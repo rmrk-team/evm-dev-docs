@@ -168,7 +168,7 @@ The `addAssetToToken` is used to add a new asset to the token and accepts three 
 
 * `tokenId`: `uint256` type of argument specifying the ID of the token we are adding asset to
 * `assetId`: `uint64` type of argument specifying the ID of the asset we are adding to the token
-* `overwrites`: `uint64` type of argument specifying the ID of the asset we are overwriting with the desired asset
+* `replacesAssetWithId`: `uint64` type of argument specifying the ID of the asset we are overwriting with the desired asset
 
 #### `addAssetEntry`
 
