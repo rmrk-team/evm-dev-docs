@@ -496,7 +496,7 @@ In addition to the minting functions, you should also implement the burning, tra
 
 * `_burn(uint256 tokenId)`
 * `_addAssetEntry(uint64 id, string memory metadataURI)`
-* `_addAssetToToken(uint256 tokenId, uint64 assetId, uint64 overwrites)`
+* `_addAssetToToken(uint256 tokenId, uint64 assetId, uint64 replacesAssetWithId)`
 * `transferFrom(address from, address to, uint256 tokenId)`
 
 Any additional functions supporting your NFT use case and utility can also be added. Remember to thoroughly test your smart contracts with extensive test suites and define strict access control rules for the functions that you implement.
