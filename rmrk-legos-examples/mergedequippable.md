@@ -178,7 +178,7 @@ The `addPartList` function is used to add a batch of catalog item entries and ac
 
 **`addEquippableAddresses`**
 
-The `addEquippableAddresses` function is used to add a number of equippable addresses to a single catalog entry. These define the collections that are allowed to be equipped in place of the base catalog. It accepts two arguments:
+The `addEquippableAddresses` function is used to add a number of equippable addresses to a single catalog entry. These define the collections that are allowed to be equipped in place of the catalog entry. It accepts two arguments:
 
 * `partId`: `uint64` type of argument specifying the ID of the part that we are adding the equippable addresses to. Only parts of slot type are valid.
 * `equippableAddresses`: `address[]` type of argument specifying the array of addresses of the collections that may equip this part
@@ -364,9 +364,9 @@ The `addAssetToToken` is used to add a new asset to the token and accepts three 
 * `assetId`: `uint64` type of argument specifying the ID of the asset we are adding to the token
 * `replacesAssetWithId`: `uint64` type of argument specifying the ID of the asset we are owerwriting with the desired asset
 
-**`addAssetEntry`**
+**`addEquippableAssetEntry`**
 
-The `addAssetEntry` is used to add a new asset of the collection and accepts three arguments:
+The `addEquippableAssetEntry` is used to add a new asset of the collection and accepts three arguments:
 
 * `equippableGroupId`: `uint64` type of argument specifying the ID of the group this asset belongs to. This ID can then be referenced in the `setValidParentRefId` in order to allow every asset with this equippable reference ID to be equipped into an NFT
 * `catalogAddress`: `address` type of argument specifying the address of the Catalog smart contract
@@ -778,7 +778,7 @@ In order for the `mintTokens` to be called, we have to add it to the `main` func
   await mintTokens(kanaria, gem);
 ```
 
-Having minted both `Kanaria`s and `Gem`s, we can now add assets to them. We will add assets to the `Kanaria` using the `addKanariaAssets` function. It accepts `Kanaria` and address of the `Catalog` smart contract. Assets will be added using the [`addAssetEntry`](broken-reference) method. We will add a default asset, which doesn't need a `baseAddress` value. The composed asset needs to have the `baseAddress`. We also specify the fixed parts IDs for background, head, body and wings. Additionally we allow the gems to be equipped in the slot parts IDs. With the asset entires added, we can add them to a token and then accept them as well:
+Having minted both `Kanaria`s and `Gem`s, we can now add assets to them. We will add assets to the `Kanaria` using the `addKanariaAssets` function. It accepts `Kanaria` and address of the `Catalog` smart contract. Assets will be added using the [`addEquippableAssetEntry`](broken-reference) method. We will add a default asset, which doesn't need a `baseAddress` value. The composed asset needs to have the `baseAddress`. We also specify the fixed parts IDs for background, head, body and wings. Additionally we allow the gems to be equipped in the slot parts IDs. With the asset entires added, we can add them to a token and then accept them as well:
 
 ```typescript
 async function addKanariaAssets(
@@ -790,7 +790,7 @@ async function addKanariaAssets(
   const assetDefaultId = 1;
   const assetComposedId = 2;
   let allTx: ContractTransaction[] = [];
-  let tx = await kanaria.addAssetEntry(
+  let tx = await kanaria.addEquippableAssetEntry(
     0, // Only used for assets meant to equip into others
     ethers.constants.AddressZero, // catalog is not needed here
     "ipfs://default.png",
@@ -798,7 +798,7 @@ async function addKanariaAssets(
   );
   allTx.push(tx);
 
-  tx = await kanaria.addAssetEntry(
+  tx = await kanaria.addEquippableAssetEntry(
     0, // Only used for assets meant to equip into others
     catalogAddress, // Since we're using parts, we must define the catalog
     "ipfs://meta1.json",
@@ -856,56 +856,56 @@ async function addGemAssets(
   console.log("Adding asset entries");
   let allTx = [
   let allTx = [
-    await gem.addAssetEntry(
+    await gem.addEquippableAssetEntry(
       // Full version for first type of gem, no need of refId or catalog
       0,
       catalogAddress,
       `ipfs://gems/typeA/full.svg`,
       []
     ),
-    await gem.addAssetEntry(
+    await gem.addEquippableAssetEntry(
       // Equipped into left slot for first type of gem
       equippableRefIdLeftGem,
       catalogAddress,
       `ipfs://gems/typeA/left.svg`,
       []
     ),
-    await gem.addAssetEntry(
+    await gem.addEquippableAssetEntry(
       // Equipped into mid slot for first type of gem
       equippableRefIdMidGem,
       catalogAddress,
       `ipfs://gems/typeA/mid.svg`,
       []
     ),
-    await gem.addAssetEntry(
+    await gem.addEquippableAssetEntry(
       // Equipped into left slot for first type of gem
       equippableRefIdRightGem,
       catalogAddress,
       `ipfs://gems/typeA/right.svg`,
       []
     ),
-    await gem.addAssetEntry(
+    await gem.addEquippableAssetEntry(
       // Full version for second type of gem, no need of refId or catalog
       0,
       ethers.constants.AddressZero,
       `ipfs://gems/typeB/full.svg`,
       []
     ),
-    await gem.addAssetEntry(
+    await gem.addEquippableAssetEntry(
       // Equipped into left slot for second type of gem
       equippableRefIdLeftGem,
       catalogAddress,
       `ipfs://gems/typeB/left.svg`,
       []
     ),
-    await gem.addAssetEntry(
+    await gem.addEquippableAssetEntry(
       // Equipped into mid slot for second type of gem
       equippableRefIdMidGem,
       catalogAddress,
       `ipfs://gems/typeB/mid.svg`,
       []
     ),
-    await gem.addAssetEntry(
+    await gem.addEquippableAssetEntry(
       // Equipped into right slot for second type of gem
       equippableRefIdRightGem,
       catalogAddress,
@@ -1441,7 +1441,7 @@ The latter is used to mint a child NFT directly into the parent NFT, so implemen
 
 Asset and reference management functions should also be implemented using:
 
-* `_addAssetEntry(uint64 id, uint64 equippableGroupId, address baseAddress, string memory metadataURI, uint64[] calldata partIds)`
+* `_addEquippableAssetEntry(uint64 id, uint64 equippableGroupId, address baseAddress, string memory metadataURI, uint64[] calldata partIds)`
 * `_addAssetToToken(uint256 tokenId, uint64 assetId, uint64 replacesAssetWithId)`
 * `_setValidParentForEquippableGroup(uint64 equippableGroupId, address parentAddress, uint64 slotPartId)`
 

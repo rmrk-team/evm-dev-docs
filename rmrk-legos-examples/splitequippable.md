@@ -89,9 +89,9 @@ The `addAssetToToken` is used to add a new asset to the token and accepts three 
 * `assetId`: `uint64` type of argument specifying the ID of the asset we are adding to the token
 * `replacesAssetWithId`: `uint64` type of argument specifying the ID of the asset we are overwriting with the desired asset
 
-**`addAssetEntry`**
+**`addEquippableAssetEntry`**
 
-The `addAssetEntry` is used to add an asset entry:
+The `addEquippableAssetEntry` is used to add an asset entry:
 
 * `metadataURI`: `string` type of argument specifying the metadata URI of a new asset
 * `equippableGroupId`: `uint64` type of argument specifying the ID of the group this asset belongs to. This ID can then be referenced in the `setValidParentRefId` in order to allow every asset with this equippable reference ID to be equipped into an NFT
@@ -724,7 +724,7 @@ In order for the `mintTokens` to be called, we have to add it to the `main` func
   await mintTokens(nestableKanaria, nestableGem);
 ```
 
-Having minted both `Kanaria`s and `Gem`s, we can now add assets to them. The assets are added to the `SimpleExternalEquip` parts of them. We will add assets to the `Kanaria` using the `addKanariaAssets` function. It accepts `Kanaria` and address of the `Catalog` smart contract. Assets will be added using the [`addAssetEntry`](broken-reference) method. We will add a default asset, which doesn't need a `catalogAddress` value. The composed asset needs to have the `baseAddress`. We also specify the fixed parts IDs for background, head, body and wings. Additionally we allow the gems to be equipped in the slot parts IDs. With the asset entires added, we can add them to a token and then accept them as well:
+Having minted both `Kanaria`s and `Gem`s, we can now add assets to them. The assets are added to the `SimpleExternalEquip` parts of them. We will add assets to the `Kanaria` using the `addKanariaAssets` function. It accepts `Kanaria` and address of the `Catalog` smart contract. Assets will be added using the [`addEquippableAssetEntry`](broken-reference) method. We will add a default asset, which doesn't need a `catalogAddress` value. The composed asset needs to have the `baseAddress`. We also specify the fixed parts IDs for background, head, body and wings. Additionally we allow the gems to be equipped in the slot parts IDs. With the asset entires added, we can add them to a token and then accept them as well:
 
 ```typescript
 async function addKanariaAssets(
@@ -736,7 +736,7 @@ async function addKanariaAssets(
   const assetComposedId = 2;
   let allTx: ContractTransaction[] = [];
   let allTx: ContractTransaction[] = [];
-  let tx = await kanaria.addAssetEntry(
+  let tx = await kanaria.addEquippableAssetEntry(
     0, // Only used for assets meant to equip into others
     ethers.constants.AddressZero, // catalog is not needed here
     "ipfs://default.png",
@@ -744,7 +744,7 @@ async function addKanariaAssets(
   );
   allTx.push(tx);
 
-  tx = await kanaria.addAssetEntry(
+  tx = await kanaria.addEquippableAssetEntry(
     0, // Only used for assets meant to equip into others
     baseAddress, // Since we're using parts, we must define the catalog
     "ipfs://meta1.json",
@@ -799,56 +799,56 @@ async function addGemAssets(
 
   // We can do a for loop, but this makes it clearer.
   let allTx = [
-    await gem.addAssetEntry(
+    await gem.addEquippableAssetEntry(
       // Full version for first type of gem, no need of refId or catalog
       0,
       catalogAddress,
       `ipfs://gems/typeA/full.svg`,
       []
     ),
-    await gem.addAssetEntry(
+    await gem.addEquippableAssetEntry(
       // Equipped into left slot for first type of gem
       equippableRefIdLeftGem,
       catalogAddress,
       `ipfs://gems/typeA/left.svg`,
       []
     ),
-    await gem.addAssetEntry(
+    await gem.addEquippableAssetEntry(
       // Equipped into mid slot for first type of gem
       equippableRefIdMidGem,
       catalogAddress,
       `ipfs://gems/typeA/mid.svg`,
       []
     ),
-    await gem.addAssetEntry(
+    await gem.addEquippableAssetEntry(
       // Equipped into left slot for first type of gem
       equippableRefIdRightGem,
       catalogAddress,
       `ipfs://gems/typeA/right.svg`,
       []
     ),
-    await gem.addAssetEntry(
+    await gem.addEquippableAssetEntry(
       // Full version for second type of gem, no need of refId or catalog
       0,
       ethers.constants.AddressZero,
       `ipfs://gems/typeB/full.svg`,
       []
     ),
-    await gem.addAssetEntry(
+    await gem.addEquippableAssetEntry(
       // Equipped into left slot for second type of gem
       equippableRefIdLeftGem,
       catalogAddress,
       `ipfs://gems/typeB/left.svg`,
       []
     ),
-    await gem.addAssetEntry(
+    await gem.addEquippableAssetEntry(
       // Equipped into mid slot for second type of gem
       equippableRefIdMidGem,
       catalogAddress,
       `ipfs://gems/typeB/mid.svg`,
       []
     ),
-    await gem.addAssetEntry(
+    await gem.addEquippableAssetEntry(
       // Equipped into right slot for second type of gem
       equippableRefIdRightGem,
       catalogAddress,
@@ -1256,7 +1256,7 @@ contract AdvancedExternalEquip is RMRKExternalEquip {
 Using `RMRKExternalEquip` requires custom implementation of asset management logic. Available internal functions when writing it are:
 
 * `_setNestableAddress(address nestableAddress)`
-* `_addAssetEntry(ExtendedAsset calldata asset, uint64[] calldata fixedPartIds, uint64[] calldata slotPartIds)`
+* `_addEquippableAssetEntry_(ExtendedAsset calldata asset, uint64[] calldata fixedPartIds, uint64[] calldata slotPartIds)`
 * `_addAssetToToken(uint256 tokenId, uint64 assetId, uint64 overwrites)`
 * `_setValidParentForEquippableGroup(uint64 equippableGroupId, address parentAddress, uint64 slotPartId)`
 
