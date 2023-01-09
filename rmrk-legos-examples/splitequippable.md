@@ -4,6 +4,8 @@ description: RMRK SplitEquippable lego composite example.
 
 # SplitEquippable
 
+<figure><img src="../.gitbook/assets/9.jpg" alt=""><figcaption><p>Split Equippable RMRK lego composite</p></figcaption></figure>
+
 The `ExternalEquippable` composite of RMRK legos uses the `Nestable`, `MultiAsset`, `Equippable` and `Catalog` RMRK legos. Unlike `MergedEquippable` RMRK lego composite, the external equippable splits `Nestable` apart from `MultiAsset` and `Equippable` in order to provide more space for custom business logic implementation.
 
 ## Abstract
@@ -149,17 +151,17 @@ The `constructor` to initialize the `RMRKNestableExternalEquipImpl` accepts the 
 
 **\[**
 
-&#x20;   **erc20TokenAddress,**
+**erc20TokenAddress,**
 
-&#x20;   **tokenUriIsEnumerable,**
+**tokenUriIsEnumerable,**
 
-&#x20;   **royaltyRecipient,**
+**royaltyRecipient,**
 
-&#x20;   **royaltyPercentageBps, // Expressed in basis points**
+**royaltyPercentageBps, // Expressed in basis points**
 
-&#x20;   **maxSupply,**
+**maxSupply,**
 
-&#x20;   **pricePerMint**
+**pricePerMint**
 
 **]**
 {% endhint %}
@@ -314,7 +316,7 @@ main().catch((error) => {
 });
 ```
 
-Since we will expand upon this deploy script in the [user journey](broken-reference), we will add a `deployContracts` function. In it we will deploy one `SimpleExternalEquip` and one `SimpleExternalEquip` smart contract per example (we will use `Kanaria` and `Gem` examples). In addition to that, we will also deploy the `SimpleCatalog` and the `RMRKEquipRenderUtils` which we will use to piece together the final product of the user journey. Once the smart contracts are deployed, we will output their addresses. The function is defined below the `main` function definition:
+Since we will expand upon this deploy script in the [user journey](broken-reference/), we will add a `deployContracts` function. In it we will deploy one `SimpleExternalEquip` and one `SimpleExternalEquip` smart contract per example (we will use `Kanaria` and `Gem` examples). In addition to that, we will also deploy the `SimpleCatalog` and the `RMRKEquipRenderUtils` which we will use to piece together the final product of the user journey. Once the smart contracts are deployed, we will output their addresses. The function is defined below the `main` function definition:
 
 ```typescript
 async function deployContracts(): Promise<
@@ -527,7 +529,7 @@ main().catch((error) => {
 });
 ```
 
-Once the smart contracts are deployed, we can setup the Catalog. We will set it up have two fixed part options for background, head, body and wings. Additionally we will add three slot options for gems. All of these will be added sing the [`addPartList`](broken-reference) method. The call together with encapsulating `setupCatalog` function should look like this:
+Once the smart contracts are deployed, we can setup the Catalog. We will set it up have two fixed part options for background, head, body and wings. Additionally we will add three slot options for gems. All of these will be added sing the [`addPartList`](broken-reference/) method. The call together with encapsulating `setupCatalog` function should look like this:
 
 ```typescript
 async function setupCatalog(catalog: SimpleCatalog, gemAddress: string): Promise<void> {
@@ -668,7 +670,7 @@ With the Catalog set up, the tokens should now be minted. Both `Kanaria` and `Ge
 const totalBirds = 5;
 ```
 
-The `mintToken` function should accept two arguments (`SimpleNestableExternalEquip` of `Kanaria` and `Gem`). We will prepare a batch of transactions to mint the tokens and send them. Once the tokens are minted, we will output the total number of tokens minted. While the `Kanaria` tokens will be minted to the `tokenOwner` address, the `Gem` tokens will be minted using the [`nestMint`](broken-reference) method in order to be minted directly to the Kanaria tokens. We will mint three `Gem` tokens to each `Kanaria`. Since all of the nested tokens need to be approved, we will also build a batch of transaction to accept a single nest-minted `Gem` for each `Kanaria`:
+The `mintToken` function should accept two arguments (`SimpleNestableExternalEquip` of `Kanaria` and `Gem`). We will prepare a batch of transactions to mint the tokens and send them. Once the tokens are minted, we will output the total number of tokens minted. While the `Kanaria` tokens will be minted to the `tokenOwner` address, the `Gem` tokens will be minted using the [`nestMint`](broken-reference/) method in order to be minted directly to the Kanaria tokens. We will mint three `Gem` tokens to each `Kanaria`. Since all of the nested tokens need to be approved, we will also build a batch of transaction to accept a single nest-minted `Gem` for each `Kanaria`:
 
 ```typescript
 async function mintTokens(
@@ -724,7 +726,7 @@ In order for the `mintTokens` to be called, we have to add it to the `main` func
   await mintTokens(nestableKanaria, nestableGem);
 ```
 
-Having minted both `Kanaria`s and `Gem`s, we can now add assets to them. The assets are added to the `SimpleExternalEquip` parts of them. We will add assets to the `Kanaria` using the `addKanariaAssets` function. It accepts `Kanaria` and address of the `Catalog` smart contract. Assets will be added using the [`addEquippableAssetEntry`](broken-reference) method. We will add a default asset, which doesn't need a `catalogAddress` value. The composed asset needs to have the `baseAddress`. We also specify the fixed parts IDs for background, head, body and wings. Additionally we allow the gems to be equipped in the slot parts IDs. With the asset entires added, we can add them to a token and then accept them as well:
+Having minted both `Kanaria`s and `Gem`s, we can now add assets to them. The assets are added to the `SimpleExternalEquip` parts of them. We will add assets to the `Kanaria` using the `addKanariaAssets` function. It accepts `Kanaria` and address of the `Catalog` smart contract. Assets will be added using the [`addEquippableAssetEntry`](broken-reference/) method. We will add a default asset, which doesn't need a `catalogAddress` value. The composed asset needs to have the `baseAddress`. We also specify the fixed parts IDs for background, head, body and wings. Additionally we allow the gems to be equipped in the slot parts IDs. With the asset entires added, we can add them to a token and then accept them as well:
 
 ```typescript
 async function addKanariaAssets(
@@ -777,7 +779,7 @@ Adding assets to `Gem`s is done in the `addGemAssets`. It accepts `SimpleExterna
 
 Having added the asset entries, we can now add the valid parent reference IDs using the `setValidParentForEquippableGroup`. For example if we want to add a valid reference for the left gem, we need to pass the value of equippable reference ID of the left gem, parent smart contract address (in our case this is `SimpleExternalEquip` of `Kanaria` smart contract) and ID of the slot which was defined in `Catalog` (this is ID number 9 in the `Catalog` for the left gem).
 
-Last thing to do is to add assets to the tokens using [`addAssetToToken`](broken-reference). Asset of type A will be added to the gems 1 and 2, and the type B of the asset is added to gem 3. All of these should be accepted using `acceptAsset`:
+Last thing to do is to add assets to the tokens using [`addAssetToToken`](broken-reference/). Asset of type A will be added to the gems 1 and 2, and the type B of the asset is added to gem 3. All of these should be accepted using `acceptAsset`:
 
 ```typescript
 async function addGemAssets(

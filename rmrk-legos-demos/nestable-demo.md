@@ -58,7 +58,7 @@ let secondtKingdomCreationTx = await kingdomSCInstance.mint(
 await secondtKingdomCreationTx.wait()
 ```
 
-<figure><img src="../.gitbook/assets/Nestable_demo_hierarchy_creation (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Nestable_demo_hierarchy_creation.png" alt=""><figcaption></figcaption></figure>
 
 After that, the Wizard decided to create the armies and did it by making them appear **directly** in their respective kingdoms.
 
@@ -82,7 +82,7 @@ let secondArmyTx = await armySCInstance.nestMint(   // mint directly into parent
 await secondArmyTx.wait()
 ```
 
-<figure><img src="../.gitbook/assets/Nestable_demo_hierarchy_creation_2 (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Nestable_demo_hierarchy_creation_2.png" alt=""><figcaption></figcaption></figure>
 
 But the a gift can't be **granted** without **acceptance** of the receiver, so after the armies were distributed to their respective kingdoms, the kings controlling them accepted the armies and vowed to guide them with honor and respect.
 
@@ -112,7 +112,7 @@ for (let i = SECOND_KINGDOM_ARMIES - 1; i >= 0; i--) {
 }
 ```
 
-<figure><img src="../.gitbook/assets/Nestable_demo_hierarchy_creation_3.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Nestable_demo_hierarchy_creation_3 (1).png" alt=""><figcaption></figcaption></figure>
 
 Wait a moment... these armies are **empty**! The Wizard created them, but forgot to add the soldiers... It is better to repair this problem a soon as possible and **fill** the armies!
 
@@ -128,7 +128,7 @@ const soldiersDistribution = [10, 20, 30, 14, 16]
 var soldierIdToMint = 1
 ```
 
-<figure><img src="../.gitbook/assets/Nestable_demo_hierarchy_creation_4.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Nestable_demo_hierarchy_creation_4 (1).png" alt=""><figcaption></figcaption></figure>
 
 ```typescript
 // Assign each soldier to his army
@@ -175,7 +175,7 @@ for (let j = 0; j < armiesComposition.length; j++) {
 }
 ```
 
-<figure><img src="../.gitbook/assets/Nestable_demo_hierarchy_creation_5 (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Nestable_demo_hierarchy_creation_5.png" alt=""><figcaption></figcaption></figure>
 
 Finally each Kingdom is complete! The Wizard can now relax and retire to a quiet place to think about the next game. :sunglasses:
 
@@ -192,7 +192,7 @@ const smallerArmy = await armySCInstance.childrenOf(smallerArmyId)
 console.log("Smaller army soldiers amount now: %d", smallerArmy.length)
 ```
 
-<figure><img src="../.gitbook/assets/Nestable_demo_hierarchy_transfer_1.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Nestable_demo_hierarchy_transfer_1 (1).png" alt=""><figcaption></figcaption></figure>
 
 So he decided to re-balance these armies a bit. He did so by removing 5 soldiers from the first one and assigning them soldiers to the third one.
 
@@ -221,7 +221,7 @@ for (let i = 0; i < 5; i++) {
 }
 ```
 
-<figure><img src="../.gitbook/assets/Nestable_demo_hierarchy_transfer_2.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Nestable_demo_hierarchy_transfer_2 (1).png" alt=""><figcaption></figcaption></figure>
 
 Integrating a new team always has its difficulties, but after proving their worth, the new soldiers have been accepted and became part of the third army.
 
@@ -267,7 +267,7 @@ await armySCInstance
   )
 ```
 
-<figure><img src="../.gitbook/assets/Nestable_demo_hierarchy_burn_1 (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Nestable_demo_hierarchy_burn_1.png" alt=""><figcaption></figcaption></figure>
 
 Several days passed and the soldier's health didn't get any better and finally, after 2 weeks of suffering, the soldier died. The King One immediately decided to burn the body to contain the infection...
 
@@ -277,7 +277,7 @@ await soldierSCInstance
   ["burn(uint256)"](secondArmyLastSoldierId)    // ID of the token to burn 
 ```
 
-<figure><img src="../.gitbook/assets/Nestable_demo_hierarchy_burn_2 (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Nestable_demo_hierarchy_burn_2.png" alt=""><figcaption></figcaption></figure>
 
 But this wasn't enough. The infection has already spread throughout the second army. A decision had to be made. The sad king decided to push the entire army away to an isolated place within the kingdom, including every object and thing related to it, and this was a wise choice.
 
@@ -297,7 +297,7 @@ await kingdomSCInstance
   )
 ```
 
-<figure><img src="../.gitbook/assets/Nestable_demo_hierarchy_burn_4 (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Nestable_demo_hierarchy_burn_4.png" alt=""><figcaption></figcaption></figure>
 
 The entire army died inside a month and the King burned every man and object to prevent the plague to resurface and do more damage to the kingdom.
 
@@ -310,7 +310,7 @@ await armySCInstance
    secondArmySoldiers.length)               // number of children to burn
 ```
 
-<figure><img src="../.gitbook/assets/Nestable_demo_hierarchy_burn_5 (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Nestable_demo_hierarchy_burn_5.png" alt=""><figcaption></figcaption></figure>
 
 Sometimes doing the right this is not easy, but the King One was wise and he contained the infection, saving the rest of its kingdom.
 
