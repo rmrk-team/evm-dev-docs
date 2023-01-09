@@ -8,9 +8,9 @@ description: RMRK MultiAsset lego example.
 
 An _asset_ is a type of output for an NFT, usually a media file.
 
-A asset can be an image, a movie, a PDF file, device config file... A multi-asset NFT is one that can output a different asset based on specific contextual information, e.g. load a PDF if loaded into a PDF reader, vs. loading an image in a virtual gallery, vs. loading hardware configuration in an IoT control hub.
+An asset can be an image, a movie, a PDF file, device config file... A multi-asset NFT is one that can output a different asset based on specific contextual information, e.g. load a PDF if loaded into a PDF reader, vs. loading an image in a virtual gallery, vs. loading hardware configuration in an IoT control hub.
 
-A asset is NOT an NFT or a standalone entity you can reference. It is part of an NFT - one of several outputs it can have.
+An asset is NOT an NFT or a standalone entity you can reference. It is part of an NFT - one of several outputs it can have.
 
 Every RMRK NFT has zero or more assets. When it has zero assets, the metadata is "root level". Any new asset added to this NFT will override the root metadata, making this NFT [revealable](https://docs.rmrk.app/usecases/revealable).
 
