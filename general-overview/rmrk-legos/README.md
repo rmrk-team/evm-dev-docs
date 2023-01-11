@@ -10,7 +10,7 @@ There are various possibilities on how to combine these legos, all of which are 
 
 1. MultiAsset ([Context-Dependent Multi-Asset Tokens](https://eips.ethereum.org/EIPS/eip-5773))
    * Only uses the MultiAsset RMRK lego
-2. Nestable (Parent-Governed Nestable Non-Fungible Tokens)
+2. Nestable ([Parent-Governed Nestable Non-Fungible Tokens](https://eips.ethereum.org/EIPS/eip-6059))
    * Only uses the Nestable RMRK lego
 3. Nestable with MultiAsset
    * Uses both Nestable and MultiAsset RMRK legos
