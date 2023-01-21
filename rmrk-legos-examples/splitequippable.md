@@ -8,10 +8,6 @@ description: RMRK SplitEquippable lego composite example.
 
 The `ExternalEquippable` composite of RMRK legos uses the `Nestable`, `MultiAsset`, `Equippable` and `Catalog` RMRK legos. Unlike `MergedEquippable` RMRK lego composite, the external equippable splits `Nestable` apart from `MultiAsset` and `Equippable` in order to provide more space for custom business logic implementation.
 
-{% hint style="info" %}
-**NOTE: To dig deeper into the Catalog and Equippable RMRK legos, you can also refer to the** [**EIP-6220**](https://eips.ethereum.org/EIPS/eip-6220) **that we published.**
-{% endhint %}
-
 ## Abstract
 
 In this tutorial we will examine the SplitEquippable composite of RMRK blocks:

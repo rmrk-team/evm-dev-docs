@@ -28,10 +28,6 @@ Assets that can be equipped into a slot each have a reference ID. The reference 
 
 Each slot of the NFT can have a predefined collection of allowed NFT collections to be equipped to this slot.
 
-{% hint style="info" %}
-**NOTE: To dig deeper into the Catalog and Equippable RMRK legos, you can also refer to the** [**EIP-6220**](https://eips.ethereum.org/EIPS/eip-6220) **that we published.**
-{% endhint %}
-
 ## Abstract
 
 In this tutorial we will examine the MergedEquippable composite of RMRK blocks:
