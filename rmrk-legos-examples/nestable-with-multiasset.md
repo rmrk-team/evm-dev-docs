@@ -12,8 +12,8 @@ Nestable and MultiAsset RMRK legos can be used together to provide more utility 
 
 In this tutorial we will examine the joined operation of the Nestable and MultiAsset RMRK blocks using two examples:
 
-* SimpleNestableMultiAsset is a minimal implementation of the Nestable and MultiAsset RMRK blocks operating together.
-* AdvancedNestableMultiAsset is a more customizable implementation of the Nestable and MultiAsset RMRK blocks operating together.
+* SimpleNestableMultiAsset is a minimal implementation of the Nestable and MultiAsset RMRK legos operating together.
+* AdvancedNestableMultiAsset is a more customizable implementation of the Nestable and MultiAsset RMRK legos operating together.
 
 ## SimpleNestableMultiAsset
 

@@ -22,8 +22,8 @@ Every RMRK NFT has zero or more assets. When it has zero assets, the metadata is
 
 In this example we will examine the MultiAsset RMRK block using two examples:
 
-* SimpleMultiAsset is a minimal implementation of the MultiAsset RMRK block.
-* AdvancedMultiAsset is a more customizable implementation of the MultiAsset RMRK block.
+* SimpleMultiAsset is a minimal implementation of the MultiAsset RMRK lego.
+* AdvancedMultiAsset is a more customizable implementation of the MultiAsset RMRK lego.
 
 Let's first examine the simple, minimal, implementation and then move on to the advanced one.
 

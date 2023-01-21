@@ -26,8 +26,8 @@ Some NFTs can be configured with special conditions for parent-child relationshi
 
 In this tutorial we will examine the Nestable RMRK block using two examples:
 
-* SimpleNestable is a minimal implementation of the Nestable RMRK block.
-* AdvancedNestable is a more customizable implementation of the Nestable RMRK block.
+* SimpleNestable is a minimal implementation of the Nestable RMRK lego.
+* AdvancedNestable is a more customizable implementation of the Nestable RMRK lego.
 
 Let's first examine the simple, minimal, implementation and then move on to the advanced one.
 
