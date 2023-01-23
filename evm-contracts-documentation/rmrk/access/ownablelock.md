@@ -8,22 +8,6 @@ A minimal ownable lock smart contract.
 
 ## Methods
 
-### addContributor
-
-```solidity
-function addContributor(address contributor) external nonpayable
-```
-
-Adds a contributor to the smart contract.
-
-_Can only be called by the owner._
-
-#### Parameters
-
-| Name        | Type    | Description                          |
-| ----------- | ------- | ------------------------------------ |
-| contributor | address | Address of the contributor's account |
-
 ### getLock
 
 ```solidity
@@ -58,6 +42,23 @@ Used to check if the address is one of the contributors.
 | ---- | ---- | -------------------------------------------------------------------- |
 | \_0  | bool | Boolean value indicating whether the address is a contributor or not |
 
+### manageContributor
+
+```solidity
+function manageContributor(address contributor, bool grantRole) external nonpayable
+```
+
+Adds or removes a contributor to the smart contract.
+
+_Can only be called by the owner._
+
+#### Parameters
+
+| Name        | Type    | Description                                                                                            |
+| ----------- | ------- | ------------------------------------------------------------------------------------------------------ |
+| contributor | address | Address of the contributor's account                                                                   |
+| grantRole   | bool    | A boolean value signifying whether the contributor role is being granted (`true`) or revoked (`false`) |
+
 ### owner
 
 ```solidity
@@ -68,9 +69,9 @@ Returns the address of the current owner.
 
 #### Returns
 
-| Name | Type    | Description |
-| ---- | ------- | ----------- |
-| \_0  | address | undefined   |
+| Name | Type    | Description                  |
+| ---- | ------- | ---------------------------- |
+| \_0  | address | Address of the current owner |
 
 ### renounceOwnership
 
@@ -81,22 +82,6 @@ function renounceOwnership() external nonpayable
 Leaves the contract without owner. Functions using the `onlyOwner` modifier will be disabled.
 
 _Can only be called by the current owner.Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner._
-
-### revokeContributor
-
-```solidity
-function revokeContributor(address contributor) external nonpayable
-```
-
-Removes a contributor from the smart contract.
-
-_Can only be called by the owner._
-
-#### Parameters
-
-| Name        | Type    | Description                          |
-| ----------- | ------- | ------------------------------------ |
-| contributor | address | Address of the contributor's account |
 
 ### setLock
 
@@ -126,11 +111,28 @@ _Can only be called by the current owner._
 
 ## Events
 
+### ContributorUpdate
+
+```solidity
+event ContributorUpdate(address indexed contributor, bool isContributor)
+```
+
+Event that signifies that an address was granted contributor role or that the permission has been revoked.
+
+#### Parameters
+
+| Name                  | Type    | Description |
+| --------------------- | ------- | ----------- |
+| contributor `indexed` | address | undefined   |
+| isContributor         | bool    | undefined   |
+
 ### OwnershipTransferred
 
 ```solidity
 event OwnershipTransferred(address indexed previousOwner, address indexed newOwner)
 ```
+
+Used to anounce the transfer of ownership.
 
 #### Parameters
 

@@ -14,7 +14,7 @@ There are various possibilities on how to combine these legos, all of which are 
    * Only uses the Nestable RMRK lego
 3. Nestable with MultiAsset
    * Uses both Nestable and MultiAsset RMRK legos
-4. Equippable MultiAsset with Nestable and Catalog
+4. Equippable MultiAsset with Nestable and Catalog ([Composable NFTs utilizing Equippable Parts](https://eips.ethereum.org/EIPS/eip-6220))
    * Merged equippable is a more compact RMRK lego composite that uses less smart contracts, but has less space for custom logic implementation
    * Split equippable is a more customisable RMRK lego composite that uses more smart contracts, but has more space for custom logic implementation
 
