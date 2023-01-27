@@ -75,6 +75,8 @@ _Returns true if this contract implements the interface defined by `interfaceId`
 event Emoted(address indexed emoter, uint256 indexed tokenId, bytes4 emoji, bool on)
 ```
 
+Used to notify listeners that the token with the specified ID has been emoted to or that the reaction has been revoked.
+
 #### Parameters
 
 | Name              | Type    | Description |
