@@ -61,9 +61,9 @@ _Asset priorities are a non-sequential array of uint16 values with an array size
 
 #### Returns
 
-| Name | Type      | Description                                                              |
-| ---- | --------- | ------------------------------------------------------------------------ |
-| \_0  | uint16\[] | uint16\[] An array of priorities of the active assets of the given token |
+| Name | Type      | Description                                                    |
+| ---- | --------- | -------------------------------------------------------------- |
+| \_0  | uint16\[] | An array of priorities of the active assets of the given token |
 
 ### getActiveAssets
 
@@ -83,9 +83,9 @@ _Asset data is stored by reference, in order to access the data corresponding to
 
 #### Returns
 
-| Name | Type      | Description                                               |
-| ---- | --------- | --------------------------------------------------------- |
-| \_0  | uint64\[] | uint64\[] An array of active asset IDs of the given token |
+| Name | Type      | Description                                     |
+| ---- | --------- | ----------------------------------------------- |
+| \_0  | uint64\[] | An array of active asset IDs of the given token |
 
 ### getApprovedForAssets
 
@@ -105,9 +105,9 @@ _Requirements: - `tokenId` must exist._
 
 #### Returns
 
-| Name | Type    | Description                                                                            |
-| ---- | ------- | -------------------------------------------------------------------------------------- |
-| \_0  | address | address Address of the account that is approved to manage the specified token's assets |
+| Name | Type    | Description                                                                    |
+| ---- | ------- | ------------------------------------------------------------------------------ |
+| \_0  | address | Address of the account that is approved to manage the specified token's assets |
 
 ### getAssetMetadata
 
@@ -128,9 +128,9 @@ _Assets are stored by reference mapping `_assets[assetId]`.Can be overriden to i
 
 #### Returns
 
-| Name | Type   | Description                                                                                          |
-| ---- | ------ | ---------------------------------------------------------------------------------------------------- |
-| \_0  | string | string The metadata of the asset belonging to the specified index in the token's active assets array |
+| Name | Type   | Description                                                                                   |
+| ---- | ------ | --------------------------------------------------------------------------------------------- |
+| \_0  | string | The metadata of the asset belonging to the specified index in the token's active assets array |
 
 ### getAssetReplacements
 
@@ -151,9 +151,9 @@ _Asset data is stored by reference, in order to access the data corresponding to
 
 #### Returns
 
-| Name | Type   | Description                                   |
-| ---- | ------ | --------------------------------------------- |
-| \_0  | uint64 | uint64 ID of the asset which will be replaced |
+| Name | Type   | Description                            |
+| ---- | ------ | -------------------------------------- |
+| \_0  | uint64 | ID of the asset which will be replaced |
 
 ### getPendingAssets
 
@@ -173,9 +173,9 @@ _Asset data is stored by reference, in order to access the data corresponding to
 
 #### Returns
 
-| Name | Type      | Description                                                |
-| ---- | --------- | ---------------------------------------------------------- |
-| \_0  | uint64\[] | uint64\[] An array of pending asset IDs of the given token |
+| Name | Type      | Description                                      |
+| ---- | --------- | ------------------------------------------------ |
+| \_0  | uint64\[] | An array of pending asset IDs of the given token |
 
 ### isApprovedForAllForAssets
 
@@ -196,9 +196,9 @@ _See {setApprovalForAllForAssets}._
 
 #### Returns
 
-| Name | Type | Description                                                                                             |
-| ---- | ---- | ------------------------------------------------------------------------------------------------------- |
-| \_0  | bool | bool The boolean value indicating wehter the account we are checking has been granted the operator role |
+| Name | Type | Description                                                                                      |
+| ---- | ---- | ------------------------------------------------------------------------------------------------ |
+| \_0  | bool | A boolean value indicating wehter the account we are checking has been granted the operator role |
 
 ### rejectAllAssets
 

@@ -18,9 +18,9 @@ Used to retrieve the specified royalty percentage.
 
 #### Returns
 
-| Name | Type    | Description                                                  |
-| ---- | ------- | ------------------------------------------------------------ |
-| \_0  | uint256 | uint256 The royalty percentage expressed in the basis points |
+| Name | Type    | Description                                          |
+| ---- | ------- | ---------------------------------------------------- |
+| \_0  | uint256 | The royalty percentage expressed in the basis points |
 
 ### getRoyaltyRecipient
 
@@ -32,9 +32,9 @@ Used to retrieve the recipient of royalties.
 
 #### Returns
 
-| Name | Type    | Description                                   |
-| ---- | ------- | --------------------------------------------- |
-| \_0  | address | address Address of the recipient of royalties |
+| Name | Type    | Description                           |
+| ---- | ------- | ------------------------------------- |
+| \_0  | address | Address of the recipient of royalties |
 
 ### royaltyInfo
 

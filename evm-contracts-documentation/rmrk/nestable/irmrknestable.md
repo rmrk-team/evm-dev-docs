@@ -64,9 +64,9 @@ _When a token is burned, all of its child tokens are recursively burned as well.
 
 #### Returns
 
-| Name | Type    | Description                                   |
-| ---- | ------- | --------------------------------------------- |
-| \_0  | uint256 | uint256 Number of recursively burned children |
+| Name | Type    | Description                           |
+| ---- | ------- | ------------------------------------- |
+| \_0  | uint256 | Number of recursively burned children |
 
 ### childOf
 
@@ -87,9 +87,9 @@ _Returns a single Child struct locating at `index` of parent token's active chil
 
 #### Returns
 
-| Name | Type                | Description                                                     |
-| ---- | ------------------- | --------------------------------------------------------------- |
-| \_0  | IRMRKNestable.Child | struct A Child struct containing data about the specified child |
+| Name | Type                | Description                                              |
+| ---- | ------------------- | -------------------------------------------------------- |
+| \_0  | IRMRKNestable.Child | A Child struct containing data about the specified child |
 
 ### childrenOf
 
@@ -109,9 +109,9 @@ _Returns array of Child structs existing for parent token.The Child struct consi
 
 #### Returns
 
-| Name | Type                   | Description                                                                           |
-| ---- | ---------------------- | ------------------------------------------------------------------------------------- |
-| \_0  | IRMRKNestable.Child\[] | struct\[] An array of Child structs containing the parent token's active child tokens |
+| Name | Type                   | Description                                                                 |
+| ---- | ---------------------- | --------------------------------------------------------------------------- |
+| \_0  | IRMRKNestable.Child\[] | An array of Child structs containing the parent token's active child tokens |
 
 ### directOwnerOf
 
@@ -131,11 +131,11 @@ _If the immediate owner is another token, the address returned, should be the on
 
 #### Returns
 
-| Name | Type    | Description                                                                                   |
-| ---- | ------- | --------------------------------------------------------------------------------------------- |
-| \_0  | address | address Address of the given token's owner                                                    |
-| \_1  | uint256 | uint256 The ID of the parent token. Should be `0` if the owner is an externally owned account |
-| \_2  | bool    | bool The boolean value signifying whether the owner is an NFT or not                          |
+| Name | Type    | Description                                                                           |
+| ---- | ------- | ------------------------------------------------------------------------------------- |
+| \_0  | address | Address of the given token's owner                                                    |
+| \_1  | uint256 | The ID of the parent token. Should be `0` if the owner is an externally owned account |
+| \_2  | bool    | The boolean value signifying whether the owner is an NFT or not                       |
 
 ### nestTransferFrom
 
@@ -196,9 +196,9 @@ _Returns a single Child struct locating at `index` of parent token's active chil
 
 #### Returns
 
-| Name | Type                | Description                                                      |
-| ---- | ------------------- | ---------------------------------------------------------------- |
-| \_0  | IRMRKNestable.Child | struct A Child struct containting data about the specified child |
+| Name | Type                | Description                                               |
+| ---- | ------------------- | --------------------------------------------------------- |
+| \_0  | IRMRKNestable.Child | A Child struct containting data about the specified child |
 
 ### pendingChildrenOf
 
@@ -218,9 +218,9 @@ _Returns array of pending Child structs existing for given parent.The Child stru
 
 #### Returns
 
-| Name | Type                   | Description                                                                            |
-| ---- | ---------------------- | -------------------------------------------------------------------------------------- |
-| \_0  | IRMRKNestable.Child\[] | struct\[] An array of Child structs containing the parent token's pending child tokens |
+| Name | Type                   | Description                                                                  |
+| ---- | ---------------------- | ---------------------------------------------------------------------------- |
+| \_0  | IRMRKNestable.Child\[] | An array of Child structs containing the parent token's pending child tokens |
 
 ### rejectAllChildren
 
@@ -341,7 +341,7 @@ _Emitted when a child NFT is added to a token's pending array._
 ### ChildTransferred
 
 ```solidity
-event ChildTransferred(uint256 indexed tokenId, uint256 childIndex, address indexed childAddress, uint256 indexed childId, bool fromPending)
+event ChildTransferred(uint256 indexed tokenId, uint256 childIndex, address indexed childAddress, uint256 indexed childId, bool fromPending, bool toZero)
 ```
 
 Used to notify listeners a child token has been transferred from parent token.
@@ -357,6 +357,7 @@ _Emitted when a token transfers a child from itself, transferring ownership to t
 | childAddress `indexed` | address | Address of the child token's collection smart contract                                                                                    |
 | childId `indexed`      | uint256 | ID of the child token in the child token's collection smart contract                                                                      |
 | fromPending            | bool    | A boolean value signifying whether the token was in the pending child tokens array (`true`) or in the active child tokens array (`false`) |
+| toZero                 | bool    | A boolean value signifying whether the token is being transferred to the `0x0` address (`true`) or not (`false`)                          |
 
 ### NestTransfer
 

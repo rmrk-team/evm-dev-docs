@@ -23,9 +23,9 @@ Used to grant permission to an account to spend the tokens of another
 
 #### Returns
 
-| Name | Type    | Description                                            |
-| ---- | ------- | ------------------------------------------------------ |
-| \_0  | uint256 | uint256 Amount of tokens that the `spender` can manage |
+| Name | Type    | Description                                    |
+| ---- | ------- | ---------------------------------------------- |
+| \_0  | uint256 | Amount of tokens that the `spender` can manage |
 
 ### transferFrom
 
@@ -45,6 +45,6 @@ Used to transfer tokens from one address to another.
 
 #### Returns
 
-| Name | Type | Description                                                                                   |
-| ---- | ---- | --------------------------------------------------------------------------------------------- |
-| \_0  | bool | bool A boolean value signifying whether the transfer was succesfull (`true`) or not (`false`) |
+| Name | Type | Description                                                                              |
+| ---- | ---- | ---------------------------------------------------------------------------------------- |
+| \_0  | bool | A boolean value signifying whether the transfer was succesfull (`true`) or not (`false`) |

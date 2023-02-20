@@ -1,10 +1,10 @@
-# RMRKMultiAsset
+# RMRKMultiAssetAutoIndex
 
 _RMRK team_
 
-> RMRKMultiAsset
+> RMRKMultiAssetAutoIndex
 
-Smart contract of the RMRK Multi asset module.
+Smart contract of the RMRK MultiAsset AutoIndex module.
 
 ## Methods
 
@@ -21,6 +21,23 @@ Version of the @rmrk-team/evm-contracts package
 | Name | Type   | Description |
 | ---- | ------ | ----------- |
 | \_0  | string | undefined   |
+
+### acceptAsset
+
+```solidity
+function acceptAsset(uint256 tokenId, uint64 assetId) external nonpayable
+```
+
+Accepts an asset from the pending array of given token.
+
+_Migrates the asset from the token's pending asset array to the token's active asset array.An active asset cannot be removed by anyone, but can be replaced by a new asset.Requirements: - The caller must own the token or be approved to manage the token's assets - `tokenId` must exist.Emits an {AssetAccepted} event._
+
+#### Parameters
+
+| Name    | Type    | Description                                           |
+| ------- | ------- | ----------------------------------------------------- |
+| tokenId | uint256 | ID of the token for which to accept the pending asset |
+| assetId | uint64  | Id of the pending asset                               |
 
 ### acceptAsset
 
@@ -346,6 +363,23 @@ _Effecitvely deletes the pending array.Requirements: - The caller must own the t
 | ------------- | ------- | --------------------------------------------------------------------------------------------------------------------------- |
 | tokenId       | uint256 | ID of the token of which to clear the pending array.                                                                        |
 | maxRejections | uint256 | Maximum number of expected assets to reject, used to prevent from rejecting assets which arrive just before this operation. |
+
+### rejectAsset
+
+```solidity
+function rejectAsset(uint256 tokenId, uint64 assetId) external nonpayable
+```
+
+Rejects an asset from the pending array of given token.
+
+_Removes the asset from the token's pending asset array.Requirements: - The caller must own the token or be approved to manage the token's assets - `tokenId` must exist.Emits a {AssetRejected} event._
+
+#### Parameters
+
+| Name    | Type    | Description                                           |
+| ------- | ------- | ----------------------------------------------------- |
+| tokenId | uint256 | ID of the token that the asset is being rejected from |
+| assetId | uint64  | Id of the pending asset                               |
 
 ### rejectAsset
 

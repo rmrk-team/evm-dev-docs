@@ -1,10 +1,10 @@
-# RMRKSoulbound
+# RMRKSoulboundAfterTransactions
 
 _RMRK team_
 
-> RMRKSoulbound
+> RMRKSoulboundAfterTransactions
 
-Smart contract of the RMRK Soulbound module.
+Smart contract of the RMRK Soulbound module where transfers are allowed for a limited a number of transfers.
 
 ## Methods
 
@@ -21,6 +21,40 @@ Version of the @rmrk-team/evm-contracts package
 | Name | Type   | Description |
 | ---- | ------ | ----------- |
 | \_0  | string | undefined   |
+
+### getMaxNumberOfTransfers
+
+```solidity
+function getMaxNumberOfTransfers() external view returns (uint256)
+```
+
+Gets the maximum number of transfers before a token becomes soulbound.
+
+#### Returns
+
+| Name | Type    | Description                                                  |
+| ---- | ------- | ------------------------------------------------------------ |
+| \_0  | uint256 | Maximum number of transfers before a token becomes soulbound |
+
+### getTransfersPerToken
+
+```solidity
+function getTransfersPerToken(uint256 tokenId) external view returns (uint256)
+```
+
+Gets the current number of transfer the specified token.
+
+#### Parameters
+
+| Name    | Type    | Description     |
+| ------- | ------- | --------------- |
+| tokenId | uint256 | ID of the token |
+
+#### Returns
+
+| Name | Type    | Description                             |
+| ---- | ------- | --------------------------------------- |
+| \_0  | uint256 | Number of the token's transfers to date |
 
 ### isSoulbound
 
@@ -89,3 +123,19 @@ Used to retrieve the collection symbol.
 | Name | Type   | Description              |
 | ---- | ------ | ------------------------ |
 | \_0  | string | Symbol of the collection |
+
+## Events
+
+### Soulbound
+
+```solidity
+event Soulbound(uint256 indexed tokenId)
+```
+
+Emitted when a token becomes soulbound.
+
+#### Parameters
+
+| Name              | Type    | Description     |
+| ----------------- | ------- | --------------- |
+| tokenId `indexed` | uint256 | ID of the token |

@@ -18,6 +18,6 @@ Used to retrieve the address of the ERC20 token this smart contract supports.
 
 #### Returns
 
-| Name | Type    | Description                                         |
-| ---- | ------- | --------------------------------------------------- |
-| \_0  | address | address Address of the ERC20 token's smart contract |
+| Name | Type    | Description                                 |
+| ---- | ------- | ------------------------------------------- |
+| \_0  | address | Address of the ERC20 token's smart contract |

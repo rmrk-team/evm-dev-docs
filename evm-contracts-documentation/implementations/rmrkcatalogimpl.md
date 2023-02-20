@@ -70,9 +70,9 @@ _Returns true if a collection may equip asset with `partId`._
 
 #### Returns
 
-| Name | Type | Description                                                                                             |
-| ---- | ---- | ------------------------------------------------------------------------------------------------------- |
-| \_0  | bool | bool The status indicating whether the `targetAddress` can be equipped into `Part` with `partId` or not |
+| Name | Type | Description                                                                                        |
+| ---- | ---- | -------------------------------------------------------------------------------------------------- |
+| \_0  | bool | The status indicating whether the `targetAddress` can be equipped into `Part` with `partId` or not |
 
 ### checkIsEquippableToAll
 
@@ -92,9 +92,9 @@ _Returns true if part is equippable to all._
 
 #### Returns
 
-| Name | Type | Description                                                                                     |
-| ---- | ---- | ----------------------------------------------------------------------------------------------- |
-| \_0  | bool | bool The status indicating whether the part with `partId` can be equipped by any address or not |
+| Name | Type | Description                                                                                |
+| ---- | ---- | ------------------------------------------------------------------------------------------ |
+| \_0  | bool | The status indicating whether the part with `partId` can be equipped by any address or not |
 
 ### getLock
 
@@ -106,9 +106,9 @@ Used to retrieve the status of a lockable smart contract.
 
 #### Returns
 
-| Name | Type | Description                                                                |
-| ---- | ---- | -------------------------------------------------------------------------- |
-| \_0  | bool | bool A boolean value signifying whether the smart contract has been locked |
+| Name | Type | Description                                                           |
+| ---- | ---- | --------------------------------------------------------------------- |
+| \_0  | bool | A boolean value signifying whether the smart contract has been locked |
 
 ### getMetadataURI
 
@@ -120,9 +120,9 @@ Used to return the metadata URI of the associated Catalog.
 
 #### Returns
 
-| Name | Type   | Description              |
-| ---- | ------ | ------------------------ |
-| \_0  | string | string Case metadata URI |
+| Name | Type   | Description          |
+| ---- | ------ | -------------------- |
+| \_0  | string | Catalog metadata URI |
 
 ### getPart
 
@@ -140,9 +140,9 @@ Used to retrieve a `Part` with id `partId`
 
 #### Returns
 
-| Name | Type              | Description                                             |
-| ---- | ----------------- | ------------------------------------------------------- |
-| \_0  | IRMRKCatalog.Part | struct The `Part` struct associated with given `partId` |
+| Name | Type              | Description                                      |
+| ---- | ----------------- | ------------------------------------------------ |
+| \_0  | IRMRKCatalog.Part | The `Part` struct associated with given `partId` |
 
 ### getParts
 
@@ -160,9 +160,9 @@ Used to retrieve multiple parts at the same time.
 
 #### Returns
 
-| Name | Type                 | Description                                                       |
-| ---- | -------------------- | ----------------------------------------------------------------- |
-| \_0  | IRMRKCatalog.Part\[] | struct An array of `Part` structs associated with given `partIds` |
+| Name | Type                 | Description                                                |
+| ---- | -------------------- | ---------------------------------------------------------- |
+| \_0  | IRMRKCatalog.Part\[] | An array of `Part` structs associated with given `partIds` |
 
 ### getType
 
@@ -174,9 +174,9 @@ Used to return the `itemType` of the associated Catalog
 
 #### Returns
 
-| Name | Type   | Description                                 |
-| ---- | ------ | ------------------------------------------- |
-| \_0  | string | string `itemType` of the associated Catalog |
+| Name | Type   | Description                          |
+| ---- | ------ | ------------------------------------ |
+| \_0  | string | `itemType` of the associated Catalog |
 
 ### isContributor
 
@@ -206,7 +206,7 @@ function manageContributor(address contributor, bool grantRole) external nonpaya
 
 Adds or removes a contributor to the smart contract.
 
-_Can only be called by the owner._
+_Can only be called by the owner.Emits **ContributorUpdate** event._
 
 #### Parameters
 
@@ -344,12 +344,14 @@ event AddedEquippables(uint64 indexed partId, address[] equippableAddresses)
 
 Event to announce new equippables to the part.
 
+_It is emitted when new addresses are marked as equippable for `partId`._
+
 #### Parameters
 
-| Name                | Type       | Description |
-| ------------------- | ---------- | ----------- |
-| partId `indexed`    | uint64     | undefined   |
-| equippableAddresses | address\[] | undefined   |
+| Name                | Type       | Description                                            |
+| ------------------- | ---------- | ------------------------------------------------------ |
+| partId `indexed`    | uint64     | ID of the part that had new equippable addresses added |
+| equippableAddresses | address\[] | An array of the new addresses that can equip this part |
 
 ### AddedPart
 
@@ -359,15 +361,17 @@ event AddedPart(uint64 indexed partId, enum IRMRKCatalog.ItemType indexed itemTy
 
 Event to announce addition of a new part.
 
+_It is emitted when a new part is added._
+
 #### Parameters
 
-| Name                | Type                       | Description |
-| ------------------- | -------------------------- | ----------- |
-| partId `indexed`    | uint64                     | undefined   |
-| itemType `indexed`  | enum IRMRKCatalog.ItemType | undefined   |
-| zIndex              | uint8                      | undefined   |
-| equippableAddresses | address\[]                 | undefined   |
-| metadataURI         | string                     | undefined   |
+| Name                | Type                       | Description                                                                                                      |
+| ------------------- | -------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| partId `indexed`    | uint64                     | ID of the part that was added                                                                                    |
+| itemType `indexed`  | enum IRMRKCatalog.ItemType | Enum value specifying whether the part is `None`, `Slot` and `Fixed`                                             |
+| zIndex              | uint8                      | An uint specifying the z value of the part. It is used to specify the depth which the part should be rendered at |
+| equippableAddresses | address\[]                 | An array of addresses that can equip this part                                                                   |
+| metadataURI         | string                     | The metadata URI of the part                                                                                     |
 
 ### ContributorUpdate
 
@@ -377,12 +381,14 @@ event ContributorUpdate(address indexed contributor, bool isContributor)
 
 Event that signifies that an address was granted contributor role or that the permission has been revoked.
 
+_This can only be triggered by a current owner, so there is no need to include that information in the event._
+
 #### Parameters
 
-| Name                  | Type    | Description |
-| --------------------- | ------- | ----------- |
-| contributor `indexed` | address | undefined   |
-| isContributor         | bool    | undefined   |
+| Name                  | Type    | Description                                                                                |
+| --------------------- | ------- | ------------------------------------------------------------------------------------------ |
+| contributor `indexed` | address | Address of the account that had contributor role status updated                            |
+| isContributor         | bool    | A boolean value signifying whether the role has been granted (`true`) or revoked (`false`) |
 
 ### OwnershipTransferred
 
@@ -394,10 +400,10 @@ Used to anounce the transfer of ownership.
 
 #### Parameters
 
-| Name                    | Type    | Description |
-| ----------------------- | ------- | ----------- |
-| previousOwner `indexed` | address | undefined   |
-| newOwner `indexed`      | address | undefined   |
+| Name                    | Type    | Description                                                  |
+| ----------------------- | ------- | ------------------------------------------------------------ |
+| previousOwner `indexed` | address | Address of the account that transferred their ownership role |
+| newOwner `indexed`      | address | Address of the account receiving the ownership role          |
 
 ### SetEquippableToAll
 
@@ -407,11 +413,13 @@ event SetEquippableToAll(uint64 indexed partId)
 
 Event to announce that a given part can be equipped by any address.
 
+_It is emitted when a given part is marked as equippable by any._
+
 #### Parameters
 
-| Name             | Type   | Description |
-| ---------------- | ------ | ----------- |
-| partId `indexed` | uint64 | undefined   |
+| Name             | Type   | Description                                        |
+| ---------------- | ------ | -------------------------------------------------- |
+| partId `indexed` | uint64 | ID of the part marked as equippable by any address |
 
 ### SetEquippables
 
@@ -421,12 +429,14 @@ event SetEquippables(uint64 indexed partId, address[] equippableAddresses)
 
 Event to announce the overriding of equippable addresses of the part.
 
+_It is emitted when the existing list of addresses marked as equippable for `partId` is overwritten by a new one._
+
 #### Parameters
 
-| Name                | Type       | Description |
-| ------------------- | ---------- | ----------- |
-| partId `indexed`    | uint64     | undefined   |
-| equippableAddresses | address\[] | undefined   |
+| Name                | Type       | Description                                                       |
+| ------------------- | ---------- | ----------------------------------------------------------------- |
+| partId `indexed`    | uint64     | ID of the part whose list of equippable addresses was overwritten |
+| equippableAddresses | address\[] | The new, full, list of addresses that can equip this part         |
 
 ## Errors
 

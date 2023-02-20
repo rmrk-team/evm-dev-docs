@@ -1,26 +1,29 @@
-# RMRKMultiAsset
+# IRMRKMultiAssetAutoIndex
 
 _RMRK team_
 
-> RMRKMultiAsset
+> RMRKMultiAssetAutoIndex
 
-Smart contract of the RMRK Multi asset module.
+Interface smart contract of the RMRK MultiAsset AutoIndex module.
 
 ## Methods
 
-### VERSION
+### acceptAsset
 
 ```solidity
-function VERSION() external view returns (string)
+function acceptAsset(uint256 tokenId, uint64 assetId) external nonpayable
 ```
 
-Version of the @rmrk-team/evm-contracts package
+Accepts an asset from the pending array of given token.
 
-#### Returns
+_Migrates the asset from the token's pending asset array to the token's active asset array.An active asset cannot be removed by anyone, but can be replaced by a new asset.Requirements: - The caller must own the token or be approved to manage the token's assets - `tokenId` must exist.Emits an {AssetAccepted} event._
 
-| Name | Type   | Description |
-| ---- | ------ | ----------- |
-| \_0  | string | undefined   |
+#### Parameters
+
+| Name    | Type    | Description                                           |
+| ------- | ------- | ----------------------------------------------------- |
+| tokenId | uint256 | ID of the token for which to accept the pending asset |
+| assetId | uint64  | Id of the pending asset                               |
 
 ### acceptAsset
 
@@ -40,23 +43,6 @@ _Migrates the asset from the token's pending asset array to the token's active a
 | index   | uint256 | Index of the asset in the pending array to accept     |
 | assetId | uint64  | ID of the asset expected to be in the index           |
 
-### approve
-
-```solidity
-function approve(address to, uint256 tokenId) external nonpayable
-```
-
-Used to grant a one-time approval to manage one's token.
-
-_Gives permission to `to` to transfer `tokenId` token to another account.The approval is cleared when the token is transferred.Only a single account can be approved at a time, so approving the zero address clears previous approvals.Requirements: - The caller must own the token or be an approved operator. - `tokenId` must exist.Emits an {Approval} event._
-
-#### Parameters
-
-| Name    | Type    | Description                                             |
-| ------- | ------- | ------------------------------------------------------- |
-| to      | address | Address receiving the approval                          |
-| tokenId | uint256 | ID of the token for which the approval is being granted |
-
 ### approveForAssets
 
 ```solidity
@@ -73,26 +59,6 @@ _This differs from transfer approvals, as approvals are not cleared when the app
 | ------- | ------- | ---------------------------------------------------------------------- |
 | to      | address | Address of the account to grant the approval to                        |
 | tokenId | uint256 | ID of the token for which the approval to manage the assets is granted |
-
-### balanceOf
-
-```solidity
-function balanceOf(address owner) external view returns (uint256)
-```
-
-Used to retrieve the number of tokens in `owner`'s account.
-
-#### Parameters
-
-| Name  | Type    | Description                          |
-| ----- | ------- | ------------------------------------ |
-| owner | address | Address of the account being checked |
-
-#### Returns
-
-| Name | Type    | Description                      |
-| ---- | ------- | -------------------------------- |
-| \_0  | uint256 | The balance of the given account |
 
 ### getActiveAssetPriorities
 
@@ -137,28 +103,6 @@ _Asset data is stored by reference, in order to access the data corresponding to
 | Name | Type      | Description                                     |
 | ---- | --------- | ----------------------------------------------- |
 | \_0  | uint64\[] | An array of active asset IDs of the given token |
-
-### getApproved
-
-```solidity
-function getApproved(uint256 tokenId) external view returns (address)
-```
-
-Used to retrieve the account approved to manage given token.
-
-_Requirements: - `tokenId` must exist._
-
-#### Parameters
-
-| Name    | Type    | Description                           |
-| ------- | ------- | ------------------------------------- |
-| tokenId | uint256 | ID of the token to check for approval |
-
-#### Returns
-
-| Name | Type    | Description                                         |
-| ---- | ------- | --------------------------------------------------- |
-| \_0  | address | Address of the account approved to manage the token |
 
 ### getApprovedForAssets
 
@@ -250,27 +194,6 @@ _Asset data is stored by reference, in order to access the data corresponding to
 | ---- | --------- | ------------------------------------------------ |
 | \_0  | uint64\[] | An array of pending asset IDs of the given token |
 
-### isApprovedForAll
-
-```solidity
-function isApprovedForAll(address owner, address operator) external view returns (bool)
-```
-
-Used to check if the given address is allowed to manage the tokens of the specified address.
-
-#### Parameters
-
-| Name     | Type    | Description                        |
-| -------- | ------- | ---------------------------------- |
-| owner    | address | Address of the owner of the tokens |
-| operator | address | Address being checked for approval |
-
-#### Returns
-
-| Name | Type | Description                                                                                                                |
-| ---- | ---- | -------------------------------------------------------------------------------------------------------------------------- |
-| \_0  | bool | A boolean value signifying whether the _operator_ is allowed to manage the tokens of the _owner_ (`true`) or not (`false`) |
-
 ### isApprovedForAllForAssets
 
 ```solidity
@@ -294,42 +217,6 @@ _See {setApprovalForAllForAssets}._
 | ---- | ---- | ------------------------------------------------------------------------------------------------ |
 | \_0  | bool | A boolean value indicating wehter the account we are checking has been granted the operator role |
 
-### name
-
-```solidity
-function name() external view returns (string)
-```
-
-Used to retrieve the collection name.
-
-#### Returns
-
-| Name | Type   | Description            |
-| ---- | ------ | ---------------------- |
-| \_0  | string | Name of the collection |
-
-### ownerOf
-
-```solidity
-function ownerOf(uint256 tokenId) external view returns (address)
-```
-
-Used to retrieve the owner of the given token.
-
-_Requirements: - `tokenId` must exist._
-
-#### Parameters
-
-| Name    | Type    | Description                                         |
-| ------- | ------- | --------------------------------------------------- |
-| tokenId | uint256 | ID of the token for which to retrieve the token for |
-
-#### Returns
-
-| Name | Type    | Description                             |
-| ---- | ------- | --------------------------------------- |
-| \_0  | address | Address of the account owning the token |
-
 ### rejectAllAssets
 
 ```solidity
@@ -350,6 +237,23 @@ _Effecitvely deletes the pending array.Requirements: - The caller must own the t
 ### rejectAsset
 
 ```solidity
+function rejectAsset(uint256 tokenId, uint64 assetId) external nonpayable
+```
+
+Rejects an asset from the pending array of given token.
+
+_Removes the asset from the token's pending asset array.Requirements: - The caller must own the token or be approved to manage the token's assets - `tokenId` must exist.Emits a {AssetRejected} event._
+
+#### Parameters
+
+| Name    | Type    | Description                                           |
+| ------- | ------- | ----------------------------------------------------- |
+| tokenId | uint256 | ID of the token that the asset is being rejected from |
+| assetId | uint64  | Id of the pending asset                               |
+
+### rejectAsset
+
+```solidity
 function rejectAsset(uint256 tokenId, uint256 index, uint64 assetId) external nonpayable
 ```
 
@@ -364,60 +268,6 @@ _Removes the asset from the token's pending asset array.Requirements: - The call
 | tokenId | uint256 | ID of the token that the asset is being rejected from  |
 | index   | uint256 | Index of the asset in the pending array to be rejected |
 | assetId | uint64  | ID of the asset expected to be in the index            |
-
-### safeTransferFrom
-
-```solidity
-function safeTransferFrom(address from, address to, uint256 tokenId) external nonpayable
-```
-
-Used to safely transfer a given token token from `from` to `to`.
-
-_Requirements: - `from` cannot be the zero address. - `to` cannot be the zero address. - `tokenId` token must exist and be owned by `from`. - If the caller is not `from`, it must be approved to move this token by either {approve} or {setApprovalForAll}. - If `to` refers to a smart contract, it must implement {IERC721Receiver-onERC721Received}, which is called upon a safe transfer.Emits a {Transfer} event._
-
-#### Parameters
-
-| Name    | Type    | Description                         |
-| ------- | ------- | ----------------------------------- |
-| from    | address | Address to transfer the tokens from |
-| to      | address | Address to transfer the tokens to   |
-| tokenId | uint256 | ID of the token to transfer         |
-
-### safeTransferFrom
-
-```solidity
-function safeTransferFrom(address from, address to, uint256 tokenId, bytes data) external nonpayable
-```
-
-Used to safely transfer a given token token from `from` to `to`.
-
-_Requirements: - `from` cannot be the zero address. - `to` cannot be the zero address. - `tokenId` token must exist and be owned by `from`. - If the caller is not `from`, it must be approved to move this token by either {approve} or {setApprovalForAll}. - If `to` refers to a smart contract, it must implement {IERC721Receiver-onERC721Received}, which is called upon a safe transfer.Emits a {Transfer} event._
-
-#### Parameters
-
-| Name    | Type    | Description                                                                            |
-| ------- | ------- | -------------------------------------------------------------------------------------- |
-| from    | address | Address to transfer the tokens from                                                    |
-| to      | address | Address to transfer the tokens to                                                      |
-| tokenId | uint256 | ID of the token to transfer                                                            |
-| data    | bytes   | Additional data without a specified format to be sent along with the token transaction |
-
-### setApprovalForAll
-
-```solidity
-function setApprovalForAll(address operator, bool approved) external nonpayable
-```
-
-Used to approve or remove `operator` as an operator for the caller.
-
-_Operators can call {transferFrom} or {safeTransferFrom} for any token owned by the caller.Requirements: - The `operator` cannot be the caller.Emits an {ApprovalForAll} event._
-
-#### Parameters
-
-| Name     | Type    | Description                                                                              |
-| -------- | ------- | ---------------------------------------------------------------------------------------- |
-| operator | address | Address of the operator being managed                                                    |
-| approved | bool    | A boolean value signifying whether the approval is being granted (`true`) or (`revoked`) |
 
 ### setApprovalForAllForAssets
 
@@ -473,71 +323,7 @@ _Returns true if this contract implements the interface defined by `interfaceId`
 | ---- | ---- | ----------- |
 | \_0  | bool | undefined   |
 
-### symbol
-
-```solidity
-function symbol() external view returns (string)
-```
-
-Used to retrieve the collection symbol.
-
-#### Returns
-
-| Name | Type   | Description              |
-| ---- | ------ | ------------------------ |
-| \_0  | string | Symbol of the collection |
-
-### transferFrom
-
-```solidity
-function transferFrom(address from, address to, uint256 tokenId) external nonpayable
-```
-
-Transfers a given token from `from` to `to`.
-
-_Requirements: - `from` cannot be the zero address. - `to` cannot be the zero address. - `tokenId` token must be owned by `from`. - If the caller is not `from`, it must be approved to move this token by either {approve} or {setApprovalForAll}.Emits a {Transfer} event._
-
-#### Parameters
-
-| Name    | Type    | Description                                   |
-| ------- | ------- | --------------------------------------------- |
-| from    | address | Address from which to transfer the token from |
-| to      | address | Address to which to transfer the token to     |
-| tokenId | uint256 | ID of the token to transfer                   |
-
 ## Events
-
-### Approval
-
-```solidity
-event Approval(address indexed owner, address indexed approved, uint256 indexed tokenId)
-```
-
-_Emitted when `owner` enables `approved` to manage the `tokenId` token._
-
-#### Parameters
-
-| Name               | Type    | Description |
-| ------------------ | ------- | ----------- |
-| owner `indexed`    | address | undefined   |
-| approved `indexed` | address | undefined   |
-| tokenId `indexed`  | uint256 | undefined   |
-
-### ApprovalForAll
-
-```solidity
-event ApprovalForAll(address indexed owner, address indexed operator, bool approved)
-```
-
-_Emitted when `owner` enables or disables (`approved`) `operator` to manage all of its assets._
-
-#### Parameters
-
-| Name               | Type    | Description |
-| ------------------ | ------- | ----------- |
-| owner `indexed`    | address | undefined   |
-| operator `indexed` | address | undefined   |
-| approved           | bool    | undefined   |
 
 ### ApprovalForAllForAssets
 
@@ -647,157 +433,3 @@ Used to notify listeners that an asset object is initialized at `assetId`.
 | Name              | Type   | Description                          |
 | ----------------- | ------ | ------------------------------------ |
 | assetId `indexed` | uint64 | ID of the asset that was initialized |
-
-### Transfer
-
-```solidity
-event Transfer(address indexed from, address indexed to, uint256 indexed tokenId)
-```
-
-_Emitted when `tokenId` token is transferred from `from` to `to`._
-
-#### Parameters
-
-| Name              | Type    | Description |
-| ----------------- | ------- | ----------- |
-| from `indexed`    | address | undefined   |
-| to `indexed`      | address | undefined   |
-| tokenId `indexed` | uint256 | undefined   |
-
-## Errors
-
-### ERC721AddressZeroIsNotaValidOwner
-
-```solidity
-error ERC721AddressZeroIsNotaValidOwner()
-```
-
-Attempting to grant the token to 0x0 address
-
-### ERC721ApprovalToCurrentOwner
-
-```solidity
-error ERC721ApprovalToCurrentOwner()
-```
-
-Attempting to grant approval to the current owner of the token
-
-### ERC721ApproveCallerIsNotOwnerNorApprovedForAll
-
-```solidity
-error ERC721ApproveCallerIsNotOwnerNorApprovedForAll()
-```
-
-Attempting to grant approval when not being owner or approved for all should not be permitted
-
-### ERC721ApproveToCaller
-
-```solidity
-error ERC721ApproveToCaller()
-```
-
-Attempting to grant approval to self
-
-### ERC721InvalidTokenId
-
-```solidity
-error ERC721InvalidTokenId()
-```
-
-Attempting to use an invalid token ID
-
-### ERC721NotApprovedOrOwner
-
-```solidity
-error ERC721NotApprovedOrOwner()
-```
-
-Attempting to manage a token without being its owner or approved by the owner
-
-### ERC721TransferFromIncorrectOwner
-
-```solidity
-error ERC721TransferFromIncorrectOwner()
-```
-
-Attempting to transfer the token from an address that is not the owner
-
-### ERC721TransferToNonReceiverImplementer
-
-```solidity
-error ERC721TransferToNonReceiverImplementer()
-```
-
-Attempting to safe transfer to an address that is unable to receive the token
-
-### ERC721TransferToTheZeroAddress
-
-```solidity
-error ERC721TransferToTheZeroAddress()
-```
-
-Attempting to transfer the token to a 0x0 address
-
-### RMRKApprovalForAssetsToCurrentOwner
-
-```solidity
-error RMRKApprovalForAssetsToCurrentOwner()
-```
-
-Attempting to grant approval of assets to their current owner
-
-### RMRKApproveForAssetsCallerIsNotOwnerNorApprovedForAll
-
-```solidity
-error RMRKApproveForAssetsCallerIsNotOwnerNorApprovedForAll()
-```
-
-Attempting to grant approval of assets without being the caller or approved for all
-
-### RMRKBadPriorityListLength
-
-```solidity
-error RMRKBadPriorityListLength()
-```
-
-Attempting to set the priorities with an array of length that doesn't match the length of active assets array
-
-### RMRKIndexOutOfRange
-
-```solidity
-error RMRKIndexOutOfRange()
-```
-
-Attempting to interact with an asset, using index greater than number of assets
-
-### RMRKNotApprovedForAssetsOrOwner
-
-```solidity
-error RMRKNotApprovedForAssetsOrOwner()
-```
-
-Attempting to manage an asset without owning it or having been granted permission by the owner to do so
-
-### RMRKTokenDoesNotHaveAsset
-
-```solidity
-error RMRKTokenDoesNotHaveAsset()
-```
-
-Attempting to compose a NFT of a token without active assets
-
-### RMRKUnexpectedAssetId
-
-```solidity
-error RMRKUnexpectedAssetId()
-```
-
-Attempting to accept or reject an asset which does not match the one at the specified index
-
-### RMRKUnexpectedNumberOfAssets
-
-```solidity
-error RMRKUnexpectedNumberOfAssets()
-```
-
-Attempting to reject all pending assets but more assets than expected are pending

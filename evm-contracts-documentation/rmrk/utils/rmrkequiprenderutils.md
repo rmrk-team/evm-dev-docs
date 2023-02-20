@@ -60,7 +60,7 @@ _The full `FixedPart` struct looks like this: \[ partId, z, metadataURI ]The ful
 ### getAllEquippableSlotsFromParent
 
 ```solidity
-function getAllEquippableSlotsFromParent(address targetChild, uint256 childId, bool onlyEquipped) external view returns (uint256 childIndex, struct RMRKEquipRenderUtils.EquippableData[] assetsWithSlots)
+function getAllEquippableSlotsFromParent(address targetChild, uint256 childId, bool onlyEquipped) external view returns (uint256 childIndex, struct RMRKEquipRenderUtils.EquippableData[] equippableData)
 ```
 
 Used to get the child's assets and slot parts pairs, identifying parts the said assets can be equipped into, for all of parent's assets.
@@ -77,10 +77,10 @@ _Reverts if child token is not owned by an NFT.The full `EquippableData` struct 
 
 #### Returns
 
-| Name            | Type                                   | Description                                                                                                               |
-| --------------- | -------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
-| childIndex      | uint256                                | Index of the child in the parent's list of active children                                                                |
-| assetsWithSlots | RMRKEquipRenderUtils.EquippableData\[] | An array of `EquippableData` structs containing info about the equippable child assets and their corresponding slot parts |
+| Name           | Type                                   | Description                                                                                                               |
+| -------------- | -------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
+| childIndex     | uint256                                | Index of the child in the parent's list of active children                                                                |
+| equippableData | RMRKEquipRenderUtils.EquippableData\[] | An array of `EquippableData` structs containing info about the equippable child assets and their corresponding slot parts |
 
 ### getAssetIdWithTopPriority
 
@@ -124,9 +124,9 @@ _Requirements: - `assetIds` must exist._
 
 #### Returns
 
-| Name | Type      | Description                                                       |
-| ---- | --------- | ----------------------------------------------------------------- |
-| \_0  | string\[] | string\[] An array of metadata URIs belonging to specified assets |
+| Name | Type      | Description                                             |
+| ---- | --------- | ------------------------------------------------------- |
+| \_0  | string\[] | An array of metadata URIs belonging to specified assets |
 
 ### getChildIndex
 
@@ -134,30 +134,32 @@ _Requirements: - `assetIds` must exist._
 function getChildIndex(address parentAddress, uint256 parentId, address childAddress, uint256 childId) external view returns (uint256)
 ```
 
+Used to retrieve the given child's index in its parent's child tokens array.
+
 #### Parameters
 
-| Name          | Type    | Description |
-| ------------- | ------- | ----------- |
-| parentAddress | address | undefined   |
-| parentId      | uint256 | undefined   |
-| childAddress  | address | undefined   |
-| childId       | uint256 | undefined   |
+| Name          | Type    | Description                                             |
+| ------------- | ------- | ------------------------------------------------------- |
+| parentAddress | address | Address of the parent token's collection smart contract |
+| parentId      | uint256 | ID of the parent token                                  |
+| childAddress  | address | Address of the child token's colection smart contract   |
+| childId       | uint256 | ID of the child token                                   |
 
 #### Returns
 
-| Name | Type    | Description |
-| ---- | ------- | ----------- |
-| \_0  | uint256 | undefined   |
+| Name | Type    | Description                                                           |
+| ---- | ------- | --------------------------------------------------------------------- |
+| \_0  | uint256 | The index of the child token in the parent token's child tokens array |
 
 ### getEquippableSlotsFromParent
 
 ```solidity
-function getEquippableSlotsFromParent(address targetChild, uint256 childId, uint64 parentAssetId) external view returns (uint256 childIndex, struct RMRKEquipRenderUtils.EquippableData[] assetsWithSlots)
+function getEquippableSlotsFromParent(address targetChild, uint256 childId, uint64 parentAssetId) external view returns (uint256 childIndex, struct RMRKEquipRenderUtils.EquippableData[] equippableData)
 ```
 
 Used to get the child's assets and slot parts pairs, identifying parts the said assets can be equipped into, for a specific parent asset.
 
-_Reverts if child token is not owned by an NFT.The full `EquippableData` struct looks like this: \[ slotPartId, childAssetId, parentAssetId, priority, parentCatalogAddress, isEquipped, partMetadata ]_
+_Reverts if child token is not owned by an NFT.The full `EquippableData` struct looks like this: \[ slotPartId, childAssetId, parentAssetId, priority, parentCatalogAddress, isEquipped, partMetadata, childAssetMetadata, parentAssetMetadata ]_
 
 #### Parameters
 
@@ -169,10 +171,10 @@ _Reverts if child token is not owned by an NFT.The full `EquippableData` struct 
 
 #### Returns
 
-| Name            | Type                                   | Description                                                                                                               |
-| --------------- | -------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
-| childIndex      | uint256                                | Index of the child in the parent's list of active children                                                                |
-| assetsWithSlots | RMRKEquipRenderUtils.EquippableData\[] | An array of `EquippableData` structs containing info about the equippable child assets and their corresponding slot parts |
+| Name           | Type                                   | Description                                                                                                               |
+| -------------- | -------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
+| childIndex     | uint256                                | Index of the child in the parent's list of active children                                                                |
+| equippableData | RMRKEquipRenderUtils.EquippableData\[] | An array of `EquippableData` structs containing info about the equippable child assets and their corresponding slot parts |
 
 ### getEquipped
 
@@ -219,9 +221,9 @@ _The full `ExtendedActiveAsset` looks like this: \[ id, priority, metadata ]_
 
 #### Returns
 
-| Name | Type                                             | Description                                                   |
-| ---- | ------------------------------------------------ | ------------------------------------------------------------- |
-| \_0  | RMRKMultiAssetRenderUtils.ExtendedActiveAsset\[] | struct\[] An array of ActiveAssets present on the given token |
+| Name | Type                                             | Description                                         |
+| ---- | ------------------------------------------------ | --------------------------------------------------- |
+| \_0  | RMRKMultiAssetRenderUtils.ExtendedActiveAsset\[] | An array of ActiveAssets present on the given token |
 
 ### getExtendedEquippableActiveAssets
 
@@ -242,9 +244,9 @@ _The full `ExtendedEquippableActiveAsset` looks like this: \[ ID, equippableGrou
 
 #### Returns
 
-| Name | Type                                                  | Description                                                                                            |
-| ---- | ----------------------------------------------------- | ------------------------------------------------------------------------------------------------------ |
-| \_0  | RMRKEquipRenderUtils.ExtendedEquippableActiveAsset\[] | ExtendedEquippableActiveAsset\[] An array of ExtendedEquippableActiveAssets present on the given token |
+| Name | Type                                                  | Description                                                           |
+| ---- | ----------------------------------------------------- | --------------------------------------------------------------------- |
+| \_0  | RMRKEquipRenderUtils.ExtendedEquippableActiveAsset\[] | An array of ExtendedEquippableActiveAssets present on the given token |
 
 ### getExtendedNft
 
@@ -288,9 +290,9 @@ _The full `ExtendedPendingAsset` looks like this: \[ ID, equippableGroupId, acce
 
 #### Returns
 
-| Name | Type                                         | Description                                                                           |
-| ---- | -------------------------------------------- | ------------------------------------------------------------------------------------- |
-| \_0  | RMRKEquipRenderUtils.ExtendedPendingAsset\[] | ExtendedPendingAssets\[] An array of ExtendedPendingAssets present on the given token |
+| Name | Type                                         | Description                                                  |
+| ---- | -------------------------------------------- | ------------------------------------------------------------ |
+| \_0  | RMRKEquipRenderUtils.ExtendedPendingAsset\[] | An array of ExtendedPendingAssets present on the given token |
 
 ### getPaginatedMintedIds
 
@@ -359,9 +361,9 @@ _The full `PendingAsset` looks like this: \[ id, acceptRejectIndex, replacesAsse
 
 #### Returns
 
-| Name | Type                                      | Description                                                    |
-| ---- | ----------------------------------------- | -------------------------------------------------------------- |
-| \_0  | RMRKMultiAssetRenderUtils.PendingAsset\[] | struct\[] An array of PendingAssets present on the given token |
+| Name | Type                                      | Description                                          |
+| ---- | ----------------------------------------- | ---------------------------------------------------- |
+| \_0  | RMRKMultiAssetRenderUtils.PendingAsset\[] | An array of PendingAssets present on the given token |
 
 ### getSlotParts
 
@@ -384,6 +386,29 @@ Used to retrieve the parent address and its slot part IDs for a given target chi
 | Name              | Type      | Description                                        |
 | ----------------- | --------- | -------------------------------------------------- |
 | parentSlotPartIds | uint64\[] | Array of slot part IDs of the parent token's asset |
+
+### getTopAsset
+
+```solidity
+function getTopAsset(address target, uint256 tokenId) external view returns (uint64 topAssetId, uint16 topAssetPriority, string topAssetMetadata)
+```
+
+Used to retrieve ID, priority value and metadata URI of the asset with the highest priority that is present on a specified token.
+
+#### Parameters
+
+| Name    | Type    | Description                                                                |
+| ------- | ------- | -------------------------------------------------------------------------- |
+| target  | address | Collection smart contract of the token for which to retireve the top asset |
+| tokenId | uint256 | ID of the token for which to retrieve the top asset                        |
+
+#### Returns
+
+| Name             | Type   | Description                                           |
+| ---------------- | ------ | ----------------------------------------------------- |
+| topAssetId       | uint64 | ID of the asset with the highest priority             |
+| topAssetPriority | uint16 | Priotity value of the asset with the highest priority |
+| topAssetMetadata | string | Metadata URI of the asset with the highest priority   |
 
 ### getTopAssetAndEquippableDataForToken
 
@@ -423,9 +448,9 @@ Used to retrieve the metadata URI of the specified token's asset with the highes
 
 #### Returns
 
-| Name | Type   | Description                                                    |
-| ---- | ------ | -------------------------------------------------------------- |
-| \_0  | string | string The metadata URI of the asset with the highest priority |
+| Name | Type   | Description                                             |
+| ---- | ------ | ------------------------------------------------------- |
+| \_0  | string | The metadata URI of the asset with the highest priority |
 
 ### isAssetEquipped
 

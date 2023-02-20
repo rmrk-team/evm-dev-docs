@@ -33,20 +33,22 @@ _Reverts if child token is not owned by an NFT.Reverts if child token is not own
 function getChildIndex(address parentAddress, uint256 parentId, address childAddress, uint256 childId) external view returns (uint256)
 ```
 
+Used to retrieve the given child's index in its parent's child tokens array.
+
 #### Parameters
 
-| Name          | Type    | Description |
-| ------------- | ------- | ----------- |
-| parentAddress | address | undefined   |
-| parentId      | uint256 | undefined   |
-| childAddress  | address | undefined   |
-| childId       | uint256 | undefined   |
+| Name          | Type    | Description                                             |
+| ------------- | ------- | ------------------------------------------------------- |
+| parentAddress | address | Address of the parent token's collection smart contract |
+| parentId      | uint256 | ID of the parent token                                  |
+| childAddress  | address | Address of the child token's colection smart contract   |
+| childId       | uint256 | ID of the child token                                   |
 
 #### Returns
 
-| Name | Type    | Description |
-| ---- | ------- | ----------- |
-| \_0  | uint256 | undefined   |
+| Name | Type    | Description                                                           |
+| ---- | ------- | --------------------------------------------------------------------- |
+| \_0  | uint256 | The index of the child token in the parent token's child tokens array |
 
 ### getParent
 

@@ -1,10 +1,10 @@
-# RMRKSoulbound
+# RMRKSoulboundPerToken
 
 _RMRK team_
 
-> RMRKSoulbound
+> RMRKSoulboundPerToken
 
-Smart contract of the RMRK Soulbound module.
+Smart contract of the RMRK Soulbound module where the transfers are permitted or prohibited on a per-token basis.
 
 ## Methods
 
@@ -89,3 +89,20 @@ Used to retrieve the collection symbol.
 | Name | Type   | Description              |
 | ---- | ------ | ------------------------ |
 | \_0  | string | Symbol of the collection |
+
+## Events
+
+### Soulbound
+
+```solidity
+event Soulbound(uint256 indexed tokenId, bool state)
+```
+
+Emitted when a token's soulbound state changes.
+
+#### Parameters
+
+| Name              | Type    | Description                                                                                       |
+| ----------------- | ------- | ------------------------------------------------------------------------------------------------- |
+| tokenId `indexed` | uint256 | ID of the token                                                                                   |
+| state             | bool    | A boolean value signifying whether the token became soulbound (`true`) or transferrable (`false`) |

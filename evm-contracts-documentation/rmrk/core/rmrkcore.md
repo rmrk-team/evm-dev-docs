@@ -20,9 +20,9 @@ Version of the @rmrk-team/evm-contracts package
 
 #### Returns
 
-| Name | Type   | Description |
-| ---- | ------ | ----------- |
-| \_0  | string | undefined   |
+| Name | Type   | Description                              |
+| ---- | ------ | ---------------------------------------- |
+| \_0  | string | Version identifier of the smart contract |
 
 ### name
 
@@ -34,9 +34,9 @@ Used to retrieve the collection name.
 
 #### Returns
 
-| Name | Type   | Description                   |
-| ---- | ------ | ----------------------------- |
-| \_0  | string | string Name of the collection |
+| Name | Type   | Description            |
+| ---- | ------ | ---------------------- |
+| \_0  | string | Name of the collection |
 
 ### symbol
 
@@ -48,6 +48,6 @@ Used to retrieve the collection symbol.
 
 #### Returns
 
-| Name | Type   | Description                     |
-| ---- | ------ | ------------------------------- |
-| \_0  | string | string Symbol of the collection |
+| Name | Type   | Description              |
+| ---- | ------ | ------------------------ |
+| \_0  | string | Symbol of the collection |

@@ -1,5 +1,11 @@
 # IRMRKNestableAutoIndex
 
+_RMRK team_
+
+> RMRKNestableAutoIndex
+
+Interface smart contract of the RMRK Nestable AutoIndex module.
+
 ## Methods
 
 ### acceptChild
@@ -76,9 +82,9 @@ _When a token is burned, all of its child tokens are recursively burned as well.
 
 #### Returns
 
-| Name | Type    | Description                                   |
-| ---- | ------- | --------------------------------------------- |
-| \_0  | uint256 | uint256 Number of recursively burned children |
+| Name | Type    | Description                           |
+| ---- | ------- | ------------------------------------- |
+| \_0  | uint256 | Number of recursively burned children |
 
 ### childOf
 
@@ -99,9 +105,9 @@ _Returns a single Child struct locating at `index` of parent token's active chil
 
 #### Returns
 
-| Name | Type                | Description                                                     |
-| ---- | ------------------- | --------------------------------------------------------------- |
-| \_0  | IRMRKNestable.Child | struct A Child struct containing data about the specified child |
+| Name | Type                | Description                                              |
+| ---- | ------------------- | -------------------------------------------------------- |
+| \_0  | IRMRKNestable.Child | A Child struct containing data about the specified child |
 
 ### childrenOf
 
@@ -121,9 +127,9 @@ _Returns array of Child structs existing for parent token.The Child struct consi
 
 #### Returns
 
-| Name | Type                   | Description                                                                           |
-| ---- | ---------------------- | ------------------------------------------------------------------------------------- |
-| \_0  | IRMRKNestable.Child\[] | struct\[] An array of Child structs containing the parent token's active child tokens |
+| Name | Type                   | Description                                                                 |
+| ---- | ---------------------- | --------------------------------------------------------------------------- |
+| \_0  | IRMRKNestable.Child\[] | An array of Child structs containing the parent token's active child tokens |
 
 ### directOwnerOf
 
@@ -143,11 +149,11 @@ _If the immediate owner is another token, the address returned, should be the on
 
 #### Returns
 
-| Name | Type    | Description                                                                                   |
-| ---- | ------- | --------------------------------------------------------------------------------------------- |
-| \_0  | address | address Address of the given token's owner                                                    |
-| \_1  | uint256 | uint256 The ID of the parent token. Should be `0` if the owner is an externally owned account |
-| \_2  | bool    | bool The boolean value signifying whether the owner is an NFT or not                          |
+| Name | Type    | Description                                                                           |
+| ---- | ------- | ------------------------------------------------------------------------------------- |
+| \_0  | address | Address of the given token's owner                                                    |
+| \_1  | uint256 | The ID of the parent token. Should be `0` if the owner is an externally owned account |
+| \_2  | bool    | The boolean value signifying whether the owner is an NFT or not                       |
 
 ### nestTransferFrom
 
@@ -208,9 +214,9 @@ _Returns a single Child struct locating at `index` of parent token's active chil
 
 #### Returns
 
-| Name | Type                | Description                                                      |
-| ---- | ------------------- | ---------------------------------------------------------------- |
-| \_0  | IRMRKNestable.Child | struct A Child struct containting data about the specified child |
+| Name | Type                | Description                                               |
+| ---- | ------------------- | --------------------------------------------------------- |
+| \_0  | IRMRKNestable.Child | A Child struct containting data about the specified child |
 
 ### pendingChildrenOf
 
@@ -230,9 +236,9 @@ _Returns array of pending Child structs existing for given parent.The Child stru
 
 #### Returns
 
-| Name | Type                   | Description                                                                            |
-| ---- | ---------------------- | -------------------------------------------------------------------------------------- |
-| \_0  | IRMRKNestable.Child\[] | struct\[] An array of Child structs containing the parent token's pending child tokens |
+| Name | Type                   | Description                                                                  |
+| ---- | ---------------------- | ---------------------------------------------------------------------------- |
+| \_0  | IRMRKNestable.Child\[] | An array of Child structs containing the parent token's pending child tokens |
 
 ### rejectAllChildren
 
@@ -326,11 +332,13 @@ event AllChildrenRejected(uint256 indexed tokenId)
 
 Used to notify listeners that all pending child tokens of a given token have been rejected.
 
+_Emitted when a token removes all a child tokens from its pending array._
+
 #### Parameters
 
-| Name              | Type    | Description |
-| ----------------- | ------- | ----------- |
-| tokenId `indexed` | uint256 | undefined   |
+| Name              | Type    | Description                                               |
+| ----------------- | ------- | --------------------------------------------------------- |
+| tokenId `indexed` | uint256 | ID of the token that rejected all of the pending children |
 
 ### ChildAccepted
 
@@ -340,14 +348,16 @@ event ChildAccepted(uint256 indexed tokenId, uint256 childIndex, address indexed
 
 Used to notify listeners that a new child token was accepted by the parent token.
 
+_Emitted when a parent token accepts a token from its pending array, migrating it to the active array._
+
 #### Parameters
 
-| Name                   | Type    | Description |
-| ---------------------- | ------- | ----------- |
-| tokenId `indexed`      | uint256 | undefined   |
-| childIndex             | uint256 | undefined   |
-| childAddress `indexed` | address | undefined   |
-| childId `indexed`      | uint256 | undefined   |
+| Name                   | Type    | Description                                                                         |
+| ---------------------- | ------- | ----------------------------------------------------------------------------------- |
+| tokenId `indexed`      | uint256 | ID of the token that accepted a new child token                                     |
+| childIndex             | uint256 | Index of the newly accepted child token in the parent token's active children array |
+| childAddress `indexed` | address | Address of the child token's collection smart contract                              |
+| childId `indexed`      | uint256 | ID of the child token in the child token's collection smart contract                |
 
 ### ChildProposed
 
@@ -357,32 +367,37 @@ event ChildProposed(uint256 indexed tokenId, uint256 childIndex, address indexed
 
 Used to notify listeners that a new token has been added to a given token's pending children array.
 
+_Emitted when a child NFT is added to a token's pending array._
+
 #### Parameters
 
-| Name                   | Type    | Description |
-| ---------------------- | ------- | ----------- |
-| tokenId `indexed`      | uint256 | undefined   |
-| childIndex             | uint256 | undefined   |
-| childAddress `indexed` | address | undefined   |
-| childId `indexed`      | uint256 | undefined   |
+| Name                   | Type    | Description                                                                    |
+| ---------------------- | ------- | ------------------------------------------------------------------------------ |
+| tokenId `indexed`      | uint256 | ID of the token that received a new pending child token                        |
+| childIndex             | uint256 | Index of the proposed child token in the parent token's pending children array |
+| childAddress `indexed` | address | Address of the proposed child token's collection smart contract                |
+| childId `indexed`      | uint256 | ID of the child token in the child token's collection smart contract           |
 
 ### ChildTransferred
 
 ```solidity
-event ChildTransferred(uint256 indexed tokenId, uint256 childIndex, address indexed childAddress, uint256 indexed childId, bool fromPending)
+event ChildTransferred(uint256 indexed tokenId, uint256 childIndex, address indexed childAddress, uint256 indexed childId, bool fromPending, bool toZero)
 ```
 
 Used to notify listeners a child token has been transferred from parent token.
 
+_Emitted when a token transfers a child from itself, transferring ownership to the root owner._
+
 #### Parameters
 
-| Name                   | Type    | Description |
-| ---------------------- | ------- | ----------- |
-| tokenId `indexed`      | uint256 | undefined   |
-| childIndex             | uint256 | undefined   |
-| childAddress `indexed` | address | undefined   |
-| childId `indexed`      | uint256 | undefined   |
-| fromPending            | bool    | undefined   |
+| Name                   | Type    | Description                                                                                                                               |
+| ---------------------- | ------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| tokenId `indexed`      | uint256 | ID of the token that transferred a child token                                                                                            |
+| childIndex             | uint256 | Index of a child in the array from which it is being transferred                                                                          |
+| childAddress `indexed` | address | Address of the child token's collection smart contract                                                                                    |
+| childId `indexed`      | uint256 | ID of the child token in the child token's collection smart contract                                                                      |
+| fromPending            | bool    | A boolean value signifying whether the token was in the pending child tokens array (`true`) or in the active child tokens array (`false`) |
+| toZero                 | bool    | A boolean value signifying whether the token is being transferred to the `0x0` address (`true`) or not (`false`)                          |
 
 ### NestTransfer
 
@@ -392,12 +407,14 @@ event NestTransfer(address indexed from, address indexed to, uint256 fromTokenId
 
 Used to notify listeners that the token is being transferred.
 
+_Emitted when `tokenId` token is transferred from `from` to `to`._
+
 #### Parameters
 
-| Name              | Type    | Description |
-| ----------------- | ------- | ----------- |
-| from `indexed`    | address | undefined   |
-| to `indexed`      | address | undefined   |
-| fromTokenId       | uint256 | undefined   |
-| toTokenId         | uint256 | undefined   |
-| tokenId `indexed` | uint256 | undefined   |
+| Name              | Type    | Description                                                                                  |
+| ----------------- | ------- | -------------------------------------------------------------------------------------------- |
+| from `indexed`    | address | Address of the previous immediate owner, which is a smart contract if the token was nested.  |
+| to `indexed`      | address | Address of the new immediate owner, which is a smart contract if the token is being nested.  |
+| fromTokenId       | uint256 | ID of the previous parent token. If the token was not nested before, the value should be `0` |
+| toTokenId         | uint256 | ID of the new parent token. If the token is not being nested, the value should be `0`        |
+| tokenId `indexed` | uint256 | ID of the token being transferred                                                            |

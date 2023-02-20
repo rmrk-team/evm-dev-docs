@@ -6,28 +6,27 @@ _RMRK team_
 
 ## Methods
 
-### getActiveAssets
+### getAssetIdWithTopPriority
 
 ```solidity
-function getActiveAssets(address target, uint256 tokenId) external view returns (struct RMRKMultiAssetRenderUtils.ActiveAsset[])
+function getAssetIdWithTopPriority(address target, uint256 tokenId) external view returns (uint64, uint16)
 ```
 
-Used to get the active assets of the given token.
-
-_The full `ActiveAsset` looks like this: \[ id, priority, metadata ]_
+Used to retrieve the ID of the specified token's asset with the highest priority.
 
 #### Parameters
 
-| Name    | Type    | Description                                       |
-| ------- | ------- | ------------------------------------------------- |
-| target  | address | Address of the smart contract of the given token  |
-| tokenId | uint256 | ID of the token to retrieve the active assets for |
+| Name    | Type    | Description                                                                         |
+| ------- | ------- | ----------------------------------------------------------------------------------- |
+| target  | address | Address of the smart contract of the given token                                    |
+| tokenId | uint256 | ID of the token for which to retrieve the ID of the asset with the highest priority |
 
 #### Returns
 
-| Name | Type                                     | Description                                                   |
-| ---- | ---------------------------------------- | ------------------------------------------------------------- |
-| \_0  | RMRKMultiAssetRenderUtils.ActiveAsset\[] | struct\[] An array of ActiveAssets present on the given token |
+| Name | Type   | Description                                               |
+| ---- | ------ | --------------------------------------------------------- |
+| \_0  | uint64 | The ID of the asset with the highest priority             |
+| \_1  | uint16 | The priority value of the asset with the highest priority |
 
 ### getAssetsById
 
@@ -49,9 +48,32 @@ _Requirements: - `assetIds` must exist._
 
 #### Returns
 
-| Name | Type      | Description                                                       |
-| ---- | --------- | ----------------------------------------------------------------- |
-| \_0  | string\[] | string\[] An array of metadata URIs belonging to specified assets |
+| Name | Type      | Description                                             |
+| ---- | --------- | ------------------------------------------------------- |
+| \_0  | string\[] | An array of metadata URIs belonging to specified assets |
+
+### getExtendedActiveAssets
+
+```solidity
+function getExtendedActiveAssets(address target, uint256 tokenId) external view returns (struct RMRKMultiAssetRenderUtils.ExtendedActiveAsset[])
+```
+
+Used to get the active assets of the given token.
+
+_The full `ExtendedActiveAsset` looks like this: \[ id, priority, metadata ]_
+
+#### Parameters
+
+| Name    | Type    | Description                                       |
+| ------- | ------- | ------------------------------------------------- |
+| target  | address | Address of the smart contract of the given token  |
+| tokenId | uint256 | ID of the token to retrieve the active assets for |
+
+#### Returns
+
+| Name | Type                                             | Description                                         |
+| ---- | ------------------------------------------------ | --------------------------------------------------- |
+| \_0  | RMRKMultiAssetRenderUtils.ExtendedActiveAsset\[] | An array of ActiveAssets present on the given token |
 
 ### getPendingAssets
 
@@ -72,9 +94,32 @@ _The full `PendingAsset` looks like this: \[ id, acceptRejectIndex, replacesAsse
 
 #### Returns
 
-| Name | Type                                      | Description                                                    |
-| ---- | ----------------------------------------- | -------------------------------------------------------------- |
-| \_0  | RMRKMultiAssetRenderUtils.PendingAsset\[] | struct\[] An array of PendingAssets present on the given token |
+| Name | Type                                      | Description                                          |
+| ---- | ----------------------------------------- | ---------------------------------------------------- |
+| \_0  | RMRKMultiAssetRenderUtils.PendingAsset\[] | An array of PendingAssets present on the given token |
+
+### getTopAsset
+
+```solidity
+function getTopAsset(address target, uint256 tokenId) external view returns (uint64 topAssetId, uint16 topAssetPriority, string topAssetMetadata)
+```
+
+Used to retrieve ID, priority value and metadata URI of the asset with the highest priority that is present on a specified token.
+
+#### Parameters
+
+| Name    | Type    | Description                                                                |
+| ------- | ------- | -------------------------------------------------------------------------- |
+| target  | address | Collection smart contract of the token for which to retireve the top asset |
+| tokenId | uint256 | ID of the token for which to retrieve the top asset                        |
+
+#### Returns
+
+| Name             | Type   | Description                                           |
+| ---------------- | ------ | ----------------------------------------------------- |
+| topAssetId       | uint64 | ID of the asset with the highest priority             |
+| topAssetPriority | uint16 | Priotity value of the asset with the highest priority |
+| topAssetMetadata | string | Metadata URI of the asset with the highest priority   |
 
 ### getTopAssetMetaForToken
 
@@ -93,9 +138,9 @@ Used to retrieve the metadata URI of the specified token's asset with the highes
 
 #### Returns
 
-| Name | Type   | Description                                                    |
-| ---- | ------ | -------------------------------------------------------------- |
-| \_0  | string | string The metadata URI of the asset with the highest priority |
+| Name | Type   | Description                                             |
+| ---- | ------ | ------------------------------------------------------- |
+| \_0  | string | The metadata URI of the asset with the highest priority |
 
 ## Errors
 

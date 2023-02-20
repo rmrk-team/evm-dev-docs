@@ -24,9 +24,9 @@ Used to get the type of the asset.
 
 #### Returns
 
-| Name | Type   | Description                  |
-| ---- | ------ | ---------------------------- |
-| \_0  | string | string The type of the asset |
+| Name | Type   | Description           |
+| ---- | ------ | --------------------- |
+| \_0  | string | The type of the asset |
 
 ### supportsInterface
 

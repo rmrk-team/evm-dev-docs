@@ -1,10 +1,10 @@
-# RMRKSoulbound
+# RMRKSoulboundAfterBlockNumber
 
 _RMRK team_
 
-> RMRKSoulbound
+> RMRKSoulboundAfterBlockNumber
 
-Smart contract of the RMRK Soulbound module.
+Smart contract of the RMRK Soulbound module where transfers are only allowed until a certain block number.
 
 ## Methods
 
@@ -22,19 +22,33 @@ Version of the @rmrk-team/evm-contracts package
 | ---- | ------ | ----------- |
 | \_0  | string | undefined   |
 
+### getLastBlockToTransfer
+
+```solidity
+function getLastBlockToTransfer() external view returns (uint256)
+```
+
+Gets the last block number where transfers are allowed
+
+#### Returns
+
+| Name | Type    | Description                                       |
+| ---- | ------- | ------------------------------------------------- |
+| \_0  | uint256 | The block number after which tokens are soulbound |
+
 ### isSoulbound
 
 ```solidity
-function isSoulbound(uint256 tokenId) external view returns (bool)
+function isSoulbound(uint256) external view returns (bool)
 ```
 
 Used to check whether the given token is soulbound or not.
 
 #### Parameters
 
-| Name    | Type    | Description                   |
-| ------- | ------- | ----------------------------- |
-| tokenId | uint256 | ID of the token being checked |
+| Name | Type    | Description |
+| ---- | ------- | ----------- |
+| \_0  | uint256 | undefined   |
 
 #### Returns
 

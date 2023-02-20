@@ -24,6 +24,6 @@ Used to retrieve the metadata URI of a token.
 
 #### Returns
 
-| Name | Type   | Description                                |
-| ---- | ------ | ------------------------------------------ |
-| \_0  | string | string Metadata URI of the specified token |
+| Name | Type   | Description                         |
+| ---- | ------ | ----------------------------------- |
+| \_0  | string | Metadata URI of the specified token |

@@ -58,9 +58,9 @@ _The ID of the asset is automatically assigned to be the next available asset ID
 
 #### Returns
 
-| Name | Type    | Description |
-| ---- | ------- | ----------- |
-| \_0  | uint256 | undefined   |
+| Name | Type    | Description                 |
+| ---- | ------- | --------------------------- |
+| \_0  | uint256 | ID of the newly added asset |
 
 ### addAssetToToken
 
@@ -86,14 +86,16 @@ _If the given asset is already added to the token, the execution will be reverte
 function approve(address to, uint256 tokenId) external nonpayable
 ```
 
-_Gives permission to `to` to transfer `tokenId` token to another account. The approval is cleared when the token is transferred. Only a single account can be approved at a time, so approving the zero address clears previous approvals. Requirements: - The caller must own the token or be an approved operator. - `tokenId` must exist. Emits an {Approval} event._
+Used to grant a one-time approval to manage one's token.
+
+_Gives permission to `to` to transfer `tokenId` token to another account.The approval is cleared when the token is transferred.Only a single account can be approved at a time, so approving the zero address clears previous approvals.Requirements: - The caller must own the token or be an approved operator. - `tokenId` must exist.Emits an {Approval} event._
 
 #### Parameters
 
-| Name    | Type    | Description |
-| ------- | ------- | ----------- |
-| to      | address | undefined   |
-| tokenId | uint256 | undefined   |
+| Name    | Type    | Description                                             |
+| ------- | ------- | ------------------------------------------------------- |
+| to      | address | Address receiving the approval                          |
+| tokenId | uint256 | ID of the token for which the approval is being granted |
 
 ### approveForAssets
 
@@ -118,19 +120,19 @@ _This differs from transfer approvals, as approvals are not cleared when the app
 function balanceOf(address owner) external view returns (uint256)
 ```
 
-_Returns the number of tokens in `owner`'s account._
+Used to retrieve the number of tokens in `owner`'s account.
 
 #### Parameters
 
-| Name  | Type    | Description |
-| ----- | ------- | ----------- |
-| owner | address | undefined   |
+| Name  | Type    | Description                          |
+| ----- | ------- | ------------------------------------ |
+| owner | address | Address of the account being checked |
 
 #### Returns
 
-| Name | Type    | Description |
-| ---- | ------- | ----------- |
-| \_0  | uint256 | undefined   |
+| Name | Type    | Description                      |
+| ---- | ------- | -------------------------------- |
+| \_0  | uint256 | The balance of the given account |
 
 ### burn
 
@@ -172,9 +174,9 @@ Used to retrieve the address of the ERC20 token this smart contract supports.
 
 #### Returns
 
-| Name | Type    | Description                                         |
-| ---- | ------- | --------------------------------------------------- |
-| \_0  | address | address Address of the ERC20 token's smart contract |
+| Name | Type    | Description                                 |
+| ---- | ------- | ------------------------------------------- |
+| \_0  | address | Address of the ERC20 token's smart contract |
 
 ### getActiveAssetPriorities
 
@@ -194,9 +196,9 @@ _Asset priorities are a non-sequential array of uint16 values with an array size
 
 #### Returns
 
-| Name | Type      | Description                                                              |
-| ---- | --------- | ------------------------------------------------------------------------ |
-| \_0  | uint16\[] | uint16\[] An array of priorities of the active assets of the given token |
+| Name | Type      | Description                                                    |
+| ---- | --------- | -------------------------------------------------------------- |
+| \_0  | uint16\[] | An array of priorities of the active assets of the given token |
 
 ### getActiveAssets
 
@@ -216,9 +218,9 @@ _Asset data is stored by reference, in order to access the data corresponding to
 
 #### Returns
 
-| Name | Type      | Description                                               |
-| ---- | --------- | --------------------------------------------------------- |
-| \_0  | uint64\[] | uint64\[] An array of active asset IDs of the given token |
+| Name | Type      | Description                                     |
+| ---- | --------- | ----------------------------------------------- |
+| \_0  | uint64\[] | An array of active asset IDs of the given token |
 
 ### getApproved
 
@@ -226,19 +228,21 @@ _Asset data is stored by reference, in order to access the data corresponding to
 function getApproved(uint256 tokenId) external view returns (address)
 ```
 
-_Returns the account approved for `tokenId` token. Requirements: - `tokenId` must exist._
+Used to retrieve the account approved to manage given token.
+
+_Requirements: - `tokenId` must exist._
 
 #### Parameters
 
-| Name    | Type    | Description |
-| ------- | ------- | ----------- |
-| tokenId | uint256 | undefined   |
+| Name    | Type    | Description                           |
+| ------- | ------- | ------------------------------------- |
+| tokenId | uint256 | ID of the token to check for approval |
 
 #### Returns
 
-| Name | Type    | Description |
-| ---- | ------- | ----------- |
-| \_0  | address | undefined   |
+| Name | Type    | Description                                         |
+| ---- | ------- | --------------------------------------------------- |
+| \_0  | address | Address of the account approved to manage the token |
 
 ### getApprovedForAssets
 
@@ -258,9 +262,9 @@ _Requirements: - `tokenId` must exist._
 
 #### Returns
 
-| Name | Type    | Description                                                                            |
-| ---- | ------- | -------------------------------------------------------------------------------------- |
-| \_0  | address | address Address of the account that is approved to manage the specified token's assets |
+| Name | Type    | Description                                                                    |
+| ---- | ------- | ------------------------------------------------------------------------------ |
+| \_0  | address | Address of the account that is approved to manage the specified token's assets |
 
 ### getAssetMetadata
 
@@ -281,9 +285,9 @@ _Assets are stored by reference mapping `_assets[assetId]`.Can be overriden to i
 
 #### Returns
 
-| Name | Type   | Description                                                                                          |
-| ---- | ------ | ---------------------------------------------------------------------------------------------------- |
-| \_0  | string | string The metadata of the asset belonging to the specified index in the token's active assets array |
+| Name | Type   | Description                                                                                   |
+| ---- | ------ | --------------------------------------------------------------------------------------------- |
+| \_0  | string | The metadata of the asset belonging to the specified index in the token's active assets array |
 
 ### getAssetReplacements
 
@@ -304,9 +308,9 @@ _Asset data is stored by reference, in order to access the data corresponding to
 
 #### Returns
 
-| Name | Type   | Description                                   |
-| ---- | ------ | --------------------------------------------- |
-| \_0  | uint64 | uint64 ID of the asset which will be replaced |
+| Name | Type   | Description                            |
+| ---- | ------ | -------------------------------------- |
+| \_0  | uint64 | ID of the asset which will be replaced |
 
 ### getLock
 
@@ -318,9 +322,9 @@ Used to retrieve the status of a lockable smart contract.
 
 #### Returns
 
-| Name | Type | Description                                                                |
-| ---- | ---- | -------------------------------------------------------------------------- |
-| \_0  | bool | bool A boolean value signifying whether the smart contract has been locked |
+| Name | Type | Description                                                           |
+| ---- | ---- | --------------------------------------------------------------------- |
+| \_0  | bool | A boolean value signifying whether the smart contract has been locked |
 
 ### getPendingAssets
 
@@ -340,9 +344,9 @@ _Asset data is stored by reference, in order to access the data corresponding to
 
 #### Returns
 
-| Name | Type      | Description                                                |
-| ---- | --------- | ---------------------------------------------------------- |
-| \_0  | uint64\[] | uint64\[] An array of pending asset IDs of the given token |
+| Name | Type      | Description                                      |
+| ---- | --------- | ------------------------------------------------ |
+| \_0  | uint64\[] | An array of pending asset IDs of the given token |
 
 ### getRoyaltyPercentage
 
@@ -354,9 +358,9 @@ Used to retrieve the specified royalty percentage.
 
 #### Returns
 
-| Name | Type    | Description                                                  |
-| ---- | ------- | ------------------------------------------------------------ |
-| \_0  | uint256 | uint256 The royalty percentage expressed in the basis points |
+| Name | Type    | Description                                          |
+| ---- | ------- | ---------------------------------------------------- |
+| \_0  | uint256 | The royalty percentage expressed in the basis points |
 
 ### getRoyaltyRecipient
 
@@ -368,9 +372,9 @@ Used to retrieve the recipient of royalties.
 
 #### Returns
 
-| Name | Type    | Description                                   |
-| ---- | ------- | --------------------------------------------- |
-| \_0  | address | address Address of the recipient of royalties |
+| Name | Type    | Description                           |
+| ---- | ------- | ------------------------------------- |
+| \_0  | address | Address of the recipient of royalties |
 
 ### isApprovedForAll
 
@@ -378,20 +382,20 @@ Used to retrieve the recipient of royalties.
 function isApprovedForAll(address owner, address operator) external view returns (bool)
 ```
 
-_Returns if the `operator` is allowed to manage all of the assets of `owner`. See {setApprovalForAll}_
+Used to check if the given address is allowed to manage the tokens of the specified address.
 
 #### Parameters
 
-| Name     | Type    | Description |
-| -------- | ------- | ----------- |
-| owner    | address | undefined   |
-| operator | address | undefined   |
+| Name     | Type    | Description                        |
+| -------- | ------- | ---------------------------------- |
+| owner    | address | Address of the owner of the tokens |
+| operator | address | Address being checked for approval |
 
 #### Returns
 
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| \_0  | bool | undefined   |
+| Name | Type | Description                                                                                                                |
+| ---- | ---- | -------------------------------------------------------------------------------------------------------------------------- |
+| \_0  | bool | A boolean value signifying whether the _operator_ is allowed to manage the tokens of the _owner_ (`true`) or not (`false`) |
 
 ### isApprovedForAllForAssets
 
@@ -412,9 +416,9 @@ _See {setApprovalForAllForAssets}._
 
 #### Returns
 
-| Name | Type | Description                                                                                             |
-| ---- | ---- | ------------------------------------------------------------------------------------------------------- |
-| \_0  | bool | bool The boolean value indicating wehter the account we are checking has been granted the operator role |
+| Name | Type | Description                                                                                      |
+| ---- | ---- | ------------------------------------------------------------------------------------------------ |
+| \_0  | bool | A boolean value indicating wehter the account we are checking has been granted the operator role |
 
 ### isContributor
 
@@ -444,7 +448,7 @@ function manageContributor(address contributor, bool grantRole) external nonpaya
 
 Adds or removes a contributor to the smart contract.
 
-_Can only be called by the owner._
+_Can only be called by the owner.Emits **ContributorUpdate** event._
 
 #### Parameters
 
@@ -463,9 +467,9 @@ Used to retrieve the maximum supply of the collection.
 
 #### Returns
 
-| Name | Type    | Description                                            |
-| ---- | ------- | ------------------------------------------------------ |
-| \_0  | uint256 | uint256 The maximum supply of tokens in the collection |
+| Name | Type    | Description                                    |
+| ---- | ------- | ---------------------------------------------- |
+| \_0  | uint256 | The maximum supply of tokens in the collection |
 
 ### mint
 
@@ -494,9 +498,9 @@ Used to retrieve the collection name.
 
 #### Returns
 
-| Name | Type   | Description                   |
-| ---- | ------ | ----------------------------- |
-| \_0  | string | string Name of the collection |
+| Name | Type   | Description            |
+| ---- | ------ | ---------------------- |
+| \_0  | string | Name of the collection |
 
 ### owner
 
@@ -518,19 +522,21 @@ Returns the address of the current owner.
 function ownerOf(uint256 tokenId) external view returns (address)
 ```
 
-_Returns the owner of the `tokenId` token. Requirements: - `tokenId` must exist._
+Used to retrieve the owner of the given token.
+
+_Requirements: - `tokenId` must exist._
 
 #### Parameters
 
-| Name    | Type    | Description |
-| ------- | ------- | ----------- |
-| tokenId | uint256 | undefined   |
+| Name    | Type    | Description                                         |
+| ------- | ------- | --------------------------------------------------- |
+| tokenId | uint256 | ID of the token for which to retrieve the token for |
 
 #### Returns
 
-| Name | Type    | Description |
-| ---- | ------- | ----------- |
-| \_0  | address | undefined   |
+| Name | Type    | Description                             |
+| ---- | ------- | --------------------------------------- |
+| \_0  | address | Address of the account owning the token |
 
 ### pricePerMint
 
@@ -542,9 +548,9 @@ Used to retrieve the price per mint.
 
 #### Returns
 
-| Name | Type    | Description                                                                                            |
-| ---- | ------- | ------------------------------------------------------------------------------------------------------ |
-| \_0  | uint256 | uint256 The price per mint of a single token expressed in the lowest denomination of a native currency |
+| Name | Type    | Description                                                                                    |
+| ---- | ------- | ---------------------------------------------------------------------------------------------- |
+| \_0  | uint256 | The price per mint of a single token expressed in the lowest denomination of a native currency |
 
 ### rejectAllAssets
 
@@ -619,15 +625,17 @@ Used to retrieve the information about who shall receive royalties of a sale of 
 function safeTransferFrom(address from, address to, uint256 tokenId) external nonpayable
 ```
 
-_Safely transfers `tokenId` token from `from` to `to`, checking first that contract recipients are aware of the ERC721 protocol to prevent tokens from being forever locked. Requirements: - `from` cannot be the zero address. - `to` cannot be the zero address. - `tokenId` token must exist and be owned by `from`. - If the caller is not `from`, it must have been allowed to move this token by either {approve} or {setApprovalForAll}. - If `to` refers to a smart contract, it must implement {IERC721Receiver-onERC721Received}, which is called upon a safe transfer. Emits a {Transfer} event._
+Used to safely transfer a given token token from `from` to `to`.
+
+_Requirements: - `from` cannot be the zero address. - `to` cannot be the zero address. - `tokenId` token must exist and be owned by `from`. - If the caller is not `from`, it must be approved to move this token by either {approve} or {setApprovalForAll}. - If `to` refers to a smart contract, it must implement {IERC721Receiver-onERC721Received}, which is called upon a safe transfer.Emits a {Transfer} event._
 
 #### Parameters
 
-| Name    | Type    | Description |
-| ------- | ------- | ----------- |
-| from    | address | undefined   |
-| to      | address | undefined   |
-| tokenId | uint256 | undefined   |
+| Name    | Type    | Description                         |
+| ------- | ------- | ----------------------------------- |
+| from    | address | Address to transfer the tokens from |
+| to      | address | Address to transfer the tokens to   |
+| tokenId | uint256 | ID of the token to transfer         |
 
 ### safeTransferFrom
 
@@ -635,16 +643,18 @@ _Safely transfers `tokenId` token from `from` to `to`, checking first that contr
 function safeTransferFrom(address from, address to, uint256 tokenId, bytes data) external nonpayable
 ```
 
-_Safely transfers `tokenId` token from `from` to `to`. Requirements: - `from` cannot be the zero address. - `to` cannot be the zero address. - `tokenId` token must exist and be owned by `from`. - If the caller is not `from`, it must be approved to move this token by either {approve} or {setApprovalForAll}. - If `to` refers to a smart contract, it must implement {IERC721Receiver-onERC721Received}, which is called upon a safe transfer. Emits a {Transfer} event._
+Used to safely transfer a given token token from `from` to `to`.
+
+_Requirements: - `from` cannot be the zero address. - `to` cannot be the zero address. - `tokenId` token must exist and be owned by `from`. - If the caller is not `from`, it must be approved to move this token by either {approve} or {setApprovalForAll}. - If `to` refers to a smart contract, it must implement {IERC721Receiver-onERC721Received}, which is called upon a safe transfer.Emits a {Transfer} event._
 
 #### Parameters
 
-| Name    | Type    | Description |
-| ------- | ------- | ----------- |
-| from    | address | undefined   |
-| to      | address | undefined   |
-| tokenId | uint256 | undefined   |
-| data    | bytes   | undefined   |
+| Name    | Type    | Description                                                                            |
+| ------- | ------- | -------------------------------------------------------------------------------------- |
+| from    | address | Address to transfer the tokens from                                                    |
+| to      | address | Address to transfer the tokens to                                                      |
+| tokenId | uint256 | ID of the token to transfer                                                            |
+| data    | bytes   | Additional data without a specified format to be sent along with the token transaction |
 
 ### setApprovalForAll
 
@@ -652,14 +662,16 @@ _Safely transfers `tokenId` token from `from` to `to`. Requirements: - `from` ca
 function setApprovalForAll(address operator, bool approved) external nonpayable
 ```
 
-_Approve or remove `operator` as an operator for the caller. Operators can call {transferFrom} or {safeTransferFrom} for any token owned by the caller. Requirements: - The `operator` cannot be the caller. Emits an {ApprovalForAll} event._
+Used to approve or remove `operator` as an operator for the caller.
+
+_Operators can call {transferFrom} or {safeTransferFrom} for any token owned by the caller.Requirements: - The `operator` cannot be the caller.Emits an {ApprovalForAll} event._
 
 #### Parameters
 
-| Name     | Type    | Description |
-| -------- | ------- | ----------- |
-| operator | address | undefined   |
-| approved | bool    | undefined   |
+| Name     | Type    | Description                                                                              |
+| -------- | ------- | ---------------------------------------------------------------------------------------- |
+| operator | address | Address of the operator being managed                                                    |
+| approved | bool    | A boolean value signifying whether the approval is being granted (`true`) or (`revoked`) |
 
 ### setApprovalForAllForAssets
 
@@ -735,9 +747,9 @@ Used to retrieve the collection symbol.
 
 #### Returns
 
-| Name | Type   | Description                     |
-| ---- | ------ | ------------------------------- |
-| \_0  | string | string Symbol of the collection |
+| Name | Type   | Description              |
+| ---- | ------ | ------------------------ |
+| \_0  | string | Symbol of the collection |
 
 ### tokenURI
 
@@ -755,9 +767,9 @@ Used to retrieve the metadata URI of a token.
 
 #### Returns
 
-| Name | Type   | Description                                |
-| ---- | ------ | ------------------------------------------ |
-| \_0  | string | string Metadata URI of the specified token |
+| Name | Type   | Description                         |
+| ---- | ------ | ----------------------------------- |
+| \_0  | string | Metadata URI of the specified token |
 
 ### totalAssets
 
@@ -769,9 +781,9 @@ Used to retrieve the total number of assets.
 
 #### Returns
 
-| Name | Type    | Description                        |
-| ---- | ------- | ---------------------------------- |
-| \_0  | uint256 | uint256 The total number of assets |
+| Name | Type    | Description                |
+| ---- | ------- | -------------------------- |
+| \_0  | uint256 | The total number of assets |
 
 ### totalSupply
 
@@ -783,9 +795,9 @@ Used to retrieve the total supply of the tokens in a collection.
 
 #### Returns
 
-| Name | Type    | Description                                  |
-| ---- | ------- | -------------------------------------------- |
-| \_0  | uint256 | uint256 The number of tokens in a collection |
+| Name | Type    | Description                          |
+| ---- | ------- | ------------------------------------ |
+| \_0  | uint256 | The number of tokens in a collection |
 
 ### transferFrom
 
@@ -793,15 +805,17 @@ Used to retrieve the total supply of the tokens in a collection.
 function transferFrom(address from, address to, uint256 tokenId) external nonpayable
 ```
 
-_Transfers `tokenId` token from `from` to `to`. WARNING: Note that the caller is responsible to confirm that the recipient is capable of receiving ERC721 or else they may be permanently lost. Usage of {safeTransferFrom} prevents loss, though the caller must understand this adds an external call which potentially creates a reentrancy vulnerability. Requirements: - `from` cannot be the zero address. - `to` cannot be the zero address. - `tokenId` token must be owned by `from`. - If the caller is not `from`, it must be approved to move this token by either {approve} or {setApprovalForAll}. Emits a {Transfer} event._
+Transfers a given token from `from` to `to`.
+
+_Requirements: - `from` cannot be the zero address. - `to` cannot be the zero address. - `tokenId` token must be owned by `from`. - If the caller is not `from`, it must be approved to move this token by either {approve} or {setApprovalForAll}.Emits a {Transfer} event._
 
 #### Parameters
 
-| Name    | Type    | Description |
-| ------- | ------- | ----------- |
-| from    | address | undefined   |
-| to      | address | undefined   |
-| tokenId | uint256 | undefined   |
+| Name    | Type    | Description                                   |
+| ------- | ------- | --------------------------------------------- |
+| from    | address | Address from which to transfer the token from |
+| to      | address | Address to which to transfer the token to     |
+| tokenId | uint256 | ID of the token to transfer                   |
 
 ### transferOwnership
 
@@ -860,6 +874,8 @@ _This function can only be called by the owner._
 event Approval(address indexed owner, address indexed approved, uint256 indexed tokenId)
 ```
 
+_Emitted when `owner` enables `approved` to manage the `tokenId` token._
+
 #### Parameters
 
 | Name               | Type    | Description |
@@ -873,6 +889,8 @@ event Approval(address indexed owner, address indexed approved, uint256 indexed 
 ```solidity
 event ApprovalForAll(address indexed owner, address indexed operator, bool approved)
 ```
+
+_Emitted when `owner` enables or disables (`approved`) `operator` to manage all of its assets._
 
 #### Parameters
 
@@ -892,11 +910,11 @@ Used to notify listeners that owner has granted approval to the user to manage a
 
 #### Parameters
 
-| Name               | Type    | Description |
-| ------------------ | ------- | ----------- |
-| owner `indexed`    | address | undefined   |
-| operator `indexed` | address | undefined   |
-| approved           | bool    | undefined   |
+| Name               | Type    | Description                                                                                                 |
+| ------------------ | ------- | ----------------------------------------------------------------------------------------------------------- |
+| owner `indexed`    | address | Address of the account that has granted the approval for all assets on all of their tokens                  |
+| operator `indexed` | address | Address of the account that has been granted the approval to manage the token's assets on all of the tokens |
+| approved           | bool    | Boolean value signifying whether the permission has been granted (`true`) or revoked (`false`)              |
 
 ### ApprovalForAssets
 
@@ -906,13 +924,15 @@ event ApprovalForAssets(address indexed owner, address indexed approved, uint256
 
 Used to notify listeners that owner has granted an approval to the user to manage the assets of a given token.
 
+_Approvals must be cleared on transfer_
+
 #### Parameters
 
-| Name               | Type    | Description |
-| ------------------ | ------- | ----------- |
-| owner `indexed`    | address | undefined   |
-| approved `indexed` | address | undefined   |
-| tokenId `indexed`  | uint256 | undefined   |
+| Name               | Type    | Description                                                                        |
+| ------------------ | ------- | ---------------------------------------------------------------------------------- |
+| owner `indexed`    | address | Address of the account that has granted the approval for all token's assets        |
+| approved `indexed` | address | Address of the account that has been granted approval to manage the token's assets |
+| tokenId `indexed`  | uint256 | ID of the token on which the approval was granted                                  |
 
 ### AssetAccepted
 
@@ -924,11 +944,11 @@ Used to notify listeners that an asset object at `assetId` is accepted by the to
 
 #### Parameters
 
-| Name                 | Type    | Description |
-| -------------------- | ------- | ----------- |
-| tokenId `indexed`    | uint256 | undefined   |
-| assetId `indexed`    | uint64  | undefined   |
-| replacesId `indexed` | uint64  | undefined   |
+| Name                 | Type    | Description                                   |
+| -------------------- | ------- | --------------------------------------------- |
+| tokenId `indexed`    | uint256 | ID of the token that had a new asset accepted |
+| assetId `indexed`    | uint64  | ID of the asset that was accepted             |
+| replacesId `indexed` | uint64  | ID of the asset that was replaced             |
 
 ### AssetAddedToToken
 
@@ -940,11 +960,11 @@ Used to notify listeners that an asset object at `assetId` is added to token's p
 
 #### Parameters
 
-| Name                 | Type    | Description |
-| -------------------- | ------- | ----------- |
-| tokenId `indexed`    | uint256 | undefined   |
-| assetId `indexed`    | uint64  | undefined   |
-| replacesId `indexed` | uint64  | undefined   |
+| Name                 | Type    | Description                                                             |
+| -------------------- | ------- | ----------------------------------------------------------------------- |
+| tokenId `indexed`    | uint256 | ID of the token that received a new pending asset                       |
+| assetId `indexed`    | uint64  | ID of the asset that has been added to the token's pending assets array |
+| replacesId `indexed` | uint64  | ID of the asset that would be replaced                                  |
 
 ### AssetPrioritySet
 
@@ -956,9 +976,9 @@ Used to notify listeners that token's prioritiy array is reordered.
 
 #### Parameters
 
-| Name              | Type    | Description |
-| ----------------- | ------- | ----------- |
-| tokenId `indexed` | uint256 | undefined   |
+| Name              | Type    | Description                                               |
+| ----------------- | ------- | --------------------------------------------------------- |
+| tokenId `indexed` | uint256 | ID of the token that had the asset priority array updated |
 
 ### AssetRejected
 
@@ -970,10 +990,10 @@ Used to notify listeners that an asset object at `assetId` is rejected from toke
 
 #### Parameters
 
-| Name              | Type    | Description |
-| ----------------- | ------- | ----------- |
-| tokenId `indexed` | uint256 | undefined   |
-| assetId `indexed` | uint64  | undefined   |
+| Name              | Type    | Description                                |
+| ----------------- | ------- | ------------------------------------------ |
+| tokenId `indexed` | uint256 | ID of the token that had an asset rejected |
+| assetId `indexed` | uint64  | ID of the asset that was rejected          |
 
 ### AssetSet
 
@@ -985,9 +1005,9 @@ Used to notify listeners that an asset object is initialized at `assetId`.
 
 #### Parameters
 
-| Name              | Type   | Description |
-| ----------------- | ------ | ----------- |
-| assetId `indexed` | uint64 | undefined   |
+| Name              | Type   | Description                          |
+| ----------------- | ------ | ------------------------------------ |
+| assetId `indexed` | uint64 | ID of the asset that was initialized |
 
 ### ContributorUpdate
 
@@ -997,12 +1017,14 @@ event ContributorUpdate(address indexed contributor, bool isContributor)
 
 Event that signifies that an address was granted contributor role or that the permission has been revoked.
 
+_This can only be triggered by a current owner, so there is no need to include that information in the event._
+
 #### Parameters
 
-| Name                  | Type    | Description |
-| --------------------- | ------- | ----------- |
-| contributor `indexed` | address | undefined   |
-| isContributor         | bool    | undefined   |
+| Name                  | Type    | Description                                                                                |
+| --------------------- | ------- | ------------------------------------------------------------------------------------------ |
+| contributor `indexed` | address | Address of the account that had contributor role status updated                            |
+| isContributor         | bool    | A boolean value signifying whether the role has been granted (`true`) or revoked (`false`) |
 
 ### OwnershipTransferred
 
@@ -1014,16 +1036,18 @@ Used to anounce the transfer of ownership.
 
 #### Parameters
 
-| Name                    | Type    | Description |
-| ----------------------- | ------- | ----------- |
-| previousOwner `indexed` | address | undefined   |
-| newOwner `indexed`      | address | undefined   |
+| Name                    | Type    | Description                                                  |
+| ----------------------- | ------- | ------------------------------------------------------------ |
+| previousOwner `indexed` | address | Address of the account that transferred their ownership role |
+| newOwner `indexed`      | address | Address of the account receiving the ownership role          |
 
 ### Transfer
 
 ```solidity
 event Transfer(address indexed from, address indexed to, uint256 indexed tokenId)
 ```
+
+_Emitted when `tokenId` token is transferred from `from` to `to`._
 
 #### Parameters
 
@@ -1234,12 +1258,6 @@ error RMRKNotApprovedForAssetsOrOwner()
 ```
 
 Attempting to manage an asset without owning it or having been granted permission by the owner to do so
-
-### RMRKNotEnoughAllowance
-
-```solidity
-error RMRKNotEnoughAllowance()
-```
 
 ### RMRKNotOwner
 

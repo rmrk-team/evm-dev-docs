@@ -62,9 +62,9 @@ Used to verify whether a token can be equipped into a given parent's slot.
 
 #### Returns
 
-| Name | Type | Description                                                                                              |
-| ---- | ---- | -------------------------------------------------------------------------------------------------------- |
-| \_0  | bool | bool The boolean indicating whether the token with the given asset can be equipped into the desired slot |
+| Name | Type | Description                                                                                       |
+| ---- | ---- | ------------------------------------------------------------------------------------------------- |
+| \_0  | bool | A boolean indicating whether the token with the given asset can be equipped into the desired slot |
 
 ### equip
 
@@ -96,9 +96,9 @@ _Asset priorities are a non-sequential array of uint16 values with an array size
 
 #### Returns
 
-| Name | Type      | Description                                                              |
-| ---- | --------- | ------------------------------------------------------------------------ |
-| \_0  | uint16\[] | uint16\[] An array of priorities of the active assets of the given token |
+| Name | Type      | Description                                                    |
+| ---- | --------- | -------------------------------------------------------------- |
+| \_0  | uint16\[] | An array of priorities of the active assets of the given token |
 
 ### getActiveAssets
 
@@ -118,9 +118,9 @@ _Asset data is stored by reference, in order to access the data corresponding to
 
 #### Returns
 
-| Name | Type      | Description                                               |
-| ---- | --------- | --------------------------------------------------------- |
-| \_0  | uint64\[] | uint64\[] An array of active asset IDs of the given token |
+| Name | Type      | Description                                     |
+| ---- | --------- | ----------------------------------------------- |
+| \_0  | uint64\[] | An array of active asset IDs of the given token |
 
 ### getApprovedForAssets
 
@@ -140,9 +140,9 @@ _Requirements: - `tokenId` must exist._
 
 #### Returns
 
-| Name | Type    | Description                                                                            |
-| ---- | ------- | -------------------------------------------------------------------------------------- |
-| \_0  | address | address Address of the account that is approved to manage the specified token's assets |
+| Name | Type    | Description                                                                    |
+| ---- | ------- | ------------------------------------------------------------------------------ |
+| \_0  | address | Address of the account that is approved to manage the specified token's assets |
 
 ### getAssetAndEquippableData
 
@@ -187,9 +187,9 @@ _Assets are stored by reference mapping `_assets[assetId]`.Can be overriden to i
 
 #### Returns
 
-| Name | Type   | Description                                                                                          |
-| ---- | ------ | ---------------------------------------------------------------------------------------------------- |
-| \_0  | string | string The metadata of the asset belonging to the specified index in the token's active assets array |
+| Name | Type   | Description                                                                                   |
+| ---- | ------ | --------------------------------------------------------------------------------------------- |
+| \_0  | string | The metadata of the asset belonging to the specified index in the token's active assets array |
 
 ### getAssetReplacements
 
@@ -210,9 +210,9 @@ _Asset data is stored by reference, in order to access the data corresponding to
 
 #### Returns
 
-| Name | Type   | Description                                   |
-| ---- | ------ | --------------------------------------------- |
-| \_0  | uint64 | uint64 ID of the asset which will be replaced |
+| Name | Type   | Description                            |
+| ---- | ------ | -------------------------------------- |
+| \_0  | uint64 | ID of the asset which will be replaced |
 
 ### getEquipment
 
@@ -234,9 +234,9 @@ _The `Equipment` struct consists of the following data: \[ assetId, childAssetId
 
 #### Returns
 
-| Name | Type                      | Description                                                             |
-| ---- | ------------------------- | ----------------------------------------------------------------------- |
-| \_0  | IRMRKEquippable.Equipment | struct The `Equipment` struct containing data about the equipped object |
+| Name | Type                      | Description                                                      |
+| ---- | ------------------------- | ---------------------------------------------------------------- |
+| \_0  | IRMRKEquippable.Equipment | The `Equipment` struct containing data about the equipped object |
 
 ### getNestableAddress
 
@@ -248,9 +248,9 @@ Returns the Equippable contract's corresponding nestable address.
 
 #### Returns
 
-| Name | Type    | Description                                                            |
-| ---- | ------- | ---------------------------------------------------------------------- |
-| \_0  | address | address Address of the Nestable module of the external equip composite |
+| Name | Type    | Description                                                    |
+| ---- | ------- | -------------------------------------------------------------- |
+| \_0  | address | Address of the Nestable module of the external equip composite |
 
 ### getPendingAssets
 
@@ -270,9 +270,9 @@ _Asset data is stored by reference, in order to access the data corresponding to
 
 #### Returns
 
-| Name | Type      | Description                                                |
-| ---- | --------- | ---------------------------------------------------------- |
-| \_0  | uint64\[] | uint64\[] An array of pending asset IDs of the given token |
+| Name | Type      | Description                                      |
+| ---- | --------- | ------------------------------------------------ |
+| \_0  | uint64\[] | An array of pending asset IDs of the given token |
 
 ### isApprovedForAllForAssets
 
@@ -293,9 +293,9 @@ _See {setApprovalForAllForAssets}._
 
 #### Returns
 
-| Name | Type | Description                                                                                             |
-| ---- | ---- | ------------------------------------------------------------------------------------------------------- |
-| \_0  | bool | bool The boolean value indicating wehter the account we are checking has been granted the operator role |
+| Name | Type | Description                                                                                      |
+| ---- | ---- | ------------------------------------------------------------------------------------------------ |
+| \_0  | bool | A boolean value indicating wehter the account we are checking has been granted the operator role |
 
 ### isChildEquipped
 
@@ -317,9 +317,9 @@ _This is used to prevent from transferring a child that is equipped._
 
 #### Returns
 
-| Name | Type | Description                                                                                       |
-| ---- | ---- | ------------------------------------------------------------------------------------------------- |
-| \_0  | bool | bool The boolean value indicating whether the child token is equipped into the given token or not |
+| Name | Type | Description                                                                                |
+| ---- | ---- | ------------------------------------------------------------------------------------------ |
+| \_0  | bool | A boolean value indicating whether the child token is equipped into the given token or not |
 
 ### rejectAllAssets
 
@@ -440,11 +440,11 @@ Used to notify listeners that owner has granted approval to the user to manage a
 
 #### Parameters
 
-| Name               | Type    | Description |
-| ------------------ | ------- | ----------- |
-| owner `indexed`    | address | undefined   |
-| operator `indexed` | address | undefined   |
-| approved           | bool    | undefined   |
+| Name               | Type    | Description                                                                                                 |
+| ------------------ | ------- | ----------------------------------------------------------------------------------------------------------- |
+| owner `indexed`    | address | Address of the account that has granted the approval for all assets on all of their tokens                  |
+| operator `indexed` | address | Address of the account that has been granted the approval to manage the token's assets on all of the tokens |
+| approved           | bool    | Boolean value signifying whether the permission has been granted (`true`) or revoked (`false`)              |
 
 ### ApprovalForAssets
 
@@ -454,13 +454,15 @@ event ApprovalForAssets(address indexed owner, address indexed approved, uint256
 
 Used to notify listeners that owner has granted an approval to the user to manage the assets of a given token.
 
+_Approvals must be cleared on transfer_
+
 #### Parameters
 
-| Name               | Type    | Description |
-| ------------------ | ------- | ----------- |
-| owner `indexed`    | address | undefined   |
-| approved `indexed` | address | undefined   |
-| tokenId `indexed`  | uint256 | undefined   |
+| Name               | Type    | Description                                                                        |
+| ------------------ | ------- | ---------------------------------------------------------------------------------- |
+| owner `indexed`    | address | Address of the account that has granted the approval for all token's assets        |
+| approved `indexed` | address | Address of the account that has been granted approval to manage the token's assets |
+| tokenId `indexed`  | uint256 | ID of the token on which the approval was granted                                  |
 
 ### AssetAccepted
 
@@ -472,11 +474,11 @@ Used to notify listeners that an asset object at `assetId` is accepted by the to
 
 #### Parameters
 
-| Name                 | Type    | Description |
-| -------------------- | ------- | ----------- |
-| tokenId `indexed`    | uint256 | undefined   |
-| assetId `indexed`    | uint64  | undefined   |
-| replacesId `indexed` | uint64  | undefined   |
+| Name                 | Type    | Description                                   |
+| -------------------- | ------- | --------------------------------------------- |
+| tokenId `indexed`    | uint256 | ID of the token that had a new asset accepted |
+| assetId `indexed`    | uint64  | ID of the asset that was accepted             |
+| replacesId `indexed` | uint64  | ID of the asset that was replaced             |
 
 ### AssetAddedToToken
 
@@ -488,11 +490,11 @@ Used to notify listeners that an asset object at `assetId` is added to token's p
 
 #### Parameters
 
-| Name                 | Type    | Description |
-| -------------------- | ------- | ----------- |
-| tokenId `indexed`    | uint256 | undefined   |
-| assetId `indexed`    | uint64  | undefined   |
-| replacesId `indexed` | uint64  | undefined   |
+| Name                 | Type    | Description                                                             |
+| -------------------- | ------- | ----------------------------------------------------------------------- |
+| tokenId `indexed`    | uint256 | ID of the token that received a new pending asset                       |
+| assetId `indexed`    | uint64  | ID of the asset that has been added to the token's pending assets array |
+| replacesId `indexed` | uint64  | ID of the asset that would be replaced                                  |
 
 ### AssetPrioritySet
 
@@ -504,9 +506,9 @@ Used to notify listeners that token's prioritiy array is reordered.
 
 #### Parameters
 
-| Name              | Type    | Description |
-| ----------------- | ------- | ----------- |
-| tokenId `indexed` | uint256 | undefined   |
+| Name              | Type    | Description                                               |
+| ----------------- | ------- | --------------------------------------------------------- |
+| tokenId `indexed` | uint256 | ID of the token that had the asset priority array updated |
 
 ### AssetRejected
 
@@ -518,10 +520,10 @@ Used to notify listeners that an asset object at `assetId` is rejected from toke
 
 #### Parameters
 
-| Name              | Type    | Description |
-| ----------------- | ------- | ----------- |
-| tokenId `indexed` | uint256 | undefined   |
-| assetId `indexed` | uint64  | undefined   |
+| Name              | Type    | Description                                |
+| ----------------- | ------- | ------------------------------------------ |
+| tokenId `indexed` | uint256 | ID of the token that had an asset rejected |
+| assetId `indexed` | uint64  | ID of the asset that was rejected          |
 
 ### AssetSet
 
@@ -533,9 +535,9 @@ Used to notify listeners that an asset object is initialized at `assetId`.
 
 #### Parameters
 
-| Name              | Type   | Description |
-| ----------------- | ------ | ----------- |
-| assetId `indexed` | uint64 | undefined   |
+| Name              | Type   | Description                          |
+| ----------------- | ------ | ------------------------------------ |
+| assetId `indexed` | uint64 | ID of the asset that was initialized |
 
 ### ChildAssetEquipped
 
@@ -547,14 +549,14 @@ Used to notify listeners that a child's asset has been equipped into one of its 
 
 #### Parameters
 
-| Name                 | Type    | Description |
-| -------------------- | ------- | ----------- |
-| tokenId `indexed`    | uint256 | undefined   |
-| assetId `indexed`    | uint64  | undefined   |
-| slotPartId `indexed` | uint64  | undefined   |
-| childId              | uint256 | undefined   |
-| childAddress         | address | undefined   |
-| childAssetId         | uint64  | undefined   |
+| Name                 | Type    | Description                                                     |
+| -------------------- | ------- | --------------------------------------------------------------- |
+| tokenId `indexed`    | uint256 | ID of the token that had an asset equipped                      |
+| assetId `indexed`    | uint64  | ID of the asset associated with the token we are equipping into |
+| slotPartId `indexed` | uint64  | ID of the slot we are using to equip                            |
+| childId              | uint256 | ID of the child token we are equipping into the slot            |
+| childAddress         | address | Address of the child token's collection                         |
+| childAssetId         | uint64  | ID of the asset associated with the token we are equipping      |
 
 ### ChildAssetUnequipped
 
@@ -566,14 +568,14 @@ Used to notify listeners that a child's asset has been unequipped from one of it
 
 #### Parameters
 
-| Name                 | Type    | Description |
-| -------------------- | ------- | ----------- |
-| tokenId `indexed`    | uint256 | undefined   |
-| assetId `indexed`    | uint64  | undefined   |
-| slotPartId `indexed` | uint64  | undefined   |
-| childId              | uint256 | undefined   |
-| childAddress         | address | undefined   |
-| childAssetId         | uint64  | undefined   |
+| Name                 | Type    | Description                                                                |
+| -------------------- | ------- | -------------------------------------------------------------------------- |
+| tokenId `indexed`    | uint256 | ID of the token that had an asset unequipped                               |
+| assetId `indexed`    | uint64  | ID of the asset associated with the token we are unequipping out of        |
+| slotPartId `indexed` | uint64  | ID of the slot we are unequipping from                                     |
+| childId              | uint256 | ID of the token being unequipped                                           |
+| childAddress         | address | Address of the collection that a token that is being unequipped belongs to |
+| childAssetId         | uint64  | ID of the asset associated with the token we are unequipping               |
 
 ### NestableAddressSet
 
@@ -602,8 +604,8 @@ Used to notify listeners that the assets belonging to a `equippableGroupId` have
 
 #### Parameters
 
-| Name                        | Type    | Description |
-| --------------------------- | ------- | ----------- |
-| equippableGroupId `indexed` | uint64  | undefined   |
-| slotPartId `indexed`        | uint64  | undefined   |
-| parentAddress               | address | undefined   |
+| Name                        | Type    | Description                                                                                                                                   |
+| --------------------------- | ------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| equippableGroupId `indexed` | uint64  | ID of the equippable group being marked as equippable into the slot associated with `slotPartId` of the `parentAddress` collection            |
+| slotPartId `indexed`        | uint64  | ID of the slot part of the catalog into which the parts belonging to the equippable group associated with `equippableGroupId` can be equipped |
+| parentAddress               | address | Address of the collection into which the parts belonging to `equippableGroupId` can be equipped                                               |

@@ -38,7 +38,7 @@ function manageContributor(address contributor, bool grantRole) external nonpaya
 
 Adds or removes a contributor to the smart contract.
 
-_Can only be called by the owner._
+_Can only be called by the owner.Emits **ContributorUpdate** event._
 
 #### Parameters
 
