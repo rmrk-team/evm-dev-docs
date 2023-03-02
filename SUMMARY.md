@@ -8,6 +8,9 @@
   * [MultiAsset](general-overview/rmrk-legos/multiasset.md)
   * [Nestable](general-overview/rmrk-legos/nestable.md)
   * [Catalog and Equippable NFTs](general-overview/rmrk-legos/catalog-and-equippable-nfts.md)
+* [RMRK extensions](general-overview/rmrk-extensions/README.md)
+  * [Emotable](general-overview/rmrk-extensions/emotable.md)
+  * [Soulbound](general-overview/rmrk-extensions/soulbound.md)
 
 ## 🧑🏫 RMRK legos examples
 
@@ -79,7 +82,7 @@
     * [multiAssetAutoIndex](evm-contracts-documentation/rmrk/extension/nestableautoindex/README.md)
       * [IRMRKMultiAssetAutoIndex](evm-contracts-documentation/rmrk/extension/nestableautoindex/irmrkmultiassetautoindex.md)
       * [RMRKMultiAssetAutoIndex](evm-contracts-documentation/rmrk/extension/nestableautoindex/rmrkmultiassetautoindex.md)
-    * [nestableAutoIndex](evm-contracts-documentation/rmrk/extension/nestableautoindex-1/README.md)
+    * [nestableAutoIndex](<evm-contracts-documentation/rmrk/extension/nestableautoindex/README (1).md>)
       * [IRMRKNestableAutoIndex](evm-contracts-documentation/rmrk/extension/nestableautoindex-1/irmrknestableautoindex.md)
       * [RMRKNestableAutoIndex](evm-contracts-documentation/rmrk/extension/nestableautoindex-1/rmrknestableautoindex.md)
     * [reclaimableChild](evm-contracts-documentation/rmrk/extension/reclaimablechild/README.md)
