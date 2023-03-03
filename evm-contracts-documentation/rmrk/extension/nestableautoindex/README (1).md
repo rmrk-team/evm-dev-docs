@@ -1,7 +1,7 @@
 ---
-description: Documentation of nestable auto index smart contacts.
+description: Documentation of multiAsset auto index smart contacts.
 ---
 
-# nestableAutoIndex
+# multiAssetAutoIndex
 
-The smart contracts in this sections provide blueprints for RMRK nestable auto index extension and provide the ability design nestable NFTs with automatically indexed child tokens.
+The smart contracts in this sections provide blueprints for RMRK multiAsset auto index extension and provide the ability design multiAsset NFTs with automatically incremented token index.

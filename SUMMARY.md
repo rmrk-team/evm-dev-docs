@@ -26,6 +26,7 @@
 * [Demos](rmrk-legos-demos/demos.md)
 * [MultiAsset Demo](rmrk-legos-demos/multiasset-demo.md)
 * [Nestable Demo](rmrk-legos-demos/nestable-demo.md)
+* [Using Nestable and MultiAsset RMRK legos in zkSync](rmrk-legos-demos/using-nestable-and-multiasset-rmrk-legos-in-zksync.md)
 
 ## 📖 EVM contracts documentation
 
@@ -79,10 +80,10 @@
       * [IRMRKEmoteTracker](evm-contracts-documentation/rmrk/extension/emotable/irmrkemotetracker.md)
       * [RMRKEmotable](evm-contracts-documentation/rmrk/extension/emotable/rmrkemotable.md)
       * [RMRKEmoteTracker](evm-contracts-documentation/rmrk/extension/emotable/rmrkemotetracker.md)
-    * [multiAssetAutoIndex](evm-contracts-documentation/rmrk/extension/nestableautoindex/README.md)
+    * [multiAssetAutoIndex](<evm-contracts-documentation/rmrk/extension/nestableautoindex/README (1).md>)
       * [IRMRKMultiAssetAutoIndex](evm-contracts-documentation/rmrk/extension/nestableautoindex/irmrkmultiassetautoindex.md)
       * [RMRKMultiAssetAutoIndex](evm-contracts-documentation/rmrk/extension/nestableautoindex/rmrkmultiassetautoindex.md)
-    * [nestableAutoIndex](<evm-contracts-documentation/rmrk/extension/nestableautoindex/README (1).md>)
+    * [nestableAutoIndex](evm-contracts-documentation/rmrk/extension/nestableautoindex/README.md)
       * [IRMRKNestableAutoIndex](evm-contracts-documentation/rmrk/extension/nestableautoindex-1/irmrknestableautoindex.md)
       * [RMRKNestableAutoIndex](evm-contracts-documentation/rmrk/extension/nestableautoindex-1/rmrknestableautoindex.md)
     * [reclaimableChild](evm-contracts-documentation/rmrk/extension/reclaimablechild/README.md)
