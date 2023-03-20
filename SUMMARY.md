@@ -11,6 +11,7 @@
 * [RMRK extensions](general-overview/rmrk-extensions/README.md)
   * [Emotable](general-overview/rmrk-extensions/emotable.md)
   * [Soulbound](general-overview/rmrk-extensions/soulbound.md)
+* [Getting started](general-overview/getting-started.md)
 
 ## 🧑🏫 RMRK legos examples
 
@@ -80,10 +81,10 @@
       * [IRMRKEmoteTracker](evm-contracts-documentation/rmrk/extension/emotable/irmrkemotetracker.md)
       * [RMRKEmotable](evm-contracts-documentation/rmrk/extension/emotable/rmrkemotable.md)
       * [RMRKEmoteTracker](evm-contracts-documentation/rmrk/extension/emotable/rmrkemotetracker.md)
-    * [multiAssetAutoIndex](<evm-contracts-documentation/rmrk/extension/nestableautoindex/README (1).md>)
+    * [multiAssetAutoIndex](evm-contracts-documentation/rmrk/extension/nestableautoindex/README.md)
       * [IRMRKMultiAssetAutoIndex](evm-contracts-documentation/rmrk/extension/nestableautoindex/irmrkmultiassetautoindex.md)
       * [RMRKMultiAssetAutoIndex](evm-contracts-documentation/rmrk/extension/nestableautoindex/rmrkmultiassetautoindex.md)
-    * [nestableAutoIndex](evm-contracts-documentation/rmrk/extension/nestableautoindex/README.md)
+    * [nestableAutoIndex](<evm-contracts-documentation/rmrk/extension/nestableautoindex/README (1).md>)
       * [IRMRKNestableAutoIndex](evm-contracts-documentation/rmrk/extension/nestableautoindex-1/irmrknestableautoindex.md)
       * [RMRKNestableAutoIndex](evm-contracts-documentation/rmrk/extension/nestableautoindex-1/rmrknestableautoindex.md)
     * [reclaimableChild](evm-contracts-documentation/rmrk/extension/reclaimablechild/README.md)
