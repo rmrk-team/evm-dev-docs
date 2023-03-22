@@ -22,12 +22,12 @@
 * [MergedEquippable](rmrk-legos-examples/mergedequippable.md)
 * [SplitEquippable](rmrk-legos-examples/splitequippable.md)
 
-## 💻 RMRK legos demos
+## 💻 RMRK legos case studies
 
-* [Demos](rmrk-legos-demos/demos.md)
-* [MultiAsset Demo](rmrk-legos-demos/multiasset-demo.md)
-* [Nestable Demo](rmrk-legos-demos/nestable-demo.md)
-* [Using Nestable and MultiAsset RMRK legos in zkSync](rmrk-legos-demos/using-nestable-and-multiasset-rmrk-legos-in-zksync.md)
+* [Case studies](rmrk-legos-case-studies/demos.md)
+* [MultiAsset case study](rmrk-legos-case-studies/multiasset-demo.md)
+* [Nestable case study](rmrk-legos-case-studies/nestable-demo.md)
+* [Using Nestable and MultiAsset RMRK legos in zkSync](rmrk-legos-case-studies/using-nestable-and-multiasset-rmrk-legos-in-zksync.md)
 
 ## 📖 EVM contracts documentation
 

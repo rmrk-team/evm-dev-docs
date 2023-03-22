@@ -4,9 +4,9 @@ description: >-
   NFT features.
 ---
 
-# MultiAsset Demo
+# MultiAsset case study
 
-MultiAsset (MA) is a Solidity smart contract implementation by [RMRK Team](https://github.com/rmrk-team) that allows to bind multiple assets of various types (PDF, MP3, video files etc...) to an NFT. In this journey we will explore the main features of [RMRK MultiAsset](../rmrk-legos-examples/multiasset.md).
+MultiAsset is a Solidity smart contract implementation by [RMRK Team](https://github.com/rmrk-team) that allows to bind multiple assets of various types (PDF, MP3, video files etc...) to an NFT. In this journey we will explore the main features of [RMRK MultiAsset](../rmrk-legos-examples/multiasset.md).
 
 You can explore the RMRK MultiAsset lego further, by reading the EIP that we published:
 
@@ -14,10 +14,10 @@ You can explore the RMRK MultiAsset lego further, by reading the EIP that we pub
 EIP-5773: Context-Dependent Multi-Asset Tokens
 {% endembed %}
 
-You can follow along using the already built demo, by cloning the following repository:
+You can follow along using the already built case study, by cloning the following repository:
 
 {% embed url="https://github.com/rmrk-team/evm-multiasset-demo" %}
-RMRK MultiAsset EVM demo
+RMRK MultiAsset EVM case study
 {% endembed %}
 
 **The use cases that will be explored are:**

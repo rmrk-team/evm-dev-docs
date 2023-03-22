@@ -4,7 +4,7 @@ description: >-
   features.
 ---
 
-# Nestable Demo
+# Nestable case study
 
 Nestable is a Solidity smart contract implementation by [RMRK Team](https://github.com/rmrk-team) that allows NFTs to own other NFTs. In this journey we will explore the main features of the [RMRK Nestable](../rmrk-legos-examples/nestable.md).
 
@@ -14,10 +14,10 @@ You can explore the RMRK Nestable lego further, by reading the EIP that we publi
 EIP-6059: Parent-Governed Nestable Non-Fungible Tokens
 {% endembed %}
 
-You can follow along using the already built demo, by cloning the following repository:
+You can follow along using the already built case study, by cloning the following repository:
 
 {% embed url="https://github.com/rmrk-team/evm-nestable-demo" %}
-RMRK Nestable EVM demo
+RMRK Nestable EVM case study
 {% endembed %}
 
 **The use cases that will be explored are:**
