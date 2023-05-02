@@ -134,24 +134,24 @@ Used to verify whether a token can be equipped into a given parent's slot.
 ### equip
 
 ```solidity
-function equip(IRMRKEquippable.IntakeEquip data) external nonpayable
+function equip(IERC6220.IntakeEquip data) external nonpayable
 ```
 
 #### Parameters
 
-| Name | Type                        | Description |
-| ---- | --------------------------- | ----------- |
-| data | IRMRKEquippable.IntakeEquip | undefined   |
+| Name | Type                 | Description |
+| ---- | -------------------- | ----------- |
+| data | IERC6220.IntakeEquip | undefined   |
 
 ### getActiveAssetPriorities
 
 ```solidity
-function getActiveAssetPriorities(uint256 tokenId) external view returns (uint16[])
+function getActiveAssetPriorities(uint256 tokenId) external view returns (uint64[])
 ```
 
 Used to retrieve the priorities of the active resoources of a given token.
 
-_Asset priorities are a non-sequential array of uint16 values with an array size equal to active asset priorites._
+_Asset priorities are a non-sequential array of uint64 values with an array size equal to active asset priorites._
 
 #### Parameters
 
@@ -163,7 +163,7 @@ _Asset priorities are a non-sequential array of uint16 values with an array size
 
 | Name | Type      | Description                                                    |
 | ---- | --------- | -------------------------------------------------------------- |
-| \_0  | uint16\[] | An array of priorities of the active assets of the given token |
+| \_0  | uint64\[] | An array of priorities of the active assets of the given token |
 
 ### getActiveAssets
 
@@ -280,7 +280,7 @@ _Asset data is stored by reference, in order to access the data corresponding to
 ### getEquipment
 
 ```solidity
-function getEquipment(uint256 tokenId, address targetCatalogAddress, uint64 slotPartId) external view returns (struct IRMRKEquippable.Equipment)
+function getEquipment(uint256 tokenId, address targetCatalogAddress, uint64 slotPartId) external view returns (struct IERC6220.Equipment)
 ```
 
 Used to get the Equipment object equipped into the specified slot of the desired token.
@@ -297,9 +297,9 @@ _The `Equipment` struct consists of the following data: \[ assetId, childAssetId
 
 #### Returns
 
-| Name | Type                      | Description                                                      |
-| ---- | ------------------------- | ---------------------------------------------------------------- |
-| \_0  | IRMRKEquippable.Equipment | The `Equipment` struct containing data about the equipped object |
+| Name | Type               | Description                                                      |
+| ---- | ------------------ | ---------------------------------------------------------------- |
+| \_0  | IERC6220.Equipment | The `Equipment` struct containing data about the equipped object |
 
 ### getLock
 
@@ -538,7 +538,7 @@ Used to set the address of the `Nestable` smart contract.
 ### setPriority
 
 ```solidity
-function setPriority(uint256 tokenId, uint16[] priorities) external nonpayable
+function setPriority(uint256 tokenId, uint64[] priorities) external nonpayable
 ```
 
 Used to set priorities of active assets of a token.
@@ -550,7 +550,7 @@ _Priorities define which asset we would rather have shown when displaying the to
 | Name       | Type      | Description                                                                                                                                        |
 | ---------- | --------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
 | tokenId    | uint256   | ID of the token we are managing the priorities of                                                                                                  |
-| priorities | uint16\[] | An array of priorities of active assets. The succesion of items in the priorities array matches that of the succesion of items in the active array |
+| priorities | uint64\[] | An array of priorities of active assets. The succesion of items in the priorities array matches that of the succesion of items in the active array |
 
 ### setValidParentForEquippableGroup
 
@@ -688,21 +688,21 @@ Used to notify listeners that an asset object at `assetId` is accepted by the to
 | assetId `indexed`    | uint64  | ID of the asset that was accepted             |
 | replacesId `indexed` | uint64  | ID of the asset that was replaced             |
 
-### AssetAddedToToken
+### AssetAddedToTokens
 
 ```solidity
-event AssetAddedToToken(uint256 indexed tokenId, uint64 indexed assetId, uint64 indexed replacesId)
+event AssetAddedToTokens(uint256[] tokenIds, uint64 indexed assetId, uint64 indexed replacesId)
 ```
 
 Used to notify listeners that an asset object at `assetId` is added to token's pending asset array.
 
 #### Parameters
 
-| Name                 | Type    | Description                                                             |
-| -------------------- | ------- | ----------------------------------------------------------------------- |
-| tokenId `indexed`    | uint256 | ID of the token that received a new pending asset                       |
-| assetId `indexed`    | uint64  | ID of the asset that has been added to the token's pending assets array |
-| replacesId `indexed` | uint64  | ID of the asset that would be replaced                                  |
+| Name                 | Type       | Description                                                             |
+| -------------------- | ---------- | ----------------------------------------------------------------------- |
+| tokenIds             | uint256\[] | An array of token IDs that received a new pending asset                 |
+| assetId `indexed`    | uint64     | ID of the asset that has been added to the token's pending assets array |
+| replacesId `indexed` | uint64     | ID of the asset that would be replaced                                  |
 
 ### AssetPrioritySet
 

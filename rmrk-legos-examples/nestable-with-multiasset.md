@@ -370,7 +370,7 @@ After the assets are added to the NFTs, we have to accept them. We will do this 
 
 {% hint style="info" %}
 **NOTE: Accepting assets is done in a array that gets elements, new assets, appended to the end of it. Once the asset is accepted, the asset that was added lats, takes its place. For example:**\
-****\
+\
 **We have assets `A`, `B`, `C` and `D` in the pending array organised like this: \[`A`, `B`, `C`, `D`].**
 
 **Accepting the asset `A` updates the array to look like this: \[`D`, `B`, `C`].**

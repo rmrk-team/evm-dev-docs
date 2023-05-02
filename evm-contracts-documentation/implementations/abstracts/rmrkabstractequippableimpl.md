@@ -260,31 +260,10 @@ Used to verify whether a token can be equipped into a given parent's slot.
 | ---- | ---- | ------------------------------------------------------------------------------------------------- |
 | \_0  | bool | A boolean indicating whether the token with the given asset can be equipped into the desired slot |
 
-### childIsInActive
-
-```solidity
-function childIsInActive(address childAddress, uint256 childId) external view returns (bool)
-```
-
-Used to verify that the given child tokwn is included in an active array of a token.
-
-#### Parameters
-
-| Name         | Type    | Description                                            |
-| ------------ | ------- | ------------------------------------------------------ |
-| childAddress | address | Address of the given token's collection smart contract |
-| childId      | uint256 | ID of the child token being checked                    |
-
-#### Returns
-
-| Name | Type | Description                                                                                                                               |
-| ---- | ---- | ----------------------------------------------------------------------------------------------------------------------------------------- |
-| \_0  | bool | A boolean value signifying whether the given child token is included in an active child tokens array of a token (`true`) or not (`false`) |
-
 ### childOf
 
 ```solidity
-function childOf(uint256 parentId, uint256 index) external view returns (struct IRMRKNestable.Child)
+function childOf(uint256 parentId, uint256 index) external view returns (struct IERC6059.Child)
 ```
 
 Used to retrieve a specific active child token for a given parent token.
@@ -300,14 +279,14 @@ _Returns a single Child struct locating at `index` of parent token's active chil
 
 #### Returns
 
-| Name | Type                | Description                                              |
-| ---- | ------------------- | -------------------------------------------------------- |
-| \_0  | IRMRKNestable.Child | A Child struct containing data about the specified child |
+| Name | Type           | Description                                              |
+| ---- | -------------- | -------------------------------------------------------- |
+| \_0  | IERC6059.Child | A Child struct containing data about the specified child |
 
 ### childrenOf
 
 ```solidity
-function childrenOf(uint256 parentId) external view returns (struct IRMRKNestable.Child[])
+function childrenOf(uint256 parentId) external view returns (struct IERC6059.Child[])
 ```
 
 Used to retrieve the active child tokens of a given parent token.
@@ -322,9 +301,9 @@ _Returns array of Child structs existing for parent token.The Child struct consi
 
 #### Returns
 
-| Name | Type                   | Description                                                                 |
-| ---- | ---------------------- | --------------------------------------------------------------------------- |
-| \_0  | IRMRKNestable.Child\[] | An array of Child structs containing the parent token's active child tokens |
+| Name | Type              | Description                                                                 |
+| ---- | ----------------- | --------------------------------------------------------------------------- |
+| \_0  | IERC6059.Child\[] | An array of Child structs containing the parent token's active child tokens |
 
 ### collectionMetadata
 
@@ -367,24 +346,24 @@ _If the immediate owner is another token, the address returned, should be the on
 ### equip
 
 ```solidity
-function equip(IRMRKEquippable.IntakeEquip data) external nonpayable
+function equip(IERC6220.IntakeEquip data) external nonpayable
 ```
 
 #### Parameters
 
-| Name | Type                        | Description |
-| ---- | --------------------------- | ----------- |
-| data | IRMRKEquippable.IntakeEquip | undefined   |
+| Name | Type                 | Description |
+| ---- | -------------------- | ----------- |
+| data | IERC6220.IntakeEquip | undefined   |
 
 ### getActiveAssetPriorities
 
 ```solidity
-function getActiveAssetPriorities(uint256 tokenId) external view returns (uint16[])
+function getActiveAssetPriorities(uint256 tokenId) external view returns (uint64[])
 ```
 
 Used to retrieve the priorities of the active resoources of a given token.
 
-_Asset priorities are a non-sequential array of uint16 values with an array size equal to active asset priorites._
+_Asset priorities are a non-sequential array of uint64 values with an array size equal to active asset priorites._
 
 #### Parameters
 
@@ -396,7 +375,7 @@ _Asset priorities are a non-sequential array of uint16 values with an array size
 
 | Name | Type      | Description                                                    |
 | ---- | --------- | -------------------------------------------------------------- |
-| \_0  | uint16\[] | An array of priorities of the active assets of the given token |
+| \_0  | uint64\[] | An array of priorities of the active assets of the given token |
 
 ### getActiveAssets
 
@@ -535,7 +514,7 @@ _Asset data is stored by reference, in order to access the data corresponding to
 ### getEquipment
 
 ```solidity
-function getEquipment(uint256 tokenId, address targetCatalogAddress, uint64 slotPartId) external view returns (struct IRMRKEquippable.Equipment)
+function getEquipment(uint256 tokenId, address targetCatalogAddress, uint64 slotPartId) external view returns (struct IERC6220.Equipment)
 ```
 
 Used to get the Equipment object equipped into the specified slot of the desired token.
@@ -552,9 +531,9 @@ _The `Equipment` struct consists of the following data: \[ assetId, childAssetId
 
 #### Returns
 
-| Name | Type                      | Description                                                      |
-| ---- | ------------------------- | ---------------------------------------------------------------- |
-| \_0  | IRMRKEquippable.Equipment | The `Equipment` struct containing data about the equipped object |
+| Name | Type               | Description                                                      |
+| ---- | ------------------ | ---------------------------------------------------------------- |
+| \_0  | IERC6220.Equipment | The `Equipment` struct containing data about the equipped object |
 
 ### getLock
 
@@ -810,7 +789,7 @@ _The root owner of the token is an externally owned account (EOA). If the given 
 ### pendingChildOf
 
 ```solidity
-function pendingChildOf(uint256 parentId, uint256 index) external view returns (struct IRMRKNestable.Child)
+function pendingChildOf(uint256 parentId, uint256 index) external view returns (struct IERC6059.Child)
 ```
 
 Used to retrieve a specific pending child token from a given parent token.
@@ -826,14 +805,14 @@ _Returns a single Child struct locating at `index` of parent token's active chil
 
 #### Returns
 
-| Name | Type                | Description                                               |
-| ---- | ------------------- | --------------------------------------------------------- |
-| \_0  | IRMRKNestable.Child | A Child struct containting data about the specified child |
+| Name | Type           | Description                                               |
+| ---- | -------------- | --------------------------------------------------------- |
+| \_0  | IERC6059.Child | A Child struct containting data about the specified child |
 
 ### pendingChildrenOf
 
 ```solidity
-function pendingChildrenOf(uint256 parentId) external view returns (struct IRMRKNestable.Child[])
+function pendingChildrenOf(uint256 parentId) external view returns (struct IERC6059.Child[])
 ```
 
 Used to retrieve the pending child tokens of a given parent token.
@@ -848,9 +827,9 @@ _Returns array of pending Child structs existing for given parent.The Child stru
 
 #### Returns
 
-| Name | Type                   | Description                                                                  |
-| ---- | ---------------------- | ---------------------------------------------------------------------------- |
-| \_0  | IRMRKNestable.Child\[] | An array of Child structs containing the parent token's pending child tokens |
+| Name | Type              | Description                                                                  |
+| ---- | ----------------- | ---------------------------------------------------------------------------- |
+| \_0  | IERC6059.Child\[] | An array of Child structs containing the parent token's pending child tokens |
 
 ### pricePerMint
 
@@ -1034,19 +1013,19 @@ _Once locked, functions using `notLocked` modifier cannot be executed._
 ### setPriority
 
 ```solidity
-function setPriority(uint256 tokenId, uint16[] priorities) external nonpayable
+function setPriority(uint256 tokenId, uint64[] priorities) external nonpayable
 ```
 
 Sets a new priority array for a given token.
 
-_The priority array is a non-sequential list of `uint16`s, where the lowest value is considered highest priority.Value `0` of a priority is a special case equivalent to unitialized.Requirements: - The caller must own the token or be approved to manage the token's assets - `tokenId` must exist. - The length of `priorities` must be equal the length of the active assets array.Emits a {AssetPrioritySet} event._
+_The priority array is a non-sequential list of `uint64`s, where the lowest value is considered highest priority.Value `0` of a priority is a special case equivalent to unitialized.Requirements: - The caller must own the token or be approved to manage the token's assets - `tokenId` must exist. - The length of `priorities` must be equal the length of the active assets array.Emits a {AssetPrioritySet} event._
 
 #### Parameters
 
 | Name       | Type      | Description                               |
 | ---------- | --------- | ----------------------------------------- |
 | tokenId    | uint256   | ID of the token to set the priorities for |
-| priorities | uint16\[] | An array of priority values               |
+| priorities | uint64\[] | An array of priority values               |
 
 ### setValidParentForEquippableGroup
 
@@ -1354,21 +1333,21 @@ Used to notify listeners that an asset object at `assetId` is accepted by the to
 | assetId `indexed`    | uint64  | ID of the asset that was accepted             |
 | replacesId `indexed` | uint64  | ID of the asset that was replaced             |
 
-### AssetAddedToToken
+### AssetAddedToTokens
 
 ```solidity
-event AssetAddedToToken(uint256 indexed tokenId, uint64 indexed assetId, uint64 indexed replacesId)
+event AssetAddedToTokens(uint256[] tokenIds, uint64 indexed assetId, uint64 indexed replacesId)
 ```
 
 Used to notify listeners that an asset object at `assetId` is added to token's pending asset array.
 
 #### Parameters
 
-| Name                 | Type    | Description                                                             |
-| -------------------- | ------- | ----------------------------------------------------------------------- |
-| tokenId `indexed`    | uint256 | ID of the token that received a new pending asset                       |
-| assetId `indexed`    | uint64  | ID of the asset that has been added to the token's pending assets array |
-| replacesId `indexed` | uint64  | ID of the asset that would be replaced                                  |
+| Name                 | Type       | Description                                                             |
+| -------------------- | ---------- | ----------------------------------------------------------------------- |
+| tokenIds             | uint256\[] | An array of token IDs that received a new pending asset                 |
+| assetId `indexed`    | uint64     | ID of the asset that has been added to the token's pending assets array |
+| replacesId `indexed` | uint64     | ID of the asset that would be replaced                                  |
 
 ### AssetPrioritySet
 
@@ -1902,6 +1881,14 @@ error RMRKPendingChildIndexOutOfRange()
 ```
 
 Attempting to interact with a pending child using an index greater than the size of pending array
+
+### RMRKRoyaltiesTooHigh
+
+```solidity
+error RMRKRoyaltiesTooHigh()
+```
+
+Attempting to set the royalties to a value higher than 100% (10000 in base points)
 
 ### RMRKSlotAlreadyUsed
 

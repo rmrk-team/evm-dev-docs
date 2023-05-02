@@ -9,7 +9,7 @@ _RMRK team_
 ### getAssetIdWithTopPriority
 
 ```solidity
-function getAssetIdWithTopPriority(address target, uint256 tokenId) external view returns (uint64, uint16)
+function getAssetIdWithTopPriority(address target, uint256 tokenId) external view returns (uint64, uint64)
 ```
 
 Used to retrieve the ID of the specified token's asset with the highest priority.
@@ -26,7 +26,7 @@ Used to retrieve the ID of the specified token's asset with the highest priority
 | Name | Type   | Description                                               |
 | ---- | ------ | --------------------------------------------------------- |
 | \_0  | uint64 | The ID of the asset with the highest priority             |
-| \_1  | uint16 | The priority value of the asset with the highest priority |
+| \_1  | uint64 | The priority value of the asset with the highest priority |
 
 ### getAssetsById
 
@@ -101,7 +101,7 @@ _The full `PendingAsset` looks like this: \[ id, acceptRejectIndex, replacesAsse
 ### getTopAsset
 
 ```solidity
-function getTopAsset(address target, uint256 tokenId) external view returns (uint64 topAssetId, uint16 topAssetPriority, string topAssetMetadata)
+function getTopAsset(address target, uint256 tokenId) external view returns (uint64 topAssetId, uint64 topAssetPriority, string topAssetMetadata)
 ```
 
 Used to retrieve ID, priority value and metadata URI of the asset with the highest priority that is present on a specified token.
@@ -118,7 +118,7 @@ Used to retrieve ID, priority value and metadata URI of the asset with the highe
 | Name             | Type   | Description                                           |
 | ---------------- | ------ | ----------------------------------------------------- |
 | topAssetId       | uint64 | ID of the asset with the highest priority             |
-| topAssetPriority | uint16 | Priotity value of the asset with the highest priority |
+| topAssetPriority | uint64 | Priotity value of the asset with the highest priority |
 | topAssetMetadata | string | Metadata URI of the asset with the highest priority   |
 
 ### getTopAssetMetaForToken
@@ -141,6 +141,27 @@ Used to retrieve the metadata URI of the specified token's asset with the highes
 | Name | Type   | Description                                             |
 | ---- | ------ | ------------------------------------------------------- |
 | \_0  | string | The metadata URI of the asset with the highest priority |
+
+### getTopAssetMetadataForTokens
+
+```solidity
+function getTopAssetMetadataForTokens(address target, uint256[] tokenIds) external view returns (string[] metadata)
+```
+
+Used to retrieve the metadata URI of the specified token's asset with the highest priority for each of the given tokens.
+
+#### Parameters
+
+| Name     | Type       | Description                                               |
+| -------- | ---------- | --------------------------------------------------------- |
+| target   | address    | Address of the smart contract of the tokens               |
+| tokenIds | uint256\[] | IDs of the tokens for which to retrieve the metadata URIs |
+
+#### Returns
+
+| Name     | Type      | Description                                                                                                                                        |
+| -------- | --------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
+| metadata | string\[] | An array of strings with the top asset metadata for each of the given tokens, in the same order as the tokens passed in the `tokenIds` input array |
 
 ## Errors
 

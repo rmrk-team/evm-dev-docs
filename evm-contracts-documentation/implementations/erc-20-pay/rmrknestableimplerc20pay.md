@@ -135,31 +135,10 @@ _When a token is burned, all of its child tokens are recursively burned as well.
 | ---- | ------- | ------------------------------------- |
 | \_0  | uint256 | Number of recursively burned children |
 
-### childIsInActive
-
-```solidity
-function childIsInActive(address childAddress, uint256 childId) external view returns (bool)
-```
-
-Used to verify that the given child tokwn is included in an active array of a token.
-
-#### Parameters
-
-| Name         | Type    | Description                                            |
-| ------------ | ------- | ------------------------------------------------------ |
-| childAddress | address | Address of the given token's collection smart contract |
-| childId      | uint256 | ID of the child token being checked                    |
-
-#### Returns
-
-| Name | Type | Description                                                                                                                               |
-| ---- | ---- | ----------------------------------------------------------------------------------------------------------------------------------------- |
-| \_0  | bool | A boolean value signifying whether the given child token is included in an active child tokens array of a token (`true`) or not (`false`) |
-
 ### childOf
 
 ```solidity
-function childOf(uint256 parentId, uint256 index) external view returns (struct IRMRKNestable.Child)
+function childOf(uint256 parentId, uint256 index) external view returns (struct IERC6059.Child)
 ```
 
 Used to retrieve a specific active child token for a given parent token.
@@ -175,14 +154,14 @@ _Returns a single Child struct locating at `index` of parent token's active chil
 
 #### Returns
 
-| Name | Type                | Description                                              |
-| ---- | ------------------- | -------------------------------------------------------- |
-| \_0  | IRMRKNestable.Child | A Child struct containing data about the specified child |
+| Name | Type           | Description                                              |
+| ---- | -------------- | -------------------------------------------------------- |
+| \_0  | IERC6059.Child | A Child struct containing data about the specified child |
 
 ### childrenOf
 
 ```solidity
-function childrenOf(uint256 parentId) external view returns (struct IRMRKNestable.Child[])
+function childrenOf(uint256 parentId) external view returns (struct IERC6059.Child[])
 ```
 
 Used to retrieve the active child tokens of a given parent token.
@@ -197,9 +176,9 @@ _Returns array of Child structs existing for parent token.The Child struct consi
 
 #### Returns
 
-| Name | Type                   | Description                                                                 |
-| ---- | ---------------------- | --------------------------------------------------------------------------- |
-| \_0  | IRMRKNestable.Child\[] | An array of Child structs containing the parent token's active child tokens |
+| Name | Type              | Description                                                                 |
+| ---- | ----------------- | --------------------------------------------------------------------------- |
+| \_0  | IERC6059.Child\[] | An array of Child structs containing the parent token's active child tokens |
 
 ### collectionMetadata
 
@@ -495,7 +474,7 @@ _The root owner of the token is an externally owned account (EOA). If the given 
 ### pendingChildOf
 
 ```solidity
-function pendingChildOf(uint256 parentId, uint256 index) external view returns (struct IRMRKNestable.Child)
+function pendingChildOf(uint256 parentId, uint256 index) external view returns (struct IERC6059.Child)
 ```
 
 Used to retrieve a specific pending child token from a given parent token.
@@ -511,14 +490,14 @@ _Returns a single Child struct locating at `index` of parent token's active chil
 
 #### Returns
 
-| Name | Type                | Description                                               |
-| ---- | ------------------- | --------------------------------------------------------- |
-| \_0  | IRMRKNestable.Child | A Child struct containting data about the specified child |
+| Name | Type           | Description                                               |
+| ---- | -------------- | --------------------------------------------------------- |
+| \_0  | IERC6059.Child | A Child struct containting data about the specified child |
 
 ### pendingChildrenOf
 
 ```solidity
-function pendingChildrenOf(uint256 parentId) external view returns (struct IRMRKNestable.Child[])
+function pendingChildrenOf(uint256 parentId) external view returns (struct IERC6059.Child[])
 ```
 
 Used to retrieve the pending child tokens of a given parent token.
@@ -533,9 +512,9 @@ _Returns array of pending Child structs existing for given parent.The Child stru
 
 #### Returns
 
-| Name | Type                   | Description                                                                  |
-| ---- | ---------------------- | ---------------------------------------------------------------------------- |
-| \_0  | IRMRKNestable.Child\[] | An array of Child structs containing the parent token's pending child tokens |
+| Name | Type              | Description                                                                  |
+| ---- | ----------------- | ---------------------------------------------------------------------------- |
+| \_0  | IERC6059.Child\[] | An array of Child structs containing the parent token's pending child tokens |
 
 ### pricePerMint
 
@@ -1249,6 +1228,14 @@ error RMRKPendingChildIndexOutOfRange()
 ```
 
 Attempting to interact with a pending child using an index greater than the size of pending array
+
+### RMRKRoyaltiesTooHigh
+
+```solidity
+error RMRKRoyaltiesTooHigh()
+```
+
+Attempting to set the royalties to a value higher than 100% (10000 in base points)
 
 ### RMRKUnexpectedChildId
 

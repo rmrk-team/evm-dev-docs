@@ -167,12 +167,12 @@ Used to retrieve the metadata of the collection.
 ### getActiveAssetPriorities
 
 ```solidity
-function getActiveAssetPriorities(uint256 tokenId) external view returns (uint16[])
+function getActiveAssetPriorities(uint256 tokenId) external view returns (uint64[])
 ```
 
 Used to retrieve the priorities of the active resoources of a given token.
 
-_Asset priorities are a non-sequential array of uint16 values with an array size equal to active asset priorites._
+_Asset priorities are a non-sequential array of uint64 values with an array size equal to active asset priorites._
 
 #### Parameters
 
@@ -184,7 +184,7 @@ _Asset priorities are a non-sequential array of uint16 values with an array size
 
 | Name | Type      | Description                                                    |
 | ---- | --------- | -------------------------------------------------------------- |
-| \_0  | uint16\[] | An array of priorities of the active assets of the given token |
+| \_0  | uint64\[] | An array of priorities of the active assets of the given token |
 
 ### getActiveAssets
 
@@ -689,19 +689,19 @@ _Once locked, functions using `notLocked` modifier cannot be executed._
 ### setPriority
 
 ```solidity
-function setPriority(uint256 tokenId, uint16[] priorities) external nonpayable
+function setPriority(uint256 tokenId, uint64[] priorities) external nonpayable
 ```
 
 Sets a new priority array for a given token.
 
-_The priority array is a non-sequential list of `uint16`s, where the lowest value is considered highest priority.Value `0` of a priority is a special case equivalent to unitialized.Requirements: - The caller must own the token or be approved to manage the token's assets - `tokenId` must exist. - The length of `priorities` must be equal the length of the active assets array.Emits a {AssetPrioritySet} event._
+_The priority array is a non-sequential list of `uint64`s, where the lowest value is considered highest priority.Value `0` of a priority is a special case equivalent to unitialized.Requirements: - The caller must own the token or be approved to manage the token's assets - `tokenId` must exist. - The length of `priorities` must be equal the length of the active assets array.Emits a {AssetPrioritySet} event._
 
 #### Parameters
 
 | Name       | Type      | Description                                                                                                                                        |
 | ---------- | --------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
 | tokenId    | uint256   | ID of the token to set the priorities for                                                                                                          |
-| priorities | uint16\[] | An array of priorities of active assets. The succesion of items in the priorities array matches that of the succesion of items in the active array |
+| priorities | uint64\[] | An array of priorities of active assets. The succesion of items in the priorities array matches that of the succesion of items in the active array |
 
 ### supportsInterface
 
@@ -936,21 +936,21 @@ Used to notify listeners that an asset object at `assetId` is accepted by the to
 | assetId `indexed`    | uint64  | ID of the asset that was accepted             |
 | replacesId `indexed` | uint64  | ID of the asset that was replaced             |
 
-### AssetAddedToToken
+### AssetAddedToTokens
 
 ```solidity
-event AssetAddedToToken(uint256 indexed tokenId, uint64 indexed assetId, uint64 indexed replacesId)
+event AssetAddedToTokens(uint256[] tokenIds, uint64 indexed assetId, uint64 indexed replacesId)
 ```
 
 Used to notify listeners that an asset object at `assetId` is added to token's pending asset array.
 
 #### Parameters
 
-| Name                 | Type    | Description                                                             |
-| -------------------- | ------- | ----------------------------------------------------------------------- |
-| tokenId `indexed`    | uint256 | ID of the token that received a new pending asset                       |
-| assetId `indexed`    | uint64  | ID of the asset that has been added to the token's pending assets array |
-| replacesId `indexed` | uint64  | ID of the asset that would be replaced                                  |
+| Name                 | Type       | Description                                                             |
+| -------------------- | ---------- | ----------------------------------------------------------------------- |
+| tokenIds             | uint256\[] | An array of token IDs that received a new pending asset                 |
+| assetId `indexed`    | uint64     | ID of the asset that has been added to the token's pending assets array |
+| replacesId `indexed` | uint64     | ID of the asset that would be replaced                                  |
 
 ### AssetPrioritySet
 
@@ -1207,12 +1207,6 @@ error RMRKMintOverMax()
 
 Attempting to mint a number of tokens that would cause the total supply to be greater than maximum supply
 
-### RMRKMintUnderpriced
-
-```solidity
-error RMRKMintUnderpriced()
-```
-
 ### RMRKMintZero
 
 ```solidity
@@ -1267,6 +1261,14 @@ error RMRKNotOwnerOrContributor()
 
 Attempting to interact with a function without being the owner or contributor of the collection
 
+### RMRKRoyaltiesTooHigh
+
+```solidity
+error RMRKRoyaltiesTooHigh()
+```
+
+Attempting to set the royalties to a value higher than 100% (10000 in base points)
+
 ### RMRKTokenDoesNotHaveAsset
 
 ```solidity
@@ -1290,3 +1292,9 @@ error RMRKUnexpectedNumberOfAssets()
 ```
 
 Attempting to reject all pending assets but more assets than expected are pending
+
+### RMRKWrongValueSent
+
+```solidity
+error RMRKWrongValueSent()
+```

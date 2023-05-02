@@ -18,7 +18,7 @@ function getExtendedNft(uint256 tokenId, address targetCollection) external view
 
 Used to get extended information about a specified token.
 
-_The full `ExtendedNft` struct looks like this: \[ tokenMetadataUri, directOwner, rootOwner, activeAssetCount, pendingAssetCount priorities, maxSupply, totalSupply, issuer, name, symbol, activeChildrenNumber, isSoulbound, hasMultiAssetInterface, hasNestingInterface, hasEquippableInterface ]_
+_The full `ExtendedNft` struct looks like this: \[ tokenMetadataUri, directOwner, rootOwner, activeAssetCount, pendingAssetCount priorities, maxSupply, totalSupply, issuer, name, symbol, activeChildrenNumber, pendingChildrenNumber, isSoulbound, hasMultiAssetInterface, hasNestingInterface, hasEquippableInterface ]_
 
 #### Parameters
 

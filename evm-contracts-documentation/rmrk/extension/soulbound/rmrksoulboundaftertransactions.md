@@ -56,13 +56,15 @@ Gets the current number of transfer the specified token.
 | ---- | ------- | --------------------------------------- |
 | \_0  | uint256 | Number of the token's transfers to date |
 
-### isSoulbound
+### isNonTransferable
 
 ```solidity
-function isSoulbound(uint256 tokenId) external view returns (bool)
+function isNonTransferable(uint256 tokenId) external view returns (bool)
 ```
 
-Used to check whether the given token is soulbound or not.
+Used to check whether the given token is non-transferable or not.
+
+_If this function returns `true`, the transfer of the token MUST revert executionIf the tokenId does not exist, this method MUST revert execution_
 
 #### Parameters
 
@@ -72,9 +74,9 @@ Used to check whether the given token is soulbound or not.
 
 #### Returns
 
-| Name | Type | Description                                                   |
-| ---- | ---- | ------------------------------------------------------------- |
-| \_0  | bool | Boolean value indicating whether the given token is soulbound |
+| Name | Type | Description                                                          |
+| ---- | ---- | -------------------------------------------------------------------- |
+| \_0  | bool | Boolean value indicating whether the given token is non-transferable |
 
 ### name
 
