@@ -8,7 +8,7 @@ In addition to the legos, RMRK provides extensions to supercharge your NFTs. Som
 
 The extensions available are:
 
-1. Emotable ([Emotable Extension for Non-Fungible Tokens](https://eips.ethereum.org/EIPS/eip-6381))
+1. Emotable ([ERC-6381: Emotable Extension for Non-Fungible Tokens](https://eips.ethereum.org/EIPS/eip-6381))
    * Used to use Unicode standardized emojis to react to NFTs
 2. MultiAssetAutoIndex
    * Used to auto-index MultiAsset tokens
@@ -16,7 +16,7 @@ The extensions available are:
    * Used to auto-index Nestable tokens
 4. ReclaimableChild
    * Used to be able to reclaim child tokens that have been accidentally rejected
-5. Soulbound ([Minimalistic Non-Transferable NFTs](https://eips.ethereum.org/EIPS/eip-6454))
+5. Soulbound ([ERC-6454: Minimal Transferable NFT detection interface](https://eips.ethereum.org/EIPS/eip-6454))
    * Used to design the tokens to be non-transferable
 6. TokenProperties
    * Used to add properties to the tokens on-chain

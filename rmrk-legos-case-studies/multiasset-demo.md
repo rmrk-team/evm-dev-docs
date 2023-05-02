@@ -11,7 +11,7 @@ MultiAsset is a Solidity smart contract implementation by [RMRK Team](https://gi
 You can explore the RMRK MultiAsset lego further, by reading the EIP that we published:
 
 {% embed url="https://eips.ethereum.org/EIPS/eip-5773" %}
-EIP-5773: Context-Dependent Multi-Asset Tokens
+ERC-5773: Context-Dependent Multi-Asset Tokens
 {% endembed %}
 
 You can follow along using the already built case study, by cloning the following repository:

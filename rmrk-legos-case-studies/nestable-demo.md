@@ -11,7 +11,7 @@ Nestable is a Solidity smart contract implementation by [RMRK Team](https://gith
 You can explore the RMRK Nestable lego further, by reading the EIP that we published:
 
 {% embed url="https://eips.ethereum.org/EIPS/eip-6059" %}
-EIP-6059: Parent-Governed Nestable Non-Fungible Tokens
+ERC-6059: Parent-Governed Nestable Non-Fungible Tokens
 {% endembed %}
 
 You can follow along using the already built case study, by cloning the following repository:
