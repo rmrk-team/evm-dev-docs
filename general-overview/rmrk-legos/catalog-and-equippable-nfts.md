@@ -2,7 +2,7 @@
 description: Introduction of Catalog and Equippable RMRK legos
 ---
 
-# Catalog and Equippable NFTs
+# Catalog and Equippable NFTs (ERC-6220)
 
 A Catalog can be considered a _colleciton of parts_ from which an NFT can be composed. Parts can be either of the `slot` type or `fixed` type. Slots are intended for equippables.
 
@@ -18,10 +18,10 @@ The most important concept to understand with regard to equippables is that the 
 
 This is what the Catalog system allows: minting collections with equippability in mind, regardless of type - audio files can be prepared with slots for audio stems, movie catalogs can be prepared with filter slots, but video files can also have a slot for subtitles, or even an alternative audio track, and more.
 
-## EIP-6220: Composable NFTs utilizing Equippable Parts
+## ERC-6220: Composable NFTs utilizing Equippable Parts
 
 We published an Ethereum Improvement Proposal detailing the specification of the Equippable RMRK lego. If you are interested, you can access it here:
 
 {% embed url="https://eips.ethereum.org/EIPS/eip-6220" %}
-EIP-6220: Composable NFTs utilizing Equippable Parts
+ERC-6220: Composable NFTs utilizing Equippable Parts
 {% endembed %}

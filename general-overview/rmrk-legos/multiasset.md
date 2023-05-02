@@ -2,7 +2,7 @@
 description: Introduction of MultiAsset RMRK lego
 ---
 
-# MultiAsset
+# MultiAsset (ERC-5773)
 
 The Multi-Asset RMRK lego allows for the construction of a new primitive: context-dependent output of information per single NFT.
 
@@ -10,10 +10,10 @@ The context-dependent output of information means that the asset in an appropria
 
 An NFT can have multiple assets (outputs), which can be any kind of file to be served to the consumer, and orders them by priority. They do not have to match in mimetype or tokenURI, nor do they depend on one another. Assets are not standalone entities, but should be thought of as “namespaced tokenURIs” that can be ordered at will by the NFT owner, but only modified, updated, added, or removed if agreed on by both the owner of the token and the issuer of the token.
 
-## EIP-5773: Context-Dependent Multi-Asset tokens
+## ERC-5773: Context-Dependent Multi-Asset tokens
 
 We published an Ethereum Improvement Proposal detailing the specification of the MultiAsset RMRK lego. If you are interested, you can access it here:
 
 {% embed url="https://eips.ethereum.org/EIPS/eip-5773" %}
-EIP-5773: Context-Dependent Multi-Asset Tokens
+ERC-5773: Context-Dependent Multi-Asset Tokens
 {% endembed %}

@@ -15,7 +15,7 @@ An asset is NOT an NFT or a standalone entity you can reference. It is part of a
 Every RMRK NFT has zero or more assets. When it has zero assets, the metadata is "root level". Any new asset added to this NFT will override the root metadata, making this NFT [revealable](https://docs.rmrk.app/usecases/revealable).
 
 {% hint style="info" %}
-**NOTE: To dig deeper into the MultiAsset RMRK lego, you can also refer to the** [**EIP-5773**](https://eips.ethereum.org/EIPS/eip-5773) **that we published.**
+**NOTE: To dig deeper into the MultiAsset RMRK lego, you can also refer to the** [**ERC-5773**](https://eips.ethereum.org/EIPS/eip-5773) **that we published.**
 {% endhint %}
 
 ## Abstract

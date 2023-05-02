@@ -9,7 +9,7 @@ description: RMRK SplitEquippable lego composite example.
 The `ExternalEquippable` composite of RMRK legos uses the `Nestable`, `MultiAsset`, `Equippable` and `Catalog` RMRK legos. Unlike `MergedEquippable` RMRK lego composite, the external equippable splits `Nestable` apart from `MultiAsset` and `Equippable` in order to provide more space for custom business logic implementation.
 
 {% hint style="info" %}
-**NOTE: To dig deeper into the Catalog and Equippable RMRK legos, you can also refer to the** [**EIP-6220**](https://eips.ethereum.org/EIPS/eip-6220) **that we published.**
+**NOTE: To dig deeper into the Catalog and Equippable RMRK legos, you can also refer to the** [**ERC-6220**](https://eips.ethereum.org/EIPS/eip-6220) **that we published.**
 {% endhint %}
 
 ## Abstract
@@ -44,7 +44,7 @@ contract SimpleExternalEquip is RMRKExternalEquipImpl {
 The `RMRKExternalEquipImpl` implements all of the required functionality of the `Equippable` and `MultiAsset` RMRK legos. It implements asset and equippable management.
 
 {% hint style="danger" %}
-**WARNING: The `RMRKExternalEquipImpl` only has minimal access control implemented. If you intend to use it, make sure to define your own, otherwise your smart contracts are at risk of unexpected behaviour.**
+**WARNING: The `RMRKExternalEquipImpl` only has minimal access control implemented. If you intend to use it, make sure to define your own, otherwise, your smart contracts are at risk of unexpected behavior.**
 {% endhint %}
 
 The constructor to initialize the `RMRKExternalEquipImpl` accepts the following arguments:

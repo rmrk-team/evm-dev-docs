@@ -2,7 +2,7 @@
 description: Introduction of Nestable RMRK lego
 ---
 
-# Nestable
+# Nestable (ERC-6059)
 
 The Nestable RMRK lego allows for a new inter-NFT relationship and interaction.
 
@@ -26,12 +26,12 @@ graph LR
 
 The graph illustrates how a child token can also be a parent token, but both are still administered by the root parent token's owner.
 
-## EIP-6059: Parent-Governed Nestable Non-Fungible Tokens
+## ERC-6059: Parent-Governed Nestable Non-Fungible Tokens
 
 We published an Ethereum Improvement Proposal detailing the specification of the Nestable RMRK lego. If you are interested, you can access it here:
 
 {% embed url="https://eips.ethereum.org/EIPS/eip-6059" %}
-EIP-6059: Parent-Governed Nestable Non-Fungible Tokens
+ERC-6059: Parent-Governed Nestable Non-Fungible Tokens
 {% endembed %}
 
 ## Managing child NFTs

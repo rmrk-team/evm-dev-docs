@@ -5,12 +5,12 @@
 ## 🌐 General overview
 
 * [RMRK legos](general-overview/rmrk-legos/README.md)
-  * [MultiAsset](general-overview/rmrk-legos/multiasset.md)
-  * [Nestable](general-overview/rmrk-legos/nestable.md)
-  * [Catalog and Equippable NFTs](general-overview/rmrk-legos/catalog-and-equippable-nfts.md)
+  * [MultiAsset (ERC-5773)](general-overview/rmrk-legos/multiasset.md)
+  * [Nestable (ERC-6059)](general-overview/rmrk-legos/nestable.md)
+  * [Catalog and Equippable NFTs (ERC-6220)](general-overview/rmrk-legos/catalog-and-equippable-nfts.md)
 * [RMRK extensions](general-overview/rmrk-extensions/README.md)
-  * [Emotable](general-overview/rmrk-extensions/emotable.md)
-  * [Soulbound](general-overview/rmrk-extensions/soulbound.md)
+  * [Emotable (ERC-6381)](general-overview/rmrk-extensions/emotable-erc-6381.md)
+  * [Soulbound (ERC-6454)](general-overview/rmrk-extensions/soulbound-erc-6454.md)
 * [Getting started](general-overview/getting-started.md)
 
 ## 🧑🏫 RMRK legos examples
