@@ -6,7 +6,7 @@ description: Introduction to RMRK legos EVM examples.
 
 A set of Solidity sample contracts using the RMRK standard implementation on EVM.
 
-<figure><img src="../.gitbook/assets/RMRK EVM Smart Contracts_rev3.png" alt=""><figcaption><p>Possible combinations of RMRK legos</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/RMRK EVM Smart Contracts_rev3.png" alt=""><figcaption><p>Possible combinations of RMRK legos</p></figcaption></figure>
 
 ## Installation
 

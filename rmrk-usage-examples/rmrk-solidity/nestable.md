@@ -4,7 +4,7 @@ description: RMRK Nestable lego example.
 
 # Nestable
 
-<figure><img src="../.gitbook/assets/5 (1).jpg" alt=""><figcaption><p>Nestable RMRK lego</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/5 (1).jpg" alt=""><figcaption><p>Nestable RMRK lego</p></figcaption></figure>
 
 The concept of nested NFTs refers to NFTs being able to own other NFTs.
 

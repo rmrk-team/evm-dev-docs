@@ -6,7 +6,7 @@ description: >-
 
 # MultiAsset case study
 
-MultiAsset is a Solidity smart contract implementation by [RMRK Team](https://github.com/rmrk-team) that allows to bind multiple assets of various types (PDF, MP3, video files etc...) to an NFT. In this journey we will explore the main features of [RMRK MultiAsset](../rmrk-legos-examples/multiasset.md).
+MultiAsset is a Solidity smart contract implementation by [RMRK Team](https://github.com/rmrk-team) that allows to bind multiple assets of various types (PDF, MP3, video files etc...) to an NFT. In this journey we will explore the main features of [RMRK MultiAsset](../rmrk-solidity/multiasset.md).
 
 You can explore the RMRK MultiAsset lego further, by reading the EIP that we published:
 
@@ -46,7 +46,7 @@ After starting their travels, Master and Alice decided to separate and they had 
     );
 ```
 
-<figure><img src="../.gitbook/assets/MA_1.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/MA_1.png" alt=""><figcaption></figcaption></figure>
 
 ## Recipes creation - Creation of assets to add to the collection tokens
 
@@ -67,7 +67,7 @@ const INITIAL_RECIPES = 3;
     await Promise.all(allAddingTxs.map((addingTx) => addingTx.wait()));
 ```
 
-<figure><img src="../.gitbook/assets/MA_2.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/MA_2.png" alt=""><figcaption></figcaption></figure>
 
 The recipes were not good enough, so, after a period of perfecting and adjusting, Master **added** them to his cookbook.
 
@@ -103,7 +103,7 @@ After getting the permission, Alice crafted her book, but she did it in Argentin
     );
 ```
 
-<figure><img src="../.gitbook/assets/MA_4.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/MA_4.png" alt=""><figcaption></figcaption></figure>
 
 She was inspired by different tastes and she created 2 recipes adding them **directly** to her cookbook.
 
@@ -127,7 +127,7 @@ const INITIAL_ALICE_RECIPES = 2;
     }
 ```
 
-<figure><img src="../.gitbook/assets/MA_5.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/MA_5.png" alt=""><figcaption></figcaption></figure>
 
 ## Recipe improvement - Asset replacement
 
@@ -142,7 +142,7 @@ During his travel, Master created a recipe dedicated to his student and he decid
         );
 ```
 
-<figure><img src="../.gitbook/assets/MA_6.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/MA_6.png" alt=""><figcaption></figcaption></figure>
 
 Alice **accepted** the recipe gifted from her master...
 
@@ -156,7 +156,7 @@ await cookBookInstance.connect(ALICE).
     actual_recipe_id++;    // Update to the next ID
 ```
 
-<figure><img src="../.gitbook/assets/MA_7.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/MA_7.png" alt=""><figcaption></figcaption></figure>
 
 ...but she discovered that the recipe was missing something. :confused: After a long search and many attempts she found the right missing ingredient. So Alice fixed the recipe and she replaced the old one with this new, improved one. :pencil:
 
@@ -180,7 +180,7 @@ await cookBookInstance.connect(ALICE).
     actual_recipe_id++;    // Update to the next ID
 ```
 
-<figure><img src="../.gitbook/assets/MA_8.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/MA_8.png" alt=""><figcaption></figcaption></figure>
 
 After this fix, Alice's career took flight and Master, proud of his student, proposed to create 2 recipes as a collaboration to add her cookbook.
 
@@ -201,7 +201,7 @@ After this fix, Alice's career took flight and Master, proud of his student, pro
     }
 ```
 
-<figure><img src="../.gitbook/assets/MA_9.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/MA_9.png" alt=""><figcaption></figcaption></figure>
 
 After a small review Alice added them to her book. :book:
 
@@ -220,7 +220,7 @@ After a small review Alice added them to her book. :book:
     }
 ```
 
-<figure><img src="../.gitbook/assets/MA_10.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/MA_10.png" alt=""><figcaption></figcaption></figure>
 
 ## Master retires and burns his cookbook - Token burning with related assets
 

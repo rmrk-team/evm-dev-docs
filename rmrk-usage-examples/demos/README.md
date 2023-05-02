@@ -4,7 +4,9 @@ description: Case studies of RMRK legos in action.
 
 # Case studies
 
-This section provides examples of RMRK legos in action. Each of the case studies contains the instructions on how to setup the smart contracts, how to use them and a runnable script to take you through them.
+This section provides examples of RMRK legos in action. In addition, each case study contains instructions on how to set up the smart contracts, how to use them, and a runnable script to take you through them.
+
+If you intend to use the pre-prepared implementations of RMRK legos without many modifications of the Solidity smart contracts, this section is meant for you.
 
 The currently available case studies are:
 

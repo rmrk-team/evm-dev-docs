@@ -4,7 +4,7 @@ description: RMRK MultiAsset lego example.
 
 # MultiAsset
 
-<figure><img src="../.gitbook/assets/4.jpg" alt=""><figcaption><p>MultiAsset RMRK lego</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/4.jpg" alt=""><figcaption><p>MultiAsset RMRK lego</p></figcaption></figure>
 
 An _asset_ is a type of output for an NFT, usually a media file.
 

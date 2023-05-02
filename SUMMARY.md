@@ -13,21 +13,18 @@
   * [Soulbound (ERC-6454)](general-overview/rmrk-extensions/soulbound-erc-6454.md)
 * [Getting started](general-overview/getting-started.md)
 
-## 🧑🏫 RMRK legos examples
+## 🧑🏫 RMRK usage examples
 
-* [RMRK Solidity](rmrk-legos-examples/rmrk-solidity.md)
-* [MultiAsset](rmrk-legos-examples/multiasset.md)
-* [Nestable](rmrk-legos-examples/nestable.md)
-* [Nestable with MultiAsset](rmrk-legos-examples/nestable-with-multiasset.md)
-* [MergedEquippable](rmrk-legos-examples/mergedequippable.md)
-* [SplitEquippable](rmrk-legos-examples/splitequippable.md)
-
-## 💻 RMRK legos case studies
-
-* [Case studies](rmrk-legos-case-studies/demos.md)
-* [MultiAsset case study](rmrk-legos-case-studies/multiasset-demo.md)
-* [Nestable case study](rmrk-legos-case-studies/nestable-demo.md)
-* [Using Nestable and MultiAsset RMRK legos in zkSync](rmrk-legos-case-studies/using-nestable-and-multiasset-rmrk-legos-in-zksync.md)
+* [RMRK Solidity](rmrk-usage-examples/rmrk-solidity/README.md)
+  * [MultiAsset](rmrk-usage-examples/rmrk-solidity/multiasset.md)
+  * [Nestable](rmrk-usage-examples/rmrk-solidity/nestable.md)
+  * [Nestable with MultiAsset](rmrk-usage-examples/rmrk-solidity/nestable-with-multiasset.md)
+  * [MergedEquippable](rmrk-usage-examples/rmrk-solidity/mergedequippable.md)
+  * [SplitEquippable](rmrk-usage-examples/rmrk-solidity/splitequippable.md)
+* [Case studies](rmrk-usage-examples/demos/README.md)
+  * [MultiAsset case study](rmrk-usage-examples/demos/multiasset-demo.md)
+  * [Nestable case study](rmrk-usage-examples/demos/nestable-demo.md)
+  * [Using Nestable and MultiAsset RMRK legos in zkSync](rmrk-usage-examples/demos/using-nestable-and-multiasset-rmrk-legos-in-zksync.md)
 
 ## 📖 EVM contracts documentation
 
