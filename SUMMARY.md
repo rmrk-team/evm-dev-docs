@@ -130,3 +130,7 @@
     * [RMRKNestableRenderUtils](evm-contracts-documentation/rmrk/utils/rmrknestablerenderutils.md)
     * [RMRKRenderUtils](evm-contracts-documentation/rmrk/utils/rmrkrenderutils.md)
     * [RMRKTokenURI](evm-contracts-documentation/rmrk/utils/rmrktokenuri.md)
+
+## ❓ Frequently asked questions
+
+* [FAQ](frequently-asked-questions/faq.md)
