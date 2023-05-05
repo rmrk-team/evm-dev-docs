@@ -11,7 +11,11 @@
 * [RMRK extensions](general-overview/rmrk-extensions/README.md)
   * [Emotable (ERC-6381)](general-overview/rmrk-extensions/emotable-erc-6381.md)
   * [Soulbound (ERC-6454)](general-overview/rmrk-extensions/soulbound-erc-6454.md)
-* [Getting started](general-overview/getting-started.md)
+
+## ⚙ Getting started
+
+* [Getting started](getting-started/getting-started.md)
+* [Which lego to use?](getting-started/which-lego-to-use.md)
 
 ## 🧑🏫 RMRK usage examples
 

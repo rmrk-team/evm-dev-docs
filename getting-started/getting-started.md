@@ -20,7 +20,7 @@ If you intend to build your project on a `zkSync` network, you can use the `zksy
 RMRK zkSync EVM development template
 {% endembed %}
 
-In order to use the template, you can use the `Use this template` button:
+To use the template, you can use the `Use this template` button:
 
 <figure><img src="../.gitbook/assets/image.png" alt=""><figcaption><p>Use this template button</p></figcaption></figure>
 
@@ -28,4 +28,4 @@ If you wish to use the `zksync` branch,  make sure to use all of the branches of
 
 <figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption><p>Include all branches option</p></figcaption></figure>
 
-That's it! You can start building your project using RMRK legos. The repository also includes and example `SimpleEquippable` smart contract that you can deploy and test to get familiar with the toolbox provided within it.
+That's it! You can start building your project using RMRK legos. The repository also includes an example `SimpleEquippable` smart contract that you can deploy and test to get familiar with the toolbox provided within it.
