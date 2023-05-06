@@ -135,6 +135,10 @@
     * [RMRKRenderUtils](evm-contracts-documentation/rmrk/utils/rmrkrenderutils.md)
     * [RMRKTokenURI](evm-contracts-documentation/rmrk/utils/rmrktokenuri.md)
 
+## 💡 References
+
+* [Additional resources](references/additional-resources.md)
+
 ## ❓ Frequently asked questions
 
 * [FAQ](frequently-asked-questions/faq.md)
