@@ -138,6 +138,7 @@
 ## 💡 References
 
 * [Additional resources](references/additional-resources.md)
+* [List collection on Singular](references/list-collection-on-singular.md)
 
 ## ❓ Frequently asked questions
 
