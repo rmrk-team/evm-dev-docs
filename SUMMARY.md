@@ -139,6 +139,7 @@
 
 * [Additional resources](references/additional-resources.md)
 * [List collection on Singular](references/list-collection-on-singular.md)
+* [Metadata formatting](references/metadata-formatting.md)
 
 ## ❓ Frequently asked questions
 

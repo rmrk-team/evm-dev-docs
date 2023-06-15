@@ -40,3 +40,7 @@ As the Singular marketplace is specially equipped to present the next generation
 #### Additional notes
 
 The [**@rmrk-team/evm-package**](https://www.npmjs.com/package/@rmrk-team/evm-contracts?activeTab=versions) offers many more powerful extensions to supercharge your collection. We invite you to explore them and build the best collection out there!
+
+### Metadata
+
+As there are more metadata-bearing resources when using NFTs 2.0, we prepared an overview of the expected metadata for each. You can refer to the structure of the metadata of collection, asset, and catalog part in the [Metadata formatting](metadata-formatting.md) section.
