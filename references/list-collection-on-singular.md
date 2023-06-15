@@ -39,6 +39,8 @@ Additionally, we suggest using [**RMRKCollectionMetadata**](https://github.com/r
 
 As the Singular marketplace is specially equipped to present the next generation of Non-Fungible Tokens, it is crucial that your collection meets other advanced collections listed on Singular. If your collection was built without the powers of NFT 2.0, you can still wrap the tokens in order to power them up to reach the functionality of NFTs 2.0.
 
+If you are still deciding on which RMRK lego to use and don't want to implement all of the base logic yourself, we encourage you to explore [ready-to-use implementations](https://github.com/rmrk-team/evm/tree/dev/contracts/implementations) that are documented in the [Implementations](../evm-contracts-documentation/implementations/) section.
+
 #### Additional notes
 
 The [**@rmrk-team/evm-package**](https://www.npmjs.com/package/@rmrk-team/evm-contracts?activeTab=versions) offers many more powerful extensions to supercharge your collection. We invite you to explore them and build the best collection out there!
