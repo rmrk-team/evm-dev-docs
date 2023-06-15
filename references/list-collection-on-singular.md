@@ -27,6 +27,8 @@ We rely on the existence of the `owner` entity in order to verify the management
 
 As this is a common practice in all of the smart contracts implementing the _Ownable_ pattern, you should be compatible using any version of it. We suggest you use the [**Ownable**](https://github.com/rmrk-team/evm/blob/dev/contracts/RMRK/access/Ownable.sol) or [**OwnableLock**](https://github.com/rmrk-team/evm/blob/dev/contracts/RMRK/access/OwnableLock.sol) from [**@rmrk-team/evm-contracts**](https://www.npmjs.com/package/@rmrk-team/evm-contracts?activeTab=versions) as it provides an additional management role compatible with the Singular marketplace called `contributor`. This allows you to appoint additional users to help you manage your collection via the marketplace.
 
+If you are wondering why we are providing custom **Ownable** implementation, you can refer to the [FAQ](../frequently-asked-questions/faq.md#why-do-we-implement-some-of-the-smart-contracts-that-are-already-provided-in-other-packages-like-ope) where we explain that.
+
 #### Collection information
 
 In order for the collection to be eligible to be presented in the Singular marketplace, it needs to have its `name` and `symbol` exposed so that the marketplace can pick it up. Most of the metadata extensions contain it, but we suggest using any of the RMRK lego smart contracts from [**@rmrk-team/evm-contracts**](https://www.npmjs.com/package/@rmrk-team/evm-contracts?activeTab=versions) as they import the [**RMRKCore**](https://github.com/rmrk-team/evm/blob/dev/contracts/RMRK/core/RMRKCore.sol) smart contract, which includes the `name` and `symbol` values.

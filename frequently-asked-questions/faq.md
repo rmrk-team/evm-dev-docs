@@ -25,3 +25,9 @@ The list can be found in the [RMRK legos](../general-overview/rmrk-legos/) and [
 #### What networks can be used to deploy the RMRK-powered smart contracts?
 
 You can deploy the Solidity implementation of RMRK legos and the extensions to any EVM-compatible network. However, if you intend to utilize Singular, the next-generation marketplace already supporting RMRK primitives, we suggest you consider the currently supported networks.
+
+#### Why do we implement some of the smart contracts that are already provided in other packages like OpenZeppelin's?
+
+The decision to implement our own utility smart contracts is an optimization decision. Since RMRK standards are highly evolved, they take up a lot of smart contract space, and since the smart contract file sizes are limited, we had to optimize them.
+
+One of the main space-saving steps taken is the use of predefined errors in favor of stringified errors and the unification of some management functions (i.e.: instead of having a function to add a contributor and another to remove a contributor, we only have one function that either adds or removes them).
