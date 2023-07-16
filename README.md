@@ -6,42 +6,12 @@ description: Welcome to RMRK EVM!
 
 # Welcome
 
-Welcome to the RMRK EVM developer documentation, home of [**ERC-5773**](https://eips.ethereum.org/EIPS/eip-5773), [**ERC-6059**](https://eips.ethereum.org/EIPS/eip-6059), [**ERC-6220**](https://eips.ethereum.org/EIPS/eip-6220), [**ERC-6381**](https://eips.ethereum.org/EIPS/eip-6381), and [**ERC-6454**](https://eips.ethereum.org/EIPS/eip-6454). Here you can find all of the information needed in order to utilise RMRK's next-generation NFT legos.
+Welcome to the RMRK EVM developer documentation, home of [**ERC-5773**](https://eips.ethereum.org/EIPS/eip-5773), [**ERC-6059**](https://eips.ethereum.org/EIPS/eip-6059), [**ERC-6220**](https://eips.ethereum.org/EIPS/eip-6220), [**ERC-6381**](https://eips.ethereum.org/EIPS/eip-6381), and [**ERC-6454**](https://eips.ethereum.org/EIPS/eip-6454). Here you can find all of the information needed in order to utilize RMRK's next-generation NFT legos.
 
-This documentation is separated into three distinct sections:
+## Sections
 
-* General overview of RMRK legos and primitives
-* Examples of RMRK legos uses
-* Documentation of `@rmrk-team/evm-contracts` package
+<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td>🌐 <strong>General Overview</strong></td><td>The General overview section contains information about RMRK legos and primitives. It also holds information about how they work and how to utilize them.</td><td></td><td><a href="broken-reference">Broken link</a></td><td></td></tr><tr><td>⚙️ <strong>Getting Started</strong></td><td>The Getting Started section focuses on crucial information needed for you to get started and provides a quick start guide.</td><td></td><td><a href="broken-reference">Broken link</a></td><td></td></tr><tr><td>🧑‍🏫 <strong>RMRK Usage Examples</strong></td><td>The RMRK Usage Examples section contains examples and instructions on how to use the RMRK legos to build your own next-generation NFT solution.</td><td></td><td><a href="broken-reference">Broken link</a></td><td></td></tr><tr><td>📖 <strong>EVM Contacts Documentation</strong></td><td>The EVM contracts documentation contains the documentation of the <code>@rmrk-team/evm-contracts</code> package. This includes explanations of functions used in the smart contracts provided by the package and their operation.</td><td></td><td><a href="broken-reference">Broken link</a></td><td></td></tr><tr><td>💡 <strong>References</strong></td><td>The References section contains additional resources worth consulting to build the best possible NFT 2.0 project.</td><td></td><td><a href="broken-reference">Broken link</a></td><td></td></tr><tr><td>❓ <strong>Frequently Asked Questions</strong></td><td>The FAQ section contains answers to the most frequently asked questions when working with NFTs 2.0 and RMRK legos.</td><td></td><td><a href="broken-reference">Broken link</a></td><td></td></tr></tbody></table>
 
-## General overview
+## ERCs
 
-The General overview section contains information about RMRK legos and primitives. It also holds information about how they work and how to utilise them.
-
-{% content-ref url="broken-reference" %}
-[Broken link](broken-reference)
-{% endcontent-ref %}
-
-## RMRK legos examples
-
-The RMRK legos examples section contains examples and instructions on how to use the RMRK legos to build your own next-generation NFT solution.
-
-{% content-ref url="broken-reference" %}
-[Broken link](broken-reference)
-{% endcontent-ref %}
-
-## RMRK legos demos
-
-The RMRK legos demos section contains contextualized user journeys illustrating operation of RMRK legos.
-
-{% content-ref url="broken-reference" %}
-[Broken link](broken-reference)
-{% endcontent-ref %}
-
-## EVM contracts documentation
-
-The EVM contracts documentation contains the documentation of `@rmrk-team/evm-contracts` package. This includes explanations of function used in the smart contracts provided by the package and their operation.
-
-{% content-ref url="broken-reference" %}
-[Broken link](broken-reference)
-{% endcontent-ref %}
+<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><h2>ERC-5773: Context-Dependent Multi-Asset Tokens</h2></td><td>An interface for Multi-Asset tokens with context-dependent asset type output controlled by owner's preference.</td><td></td><td><a href="https://eips.ethereum.org/EIPS/eip-5773">https://eips.ethereum.org/EIPS/eip-5773</a></td></tr><tr><td><h2>ERC-6059: Parent-Governed Nestable Non-Fungible Tokens</h2></td><td>An interface for Nestable Non-Fungible Tokens with emphasis on the parent token's control over the relationship.</td><td></td><td><a href="https://eips.ethereum.org/EIPS/eip-6059">https://eips.ethereum.org/EIPS/eip-6059</a></td></tr><tr><td><h2>ERC-6220: Composable NFTs utilizing Equippable Parts</h2></td><td>An interface for Composable non-fungible tokens through fixed and slot parts equipping.</td><td></td><td><a href="https://eips.ethereum.org/EIPS/eip-6220">https://eips.ethereum.org/EIPS/eip-6220</a></td></tr><tr><td><h2>ERC-6381: Public Non-Fungible Token Emote Repository</h2></td><td>React to any Non-Fungible Tokens using Unicode emojis.</td><td></td><td><a href="https://eips.ethereum.org/EIPS/eip-6381">https://eips.ethereum.org/EIPS/eip-6381</a></td></tr><tr><td><h2>ERC-6454: Minimal Transferable NFT detection interface</h2></td><td>A minimal extension to identify the transferability of Non-Fungible Tokens.</td><td></td><td><a href="https://eips.ethereum.org/EIPS/eip-6454">https://eips.ethereum.org/EIPS/eip-6454</a></td></tr></tbody></table>
