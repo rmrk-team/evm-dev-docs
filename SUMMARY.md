@@ -11,6 +11,7 @@
 * [RMRK extensions](general-overview/rmrk-extensions/README.md)
   * [Emotable (ERC-6381)](general-overview/rmrk-extensions/emotable-erc-6381.md)
   * [Soulbound (ERC-6454)](general-overview/rmrk-extensions/soulbound-erc-6454.md)
+* [RMRK ERCs](general-overview/rmrk-ercs.md)
 
 ## ⚙ Getting started
 
