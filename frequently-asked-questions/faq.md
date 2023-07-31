@@ -4,6 +4,10 @@ description: Answers to frequently asked questions.
 
 # FAQ
 
+{% hint style="info" %}
+Do you have any feedback on your development experience with RMRK standards or any questions left unanswered? Let us know in our [feedback form](https://docs.google.com/forms/d/1jTHJsZ7GT\_umZol3HT6YghWCQRsWuQ382DWJRShx9EA)!
+{% endhint %}
+
 #### Are RMRK legos compatible with ERC-721?
 
 Yes, we ensured that all our legos and extensions are backward compatible with ERC-721 and the existing tooling to build and interact with ERC-721-compatible smart contracts.
