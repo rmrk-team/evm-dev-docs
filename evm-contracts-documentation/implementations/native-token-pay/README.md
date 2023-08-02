@@ -1,7 +1,7 @@
 ---
-description: Documentation of Native token pay smart contacts.
+description: Documentation of Lazy mint native smart contacts.
 ---
 
-# Native token pay
+# Lazy mint native
 
-The smart contracts included in this section provide the ability to use native tokens of the chain to which the smart contracts are deployed in conjunction with RMRK smart contracts.
+The smart contracts included in this section provide the ability to use native tokens of the chain to interact with the RMRK smart contracts and mint tokens.

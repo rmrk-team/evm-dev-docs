@@ -1,7 +1,7 @@
 ---
-description: Documentation of token properties smart contacts.
+description: Documentation of token holder smart contacts.
 ---
 
-# tokenProperties
+# tokenHolder
 
-The smart contracts in this sections provide blueprints for RMRK token properties extension and provide the ability to add on-chain token properties.
+The smart contracts in this sections provide blueprints for RMRK token holder extension and provide the ability for tokens to hold other tokens.

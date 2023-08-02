@@ -8,6 +8,10 @@ This section provides examples of RMRK legos in action. In addition, each case s
 
 If you intend to use the pre-prepared implementations of RMRK legos without many modifications of the Solidity smart contracts, this section is meant for you.
 
+{% hint style="danger" %}
+The case studies utilizing **v2.0.0** of our package are coming soon. The current examples are of the previous version.
+{% endhint %}
+
 The currently available case studies are:
 
 {% content-ref url="multiasset-demo.md" %}

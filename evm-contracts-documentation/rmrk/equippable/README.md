@@ -1,7 +1,7 @@
 ---
-description: Documentation of equippable smart contacts.
+description: Documentation of emotable smart contacts.
 ---
 
-# Equippable
+# Emotable
 
-The smart contracts in this sections provide blueprints for RMRK equippable legos and provide the ability to equip and manage parts of RMRK tokens.
+The smart contracts in this section provide blueprints for RMRK emotable extension, allowing to react to NFTs using Unicode emojis.

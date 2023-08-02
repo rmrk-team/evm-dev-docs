@@ -22,6 +22,10 @@ Some NFTs can be configured with special conditions for parent-child relationshi
 **NOTE: To dig deeper into the Nestable RMRK lego, you can also refer to the** [**ERC-6059**](https://eips.ethereum.org/EIPS/eip-6059) **that we published.**
 {% endhint %}
 
+{% hint style="danger" %}
+The usage examples of package **v2.0.0** are coming soon. The current examples are of the previous version.
+{% endhint %}
+
 ## Abstract
 
 In this tutorial we will examine the Nestable RMRK block using two examples:

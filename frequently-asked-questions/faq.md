@@ -35,3 +35,9 @@ You can deploy the Solidity implementation of RMRK legos and the extensions to a
 The decision to implement our own utility smart contracts is an optimization decision. Since RMRK standards are highly evolved, they take up a lot of smart contract space, and since the smart contract file sizes are limited, we had to optimize them.
 
 One of the main space-saving steps taken is the use of predefined errors in favor of stringified errors and the unification of some management functions (i.e.: instead of having a function to add a contributor and another to remove a contributor, we only have one function that either adds or removes them).
+
+#### Where can we find the up-to-date notes on the changes of the `@rmrk-team/evm-contracts`?
+
+All of the changes to the package are recorded in a congested way in the [CHANGELOG](https://github.com/rmrk-team/evm/blob/master/CHANGELOG.md) we are keeping.
+
+{% embed url="https://github.com/rmrk-team/evm/blob/master/CHANGELOG.md" %}

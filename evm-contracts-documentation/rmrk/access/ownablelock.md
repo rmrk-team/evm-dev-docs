@@ -91,7 +91,7 @@ function setLock() external nonpayable
 
 Locks the operation.
 
-_Once locked, functions using `notLocked` modifier cannot be executed._
+_Once locked, functions using `notLocked` modifier cannot be executed.Emits **LockSet** event._
 
 ### transferOwnership
 
@@ -127,6 +127,14 @@ _This can only be triggered by a current owner, so there is no need to include t
 | --------------------- | ------- | ------------------------------------------------------------------------------------------ |
 | contributor `indexed` | address | Address of the account that had contributor role status updated                            |
 | isContributor         | bool    | A boolean value signifying whether the role has been granted (`true`) or revoked (`false`) |
+
+### LockSet
+
+```solidity
+event LockSet()
+```
+
+Emitted when the smart contract is locked.
 
 ### OwnershipTransferred
 

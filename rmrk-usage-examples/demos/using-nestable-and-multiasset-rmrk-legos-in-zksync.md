@@ -8,6 +8,10 @@ This workshop examines the Nestable and MultiAsset RMRK legos in action and show
 
 The easiest way of doing so, is by defining a use case utilizing both legos and then building a collection around it. So let's do just that!
 
+{% hint style="danger" %}
+The case studies utilizing **v2.0.0** of our package are coming soon. The current examples are of the previous version.
+{% endhint %}
+
 ## Use Case
 
 The use case we will be implementing in this workshop is a music album. The album will be a collection of NFTs, each representing a song in the album. Each song can be represented by multiple assets, such as an audio file, a lyric sheet, etc. The album itself will also be represented by a single NFT, which will be the parent of all the songs. The album NFT will also contain multiple assets such as album artwork, metadata about the album, such as the artist, the release date, etc.

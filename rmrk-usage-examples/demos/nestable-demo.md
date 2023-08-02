@@ -14,6 +14,10 @@ You can explore the RMRK Nestable lego further, by reading the EIP that we publi
 ERC-6059: Parent-Governed Nestable Non-Fungible Tokens
 {% endembed %}
 
+{% hint style="danger" %}
+The case studies utilizing **v2.0.0** of our package are coming soon. The current examples are of the previous version.
+{% endhint %}
+
 You can follow along using the already built case study, by cloning the following repository:
 
 {% embed url="https://github.com/rmrk-team/evm-nestable-demo" %}

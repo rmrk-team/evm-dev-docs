@@ -8,6 +8,10 @@ description: RMRK MergedEquippable lego composite example.
 
 The `MergedEquippable` composite of RMRK legos uses both the `Nestable` and `MultiAsset` RMRK legos as well as the `Equippable` lego. In addition to these three RMRK legos, it also requires the `Catalog` RMRK lego. Let's first examine the `Catalog` RMRK lego and then the `Equippable` one.
 
+{% hint style="danger" %}
+The usage examples of package **v2.0.0** are coming soon. The current examples are of the previous version.
+{% endhint %}
+
 #### Catalog
 
 A _Catalog_ can be considered a catalogue of parts from which an NFT can be composed. Parts can be either of the slot type or fixed type. Slots are intended for equippables.

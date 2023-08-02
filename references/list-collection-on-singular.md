@@ -8,12 +8,9 @@ The [Singular marketplace](https://singular.app) is the most advanced NFT market
 
 To ensure the best results when the collection is displayed, we prepared a list of suggested extensions to implement:
 
-* [**Ownable**](https://github.com/rmrk-team/evm/blob/dev/contracts/RMRK/access/Ownable.sol) or [**OwnableLock**](https://github.com/rmrk-team/evm/blob/dev/contracts/RMRK/access/OwnableLock.sol): Used for access control or for access control with the ability to lock the operation of the smart contract
-* [**RMRKCore**](https://github.com/rmrk-team/evm/blob/dev/contracts/RMRK/core/RMRKCore.sol): Used to set the `name` and `symbol` of the collection
-* [**RMRKRoyalties**](https://github.com/rmrk-team/evm/blob/dev/contracts/RMRK/extension/RMRKRoyalties.sol): Used to configure secondary sale royalties compatible with ERC-2981
-* [**RMRKCollectionMetadata**](https://github.com/rmrk-team/evm/blob/dev/contracts/RMRK/utils/RMRKCollectionMetadata.sol): Used to provide the collection metadata
-* [**RMRKTokenURI**](https://github.com/rmrk-team/evm/blob/dev/contracts/RMRK/utils/RMRKTokenURI.sol): Used to provide token URI and power enumerable tokens
-* [**RMRKMintingUtils**](https://github.com/rmrk-team/evm/blob/dev/contracts/RMRK/utils/RMRKMintingUtils.sol): Used to provide information about token supply and minting
+* [**Ownable**](https://github.com/rmrk-team/evm/blob/master/contracts/RMRK/access/Ownable.sol) or [**OwnableLock**](https://github.com/rmrk-team/evm/blob/master/contracts/RMRK/access/OwnableLock.sol): Used for access control or for access control with the ability to lock the operation of the smart contract
+* [**RMRKImplementationBase**](https://github.com/rmrk-team/evm/blob/master/contracts/implementations/utils/RMRKImplementationBase.sol): Used to provide the basic collection information like name,  symbol, and collection metadata and information about token supply and minting. Additionally, it contains a secondary sale royalties configuration compatible with ERC-2981
+* [**RMRKTokenURIPerToken**](https://github.com/rmrk-team/evm/blob/master/contracts/implementations/utils/RMRKTokenURIPerToken.sol) or [**RMRKTokenURIEnumerated**](https://github.com/rmrk-team/evm/blob/master/contracts/implementations/utils/RMRKTokenURIEnumerated.sol): Used to provide token URI
 
 In order to be eligible for your collection to be listed on the Singular marketplace, it **MUST** implement and contain the following:
 
@@ -25,15 +22,13 @@ In order to be eligible for your collection to be listed on the Singular marketp
 
 We rely on the existence of the `owner` entity in order to verify the management operations done through the marketplace. This means the `owner` view function must be exposed in your collection.
 
-As this is a common practice in all of the smart contracts implementing the _Ownable_ pattern, you should be compatible using any version of it. We suggest you use the [**Ownable**](https://github.com/rmrk-team/evm/blob/dev/contracts/RMRK/access/Ownable.sol) or [**OwnableLock**](https://github.com/rmrk-team/evm/blob/dev/contracts/RMRK/access/OwnableLock.sol) from [**@rmrk-team/evm-contracts**](https://www.npmjs.com/package/@rmrk-team/evm-contracts?activeTab=versions) as it provides an additional management role compatible with the Singular marketplace called `contributor`. This allows you to appoint additional users to help you manage your collection via the marketplace.
+As this is a common practice in all of the smart contracts implementing the _Ownable_ pattern, you should be compatible using any version of it. We suggest you use the [**Ownable**](https://github.com/rmrk-team/evm/blob/master/contracts/RMRK/access/Ownable.sol) or [**OwnableLock**](https://github.com/rmrk-team/evm/blob/master/contracts/RMRK/access/OwnableLock.sol) from [**@rmrk-team/evm-contracts**](https://www.npmjs.com/package/@rmrk-team/evm-contracts?activeTab=versions) as it provides an additional management role compatible with the Singular marketplace called `contributor`. This allows you to appoint additional users to help you manage your collection via the marketplace.
 
 If you are wondering why we are providing custom **Ownable** implementation, you can refer to the [FAQ](../frequently-asked-questions/faq.md#why-do-we-implement-some-of-the-smart-contracts-that-are-already-provided-in-other-packages-like-ope) where we explain that.
 
 #### Collection information
 
-In order for the collection to be eligible to be presented in the Singular marketplace, it needs to have its `name` and `symbol` exposed so that the marketplace can pick it up. Most of the metadata extensions contain it, but we suggest using any of the RMRK lego smart contracts from [**@rmrk-team/evm-contracts**](https://www.npmjs.com/package/@rmrk-team/evm-contracts?activeTab=versions) as they import the [**RMRKCore**](https://github.com/rmrk-team/evm/blob/dev/contracts/RMRK/core/RMRKCore.sol) smart contract, which includes the `name` and `symbol` values.
-
-Additionally, we suggest using [**RMRKCollectionMetadata**](https://github.com/rmrk-team/evm/blob/dev/contracts/RMRK/utils/RMRKCollectionMetadata.sol), which extends your collection by adding collection-wide metadata support.
+In order for the collection to be eligible to be presented in the Singular marketplace, it needs to have its `name`, `symbol`, `maxSupply`, and `totalSupply` exposed so that the marketplace can pick it up. Most of the metadata extensions contain it, but we suggest using any of the RMRK lego smart contracts from [**@rmrk-team/evm-contracts**](https://www.npmjs.com/package/@rmrk-team/evm-contracts?activeTab=versions) as they import the [**RMRKImplementationBase**](https://github.com/rmrk-team/evm/blob/master/contracts/implementations/utils/RMRKImplementationBase.sol) smart contract, which includes the `name`, `symbol`, `maxSupply`, and `totalSupply` values. Additionally, the **RMRKImplementationBase** contains the `collectionMetadata` providing metadata URI of the collection.
 
 #### RMRK lego
 

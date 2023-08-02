@@ -35,8 +35,8 @@ import "@rmrk-team/evm-contracts/contracts/RMRK/nestable/RMRKNestable.sol";
 
 `RMRKMultiAsset` provides the minimal implementation of RMRK multi-asset lego, also known as [ERC-5773](https://eips.ethereum.org/EIPS/eip-5773). It allows a single token to have multiple assets.
 
-* You can refer to the `RMRKMultiAsset` documentation [here](../evm-contracts-documentation/rmrk/multiasset/rmrkmultiasset.md)
-* You can refer to the `RMRKMultiAsset` source code [here](https://github.com/rmrk-team/evm/blob/master/contracts/RMRK/multiasset/RMRKMultiAsset.sol)q
+* You can refer to the `RMRKMultiAsset` documentation [here](broken-reference)
+* You can refer to the `RMRKMultiAsset` source code [here](https://github.com/rmrk-team/evm/blob/master/contracts/RMRK/multiasset/RMRKMultiAsset.sol)
 
 In order to import the `RMRKMultiAsset` into your smart contract, you can import it from `@rmrk-team/evm-contracts`:
 
@@ -65,7 +65,7 @@ The `RMRKEquippable` is considered the merged equippable RMRK lego composite as 
 
 `RMRKEquippable` provides the minimal implementation of RMRK equippable lego, also known as ERC-6220. It allows tokens to be equipped into other tokens. In addition to the Equippable smart contract, you also need to set up the RMRK catalog lego.
 
-* You can refer to the `RMRKEquippable` documentation [here](../evm-contracts-documentation/rmrk/equippable/rmrkequippable.md)
+* You can refer to the `RMRKEquippable` documentation [here](../evm-contracts-documentation/implementations/erc-20-pay/rmrkequippablelazyminterc20.md)
 * You can refer to the `RMRKEquippable` source code [here](https://github.com/rmrk-team/evm/blob/master/contracts/RMRK/equippable/RMRKEquippable.sol)
 
 In order to import the `RMRKEquippable` into your smart contract, you can import it from `@rmrk-team/evm-contracts`:
@@ -91,7 +91,7 @@ The `RMRKMinifiedEquippable` is considered the merged equippable RMRK lego compo
 
 `RMRKMinifiedEquippable` provides the minimal implementation of RMRK equippable lego composite, also known as ERC-6220. It allows tokens to be equipped into other tokens. In addition to the Equippable smart contract, you also need to set up the RMRK catalog lego.
 
-* You can refer to the `RMRKMinifiedEquippable` documentation [here](../evm-contracts-documentation/rmrk/equippable/rmrkminifiedequippable.md)
+* You can refer to the `RMRKMinifiedEquippable` documentation [here](../evm-contracts-documentation/rmrk/equippable-1/rmrkminifiedequippable.md)
 * You can refer to the `RMRKMinifiedEquippable` source code [here](https://github.com/rmrk-team/evm/blob/master/contracts/RMRK/equippable/RMRKMinifiedEquippable.sol)
 
 In order to import the `RMRKMinifiedEquippable` into your smart contract, you can import it from `@rmrk-team/evm-contracts`:
@@ -109,230 +109,153 @@ In order to import the RMRKCatalog into your smart contract, you can import it f
 import "@rmrk-team/evm-contracts/contracts/RMRK/catalog/RMRKCatalog.sol";
 ```
 
-#### RMRKExternalEquip & RMRKNestableExternalEquip
-
-{% hint style="info" %}
-The `RMRKExternalEquip` and `RMRKNestableExternalEquip` are considered the split equippable RMRK lego composite as it uses three smart contracts (External Equippable, Nestable External Equippable and Core) to provide the full Equippable capabilities. This means that there are more smart contracts to manage, but there is also more space for customization.
-{% endhint %}
-
-`RMRKExternalEquip` provides the equipping part of the implementation of RMRK equippable lego composite, also known as ERC-6220. It allows tokens to be equipped into other tokens. In addition to the External Equippable smart contract, you also need to set up the Nestable External Equip and RMRK catalog lego.
-
-* You can refer to the `RMRKExternalEquip` documentation [here](../evm-contracts-documentation/rmrk/equippable/rmrkexternalequip.md)
-* You can refer to the `RMRKExternalEquip` source code [here](https://github.com/rmrk-team/evm/blob/master/contracts/RMRK/equippable/RMRKExternalEquip.sol)
-
-In order to import the `RMRKMinifiedEquippable` into your smart contract, you can import it from `@rmrk-team/evm-contracts`:
-
-```solidity
-import "@rmrk-team/evm-contracts/contracts/RMRK/equippable/RMRKExternalEquip.sol";
-```
-
-`RMRKNestableExternalEquip` provides the nesting part of the implementation of RMRK equippable lego composite, also known as ERC-6220. It allows tokens to be nested into other tokens to be equipped.
-
-* You can refer to the `RMRKNestableExternalEquip` documentation [here](../evm-contracts-documentation/rmrk/equippable/rmrknestableexternalequip.md)
-* You can refer to the `RMRKNestableExternalEquip` source code [here](https://github.com/rmrk-team/evm/blob/master/contracts/RMRK/equippable/IRMRKNestableExternalEquip.sol)
-
-```solidity
-import "@rmrk-team/evm-contracts/contracts/RMRK/equippable/RMRKNestablelolExternalEquip.sol";
-```
-
-* You can refer to the `RMRKCatalog` documentation [here](../evm-contracts-documentation/rmrk/catalog/rmrkcatalog.md)
-* You can refer to the `RMRKCatalog` source code [here](https://github.com/rmrk-team/evm/blob/master/contracts/RMRK/catalog/RMRKCatalog.sol)
-
-In order to import the `RMRKMinifiedEquippable` into your smart contract, you can import it from `@rmrk-team/evm-contracts`:
-
-```solidity
-import "@rmrk-team/evm-contracts/contracts/RMRK/equippable/RMRKExternalEquip.sol";
-```
-
-In order to import the RMRKCatalog into your smart contract, you can import it from `@rmrk-team/evm-contracts`:
-
-```solidity
-import "@rmrk-team/evm-contracts/contracts/RMRK/catalog/RMRKCatalog.sol";
-```
-
 ### Ready-to-use Implementation
 
 There is a number of ready-to-use implementation smart contracts available. Each of the implementations also has three variations:
 
-* The native token pay implementations are designed around minting being paid by the native token of the chain to which the smart contract is deployed.
-* The ERC-20 pay implementations are designed to support paying for token minting using ERC-20 tokens.
+* The lazy mint native implementations are designed around minting being paid by the native token of the chain to which the smart contract is deployed.
+* The lazy mint ERC-20 implementations are designed to support paying for token minting using ERC-20 tokens.
 * The premint implementations are designed for minting to be done by the issuer and distributed later.
 
 #### Nestable
 
-The `RMRKNestableImpl` provides a ready-to-use native token pay implementation of RMRK nestable lego, also known as the [ERC-6059](https://eips.ethereum.org/EIPS/eip-6059) allowing NFTs to be nested into other NFTs.
+The `RMRKNestableLazyMintNative` provides a ready-to-use native token pay implementation of RMRK nestable lego, also known as the [ERC-6059](https://eips.ethereum.org/EIPS/eip-6059) allowing NFTs to be nested into other NFTs.
 
-* You can refer to the `RMRKNestableImpl` documentation [here](../evm-contracts-documentation/implementations/native-token-pay/rmrknestableimpl.md)
-* You can refer to the `RMRKNestableImpl` source code [here](https://github.com/rmrk-team/evm/blob/master/contracts/implementations/nativeTokenPay/RMRKNestableImpl.sol)
+* You can refer to the `RMRKNestableLazyMintNative` documentation [here](../evm-contracts-documentation/implementations/native-token-pay/rmrknestablelazymintnative.md)
+* You can refer to the `RMRKNestableLazyMintNative` source code [here](https://github.com/rmrk-team/evm/blob/master/contracts/implementations/lazyMintNative/RMRKNestableLazyMintNative.sol)
 
 In order to import the `RMRKNestableImpl` into your smart contract, you can import it from `@rmrk-team/evm-contracts`:
 
 ```solidity
-import "@rmrk-team/evm-contracts/contracts/implementations/nativeTokenPay/RMRKNestableImpl.sol";
+import "@rmrk-team/evm-contracts/contracts/implementations/lazyMintNative/RMRKNestableLazyMintNative.sol";
 ```
 
-The `RMRKNestableImplErc20Pay` provides a ready-to-use ERC-20 pay implementation of RMRK nestable lego, also known as the [ERC-6059](https://eips.ethereum.org/EIPS/eip-6059) allowing NFTs to be nested into other NFTs.
+The `RMRKNestableLazyMintErc20` provides a ready-to-use ERC-20 pay implementation of RMRK nestable lego, also known as the [ERC-6059](https://eips.ethereum.org/EIPS/eip-6059) allowing NFTs to be nested into other NFTs.
 
-* You can refer to the `RMRKNestableImplErc20Pay` documentation [here](../evm-contracts-documentation/implementations/erc-20-pay/rmrknestableimplerc20pay.md)
-* You can refer to the `RMRKNestableImplErc20Pay` source code [here](https://github.com/rmrk-team/evm/blob/master/contracts/implementations/erc20Pay/RMRKNestableImplErc20Pay.sol)
+* You can refer to the `RMRKNestableLazyMintErc20` documentation [here](../evm-contracts-documentation/implementations/erc-20-pay/rmrknestablelazyminterc20soulbound.md)
+* You can refer to the `RMRKNestableLazyMintErc20` source code [here](https://github.com/rmrk-team/evm/blob/master/contracts/implementations/lazyMintErc20/RMRKNestableLazyMintErc20.sol)
 
-In order to import the `RMRKNestableImplErc20Pay` into your smart contract, you can import it from `@rmrk-team/evm-contracts`:
+In order to import the `RMRKNestablelazyMintErc20` into your smart contract, you can import it from `@rmrk-team/evm-contracts`:
 
 ```solidity
-import "@rmrk-team/evm-contracts/contracts/implementations/erc20pay/RMRKNestableImplErc20Pay.sol";
+import "@rmrk-team/evm-contracts/contracts/implementations/lazyMintErc20/RMRKNestableLazyMintErc20.sol";
 ```
 
-The `RMRKNestableImplPreMint` provides a ready-to-use premint implementation of RMRK nestable lego, also known as the [ERC-6059](https://eips.ethereum.org/EIPS/eip-6059) allowing NFTs to be nested into other NFTs.
+The `RMRKNestablePreMint` provides a ready-to-use premint implementation of RMRK nestable lego, also known as the [ERC-6059](https://eips.ethereum.org/EIPS/eip-6059) allowing NFTs to be nested into other NFTs.
 
-* You can refer to the `RMRKNestableImplPreMint` documentation [here](../evm-contracts-documentation/implementations/premint/rmrknestableimplpremint.md)
-* You can refer to the `RMRKNestableImplPreMint` source code [here](https://github.com/rmrk-team/evm/blob/master/contracts/implementations/premint/RMRKNestableImplPreMint.sol)
+* You can refer to the `RMRKNestablePreMint` documentation [here](../evm-contracts-documentation/implementations/premint/rmrknestablepremint.md)
+* You can refer to the `RMRKNestablePreMint` source code [here](https://github.com/rmrk-team/evm/blob/master/contracts/implementations/premint/RMRKNestablePreMint.sol)
 
 In order to import the `RMRKNestableImplPreMint` into your smart contract, you can import it from `@rmrk-team/evm-contracts`:
 
 ```solidity
-import "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKNestableImplPreMint.sol";
+import "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKNestablePreMint.sol";
 ```
 
 #### MultiAsset
 
-The `RMRKMultiAssetImpl` provides a ready-to-use native token pay implementation of RMRK multi-asset lego, also known as the [ERC-5773](https://eips.ethereum.org/EIPS/eip-5773) allowing NFTs to have multiple assets.
+The `RMRKMultiAssetLazyMintNative` provides a ready-to-use native token pay implementation of RMRK multi-asset lego, also known as the [ERC-5773](https://eips.ethereum.org/EIPS/eip-5773) allowing NFTs to have multiple assets.
 
-* You can refer to the `RMRKMultiAssetImpl` documentation [here](../evm-contracts-documentation/implementations/native-token-pay/rmrkmultiassetimpl.md)
-* You can refer to the `RMRKMultiAssetImpl` source code [here](https://github.com/rmrk-team/evm/blob/master/contracts/implementations/nativeTokenPay/RMRKMultiAssetImpl.sol)
+* You can refer to the `RMRKMultiAssetLazyMintNative` documentation [here](../evm-contracts-documentation/implementations/native-token-pay/rmrkmultiassetlazymintnative.md)
+* You can refer to the `RMRKMultiAssetLazyMintNative` source code [here](https://github.com/rmrk-team/evm/blob/master/contracts/implementations/lazyMintNative/RMRKMultiAssetLazyMintNative.sol)
 
-In order to import the `RMRKMultiAssetImpl` into your smart contract, you can import it from `@rmrk-team/evm-contracts`:
+In order to import the `RMRKMultiAssetLazyMintNative` into your smart contract, you can import it from `@rmrk-team/evm-contracts`:
 
 ```solidity
-import "@rmrk-team/evm-contracts/contracts/implementations/nativeTokenPay/RMRKMultiAssetImpl.sol";
+import "@rmrk-team/evm-contracts/contracts/implementations/lazyMintNative/RMRKMultiAssetLazyMintNative.sol";
 ```
 
-The `RMRKMultiAssetImplErc20Pay` provides a ready-to-use ERC-20 pay implementation of RMRK multi-asset lego, also known as the [ERC-5773](https://eips.ethereum.org/EIPS/eip-5773) allowing NFTs to have multiple assets.
+The `RMRKMultiAssetLazyMintErc20` provides a ready-to-use ERC-20 pay implementation of RMRK multi-asset lego, also known as the [ERC-5773](https://eips.ethereum.org/EIPS/eip-5773) allowing NFTs to have multiple assets.
 
-* You can refer to the `RMRKMultiAssetImplErc20Pay` documentation [here](../evm-contracts-documentation/implementations/erc-20-pay/rmrkmultiassetimplerc20pay.md)
-* You can refer to the `RMRKMultiAssetImplErc20Pay` source code [here](https://github.com/rmrk-team/evm/blob/master/contracts/implementations/erc20Pay/RMRKMultiAssetImplErc20Pay.sol)
+* You can refer to the `RMRKMultiAssetLazyMintErc20` documentation [here](../evm-contracts-documentation/implementations/erc-20-pay/rmrkmultiassetlazyminterc20.md)
+* You can refer to the `RMRKMultiAssetLazyMintErc20` source code [here](https://github.com/rmrk-team/evm/blob/master/contracts/implementations/lazyMintErc20/RMRKMultiAssetLazyMintErc20.sol)
 
-In order to import the `RMRKMultiAssetImplErc20Pay` into your smart contract, you can import it from `@rmrk-team/evm-contracts`:
+In order to import the `RMRKMultiAssetLazyMintErc20` into your smart contract, you can import it from `@rmrk-team/evm-contracts`:
 
 ```solidity
-import "@rmrk-team/evm-contracts/contracts/implementations/erc20pay/RMRKMultiAssetImplErc20Pay.sol";
+import "@rmrk-team/evm-contracts/contracts/implementations/LazyMintErc20/RMRKMultiAssetLazyMintErc20.sol";
 ```
 
-The `RMRKMultiAssetImplPreMint` provides a ready-to-use premint implementation of RMRK multi-asset lego, also known as the [ERC-5773](https://eips.ethereum.org/EIPS/eip-5773) allowing NFTs to have multiple assets.
+The `RMRKMultiAssetPreMint` provides a ready-to-use premint implementation of RMRK multi-asset lego, also known as the [ERC-5773](https://eips.ethereum.org/EIPS/eip-5773) allowing NFTs to have multiple assets.
 
-* You can refer to the `RMRKMultiAssetImplPreMint` documentation [here](../evm-contracts-documentation/implementations/premint/rmrkmultiassetimplpremint.md)
-* You can refer to the `RMRKMultiAssetImplPreMint` source code [here](https://github.com/rmrk-team/evm/blob/master/contracts/implementations/premint/RMRKMultiAssetImplPreMint.sol)
+* You can refer to the `RMRKMultiAssetPreMint` documentation [here](../evm-contracts-documentation/implementations/premint/rmrkmultiassetpremint.md)
+* You can refer to the `RMRKMultiAssetPreMint` source code [here](https://github.com/rmrk-team/evm/blob/master/contracts/implementations/premint/RMRKMultiAssetPreMint.sol)
 
-In order to import the `RMRKMultiAssetImplPreMint` into your smart contract, you can import it from `@rmrk-team/evm-contracts`:
+In order to import the `RMRKMultiAssetPreMint` into your smart contract, you can import it from `@rmrk-team/evm-contracts`:
 
 ```solidity
-import "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetImplPreMint.sol";
+import "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol";
 ```
 
 #### Nestable with MultiAsset
 
-The `RMRKNestableMultiAssetImpl` provides a ready-to-use native token pay implementation of RMRK nestable and multi-asset legos, also known as the [ERC-6059](https://eips.ethereum.org/EIPS/eip-6059) and [ERC-5773](https://eips.ethereum.org/EIPS/eip-5773) allowing NFTs to be nested into after other NFTs and to have multiple assets.
+The `RMRKNestableMultiAssetLazyMintNative` provides a ready-to-use native token pay implementation of RMRK nestable and multi-asset legos, also known as the [ERC-6059](https://eips.ethereum.org/EIPS/eip-6059) and [ERC-5773](https://eips.ethereum.org/EIPS/eip-5773) allowing NFTs to be nested into after other NFTs and to have multiple assets.
 
-* You can refer to the `RMRKNestableMultiAssetImpl` documentation [here](../evm-contracts-documentation/implementations/native-token-pay/rmrknestablemultiassetimpl.md)
-* You can refer to the `RMRKNestableMultiAssetImpl` source code [here](https://github.com/rmrk-team/evm/blob/master/contracts/implementations/nativeTokenPay/RMRKNestableMultiAssetImpl.sol)
+* You can refer to the `RMRKNestableMultiAssetLazyMintNative` documentation [here](../evm-contracts-documentation/implementations/native-token-pay/rmrknestablemultiassetlazymintnative.md)
+* You can refer to the `RMRKNestableMultiAssetLazyMintNative` source code [here](https://github.com/rmrk-team/evm/blob/master/contracts/implementations/lazyMintNative/RMRKNestableMultiAssetLazyMintNative.sol)
 
-In order to import the `RMRKNestableMultiAssetImpl` into your smart contract, you can import it from `@rmrk-team/evm-contracts`:
-
-```solidity
-import "@rmrk-team/evm-contracts/contracts/implementations/nativeTokenPay/RMRKNestableMultiAssetImpl.sol";
-```
-
-The `RMRKNestableMultiAssetImplErc20Pay` provides a ready-to-use ERC-20 pay implementation of RMRK nestable and multi-asset legos, also known as the [ERC-6059](https://eips.ethereum.org/EIPS/eip-6059) and [ERC-5773](https://eips.ethereum.org/EIPS/eip-5773) allowing NFTs to be nested into after other NFTs and to have multiple assets.
-
-* You can refer to the `RMRKNestableMultiAssetImplErc20Pay` documentation [here](../evm-contracts-documentation/implementations/erc-20-pay/rmrknestablemultiassetimplerc20pay.md)
-* You can refer to the `RMRKNestableMultiAssetImplErc20Pay` source code [here](https://github.com/rmrk-team/evm/blob/master/contracts/implementations/erc20Pay/RMRKNestableMultiAssetImplErc20Pay.sol)
-
-In order to import the `RMRKNestableMultiAssetImplErc20Pay` into your smart contract, you can import it from `@rmrk-team/evm-contracts`:
+In order to import the `RMRKNestableMultiAssetLazyMintNative` into your smart contract, you can import it from `@rmrk-team/evm-contracts`:
 
 ```solidity
-import "@rmrk-team/evm-contracts/contracts/implementations/erc20pay/RMRKNestableMultiAssetImplErc20Pay.sol";
+import "@rmrk-team/evm-contracts/contracts/implementations/lazyMintNative/RMRKNestableMultiAssetLazyMintNative.sol";
 ```
 
-The `RMRKNestableMultiAssetImplPreMint` provides a ready-to-use premint implementation of RMRK nestable and multi-asset legos, also known as the [ERC-6059](https://eips.ethereum.org/EIPS/eip-6059) and [ERC-5773](https://eips.ethereum.org/EIPS/eip-5773) allowing NFTs to be nested into after other NFTs and to have multiple assets.
+The `RMRKNestableMultiAssetLazyMintErc20` provides a ready-to-use ERC-20 pay implementation of RMRK nestable and multi-asset legos, also known as the [ERC-6059](https://eips.ethereum.org/EIPS/eip-6059) and [ERC-5773](https://eips.ethereum.org/EIPS/eip-5773) allowing NFTs to be nested into after other NFTs and to have multiple assets.
 
-* You can refer to the `RMRKNestableMultiAssetImplPreMint` documentation [here](../evm-contracts-documentation/implementations/premint/rmrknestablemultiassetimplpremint.md)
-* You can refer to the `RMRKNestableMultiAssetImplPreMint` source code [here](https://github.com/rmrk-team/evm/blob/master/contracts/implementations/premint/RMRKNestableMultiAssetImplPreMint.sol)
+* You can refer to the `RMRKNestableMultiAssetLazyMintErc20` documentation [here](../evm-contracts-documentation/implementations/erc-20-pay/rmrknestablemultiassetlazyminterc20.md)
+* You can refer to the `RMRKNestableMultiAssetLazyMintErc20` source code [here](https://github.com/rmrk-team/evm/blob/master/contracts/implementations/lazyMintErc20/RMRKNestableMultiAssetLazyMintErc20.sol)
 
-In order to import the `RMRKNestableMultiAssetImplPreMint` into your smart contract, you can import it from `@rmrk-team/evm-contracts`:
+In order to import the `RMRKNestableMultiAssetLazyMintErc20` into your smart contract, you can import it from `@rmrk-team/evm-contracts`:
 
 ```solidity
-import "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKNestableMultiAssetImplPreMint.sol";
+import "@rmrk-team/evm-contracts/contracts/implementations/LazyMintErc20/RMRKNestableMultiAssetLazyMintErc20.sol";
 ```
 
-#### Merged equippable
+The `RMRKNestableMultiAssetPreMint` provides a ready-to-use premint implementation of RMRK nestable and multi-asset legos, also known as the [ERC-6059](https://eips.ethereum.org/EIPS/eip-6059) and [ERC-5773](https://eips.ethereum.org/EIPS/eip-5773) allowing NFTs to be nested into after other NFTs and to have multiple assets.
 
-The `RMRKEquippableImpl` provides a ready-to-use native token pay implementation of RMRK equippable lego, also known as the [ERC-6220](https://eips.ethereum.org/EIPS/eip-6220) allowing NFTs to be equipped into other NFTs.
+* You can refer to the `RMRKNestableMultiAssetPreMint` documentation [here](../evm-contracts-documentation/implementations/premint/rmrknestablemultiassetpremint.md)
+* You can refer to the `RMRKNestableMultiAssetPreMint` source code [here](https://github.com/rmrk-team/evm/blob/master/contracts/implementations/premint/RMRKNestableMultiAssetPreMint.sol)
 
-* You can refer to the `RMRKEquippableImpl` documentation [here](../evm-contracts-documentation/implementations/native-token-pay/rmrkequippableimpl.md)
-* You can refer to the `RMRKEquippableImpl` source code [here](https://github.com/rmrk-team/evm/blob/master/contracts/implementations/nativeTokenPay/RMRKEquippableImpl.sol)
-
-In order to import the `RMRKEquippableImpl` into your smart contract, you can import it from `@rmrk-team/evm-contracts`:
+In order to import the `RMRKNestableMultiAssetPreMint` into your smart contract, you can import it from `@rmrk-team/evm-contracts`:
 
 ```solidity
-import "@rmrk-team/evm-contracts/contracts/implementations/nativeTokenPay/RMRKEqippableImpl.sol";
+import "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKNestableMultiAssetPreMint.sol";
 ```
 
-The `RMRKNestableImplErc20Pay` provides a ready-to-use ERC-20 pay implementation of RMRK equippable lego, also known as the [ERC-6220](https://eips.ethereum.org/EIPS/eip-6220) allowing NFTs to be equipped into other NFTs.
+#### Equippable
 
-* You can refer to the `RMRKEquippableImplErc20Pay` documentation [here](../evm-contracts-documentation/implementations/erc-20-pay/rmrkequippableimplerc20pay.md)
-* You can refer to the `RMRKEquippableImplErc20Pay` source code [here](https://github.com/rmrk-team/evm/blob/master/contracts/implementations/erc20Pay/RMRKEquippableImplErc20Pay.sol)
+The `RMRKEquippableLazyMintNative` provides a ready-to-use native token pay implementation of RMRK equippable lego, also known as the [ERC-6220](https://eips.ethereum.org/EIPS/eip-6220) allowing NFTs to be equipped into other NFTs.
 
-In order to import the `RMRKEquippableImplErc20Pay` into your smart contract, you can import it from `@rmrk-team/evm-contracts`:
+* You can refer to the `RMRKEquippableLazyMintNative` documentation [here](../evm-contracts-documentation/implementations/native-token-pay/rmrkequippablelazymintnative.md)
+* You can refer to the `RMRKEquippableLazyMintNative` source code [here](https://github.com/rmrk-team/evm/blob/master/contracts/implementations/lazyMintNative/RMRKEquippableLazyMintNative.sol)
+
+In order to import the `RMRKEquippableLazyMintNative` into your smart contract, you can import it from `@rmrk-team/evm-contracts`:
 
 ```solidity
-import "@rmrk-team/evm-contracts/contracts/implementations/erc20pay/RMRKEquippableImplErc20Pay.sol";
+import "@rmrk-team/evm-contracts/contracts/implementations/lazyMintNative/RMRKEqippableLazyMintNative.sol";
 ```
 
-The `RMRKEquippableImplPreMint` provides a ready-to-use premint implementation of RMRK equippable lego, also known as the [ERC-6220](https://eips.ethereum.org/EIPS/eip-6220) allowing NFTs to be equipped into other NFTs.
+The `RMRKEquippableLazyMintErc20` provides a ready-to-use ERC-20 pay implementation of RMRK equippable lego, also known as the [ERC-6220](https://eips.ethereum.org/EIPS/eip-6220) allowing NFTs to be equipped into other NFTs.
 
-* You can refer to the `RMRKEquippableImplPreMint` documentation [here](../evm-contracts-documentation/implementations/premint/rmrkequippableimplpremint.md)
-* You can refer to the `RMRKEquippableImplPreMint` source code [here](https://github.com/rmrk-team/evm/blob/master/contracts/implementations/premint/RMRKEquippableImplPreMint.sol)
+* You can refer to the `RMRKEquippableLazyMintErc20` documentation [here](../evm-contracts-documentation/implementations/erc-20-pay/rmrkequippablelazyminterc20.md)
+* You can refer to the `RMRKEquippableLazyMintErc20` source code [here](https://github.com/rmrk-team/evm/blob/master/contracts/implementations/lazyMintErc20/RMRKEquippableLazyMintErc20.sol)
 
-In order to import the `RMRKEquippableImplPreMint` into your smart contract, you can import it from `@rmrk-team/evm-contracts`:
+In order to import the `RMRKEquippableLazyMintErc20` into your smart contract, you can import it from `@rmrk-team/evm-contracts`:
 
 ```solidity
-import "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKEquippableImplPreMint.sol";
+import "@rmrk-team/evm-contracts/contracts/implementations/lazyMintErc20/RMRKEquippableLazyMintErc20.sol";
 ```
 
-{% hint style="info" %}
-Please remember that any implementation of Equippable lego requires Catalog as well.
-{% endhint %}
+The `RMRKEquippablePreMint` provides a ready-to-use premint implementation of RMRK equippable lego, also known as the [ERC-6220](https://eips.ethereum.org/EIPS/eip-6220) allowing NFTs to be equipped into other NFTs.
 
-* You can refer to the `RMRKCatalogImpl` documentation [here](../evm-contracts-documentation/implementations/rmrkcatalogimpl.md)
-* You can refer to the `RMRKCatalogImpl` source code [here](https://github.com/rmrk-team/evm/blob/master/contracts/implementations/RMRKCatalogImpl.sol)
+* You can refer to the `RMRKEquippablePreMint` documentation [here](../evm-contracts-documentation/implementations/premint/rmrkequippablepremint.md)
+* You can refer to the `RMRKEquippablePreMint` source code [here](https://github.com/rmrk-team/evm/blob/master/contracts/implementations/premint/RMRKEquippablePreMint.sol)
 
-In order to import the `RMRKCatalogImpl` into your smart contract, you can import it from `@rmrk-team/evm-contracts`:
+In order to import the `RMRKEquippablePreMint` into your smart contract, you can import it from `@rmrk-team/evm-contracts`:
 
 ```solidity
-import "@rmrk-team/evm-contracts/contracts/implementations/RMRKCatalogImpl.sol";l
+import "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKEquippablePreMint.sol";
 ```
-
-#### Split equippable
-
-The `RMRKExternalEquipImpl` and `RMRKNestableExternalEquipImpl` provide a ready-to-use native token pay implementation of RMRK equippable lego, also known as the [ERC-6220](https://eips.ethereum.org/EIPS/eip-6220) allowing NFTs to be equipped into other NFTs.
-
-* You can refer to the `RMRKExternalEquipImpl` documentation [here](../evm-contracts-documentation/implementations/native-token-pay/rmrkexternalequipimpl.md)
-* You can refer to the `RMRKExternalEquipImpl` source code [here](https://github.com/rmrk-team/evm/blob/master/contracts/implementations/nativeTokenPay/RMRKExternalEquipImpl.sol)
-* You can refer to the `RMRKNestableExternalEquipImpl` documentation [here](../evm-contracts-documentation/implementations/native-token-pay/rmrknestableexternalequipimpl.md)
-* You can refer to the `RMRKNestableExternalEquipImpl` source code [here](https://github.com/rmrk-team/evm/blob/master/contracts/implementations/nativeTokenPay/RMRKNestableExternalEquipImpl.sol)
-
-In order to import the `RMRKExternalEquipImpl` into your smart contract, you can import it from `@rmrk-team/evm-contracts`:
-
-```solidity
-import "@rmrk-team/evm-contracts/contracts/implementations/nativeTokenPay/RMRKExternalEquipImpl.sol";
-```
-
-In order to import the `RMRKNestableExternalImpl` into your smart contract, you can import it from `@rmrk-team/evm-contracts`:
-
-```solidity
-import "@rmrk-team/evm-contracts/contracts/implementations/nativeTokenPay/RMRKNestableExternalEquipImpl.sol";
-```
-
-The ready-to-use ERC-20 pay and premint implementations of RMRK equippable lego are not available as the contract size would be too big in order to be deployed.
 
 {% hint style="info" %}
 Please remember that any implementation of Equippable lego requires Catalog as well.

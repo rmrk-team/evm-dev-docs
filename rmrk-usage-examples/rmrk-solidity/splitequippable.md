@@ -12,6 +12,10 @@ The `ExternalEquippable` composite of RMRK legos uses the `Nestable`, `MultiAsse
 **NOTE: To dig deeper into the Catalog and Equippable RMRK legos, you can also refer to the** [**ERC-6220**](https://eips.ethereum.org/EIPS/eip-6220) **that we published.**
 {% endhint %}
 
+{% hint style="danger" %}
+The usage examples of package **v2.0.0** are coming soon. The current examples are of the previous version.
+{% endhint %}
+
 ## Abstract
 
 In this tutorial we will examine the SplitEquippable composite of RMRK blocks:

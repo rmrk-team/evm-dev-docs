@@ -57,6 +57,33 @@ _The full `FixedPart` struct looks like this: \[ partId, z, metadataURI ]The ful
 | fixedParts        | RMRKEquipRenderUtils.FixedPart\[]        | An array of fixed parts respresented by the `FixedPart` structs present on the asset      |
 | slotParts         | RMRKEquipRenderUtils.EquippedSlotPart\[] | An array of slot parts represented by the `EquippedSlotPart` structs present on the asset |
 
+### directOwnerOfWithParentsPerspective
+
+```solidity
+function directOwnerOfWithParentsPerspective(address collection, uint256 tokenId) external view returns (address directOwner, uint256 ownerId, bool isNFT, bool inParentsActiveChildren, bool inParentsPendingChildren)
+```
+
+Used to retrieve the immediate owner of the given token, and whether it is on the parent's active or pending children list.
+
+_If the immediate owner is not an NFT, the function returns false for both `inParentsActiveChildren` and `inParentsPendingChildren`._
+
+#### Parameters
+
+| Name       | Type    | Description                                      |
+| ---------- | ------- | ------------------------------------------------ |
+| collection | address | Address of the token's collection smart contract |
+| tokenId    | uint256 | ID of the token                                  |
+
+#### Returns
+
+| Name                     | Type    | Description                                                                           |
+| ------------------------ | ------- | ------------------------------------------------------------------------------------- |
+| directOwner              | address | Address of the given token's owner                                                    |
+| ownerId                  | uint256 | The ID of the parent token. Should be `0` if the owner is an externally owned account |
+| isNFT                    | bool    | The boolean value signifying whether the owner is an NFT or not                       |
+| inParentsActiveChildren  | bool    | A boolean value signifying whether the token is in the parent's active children list  |
+| inParentsPendingChildren | bool    | A boolean value signifying whether the token is in the parent's pending children list |
+
 ### equippedChildrenOf
 
 ```solidity
@@ -364,30 +391,6 @@ _The full `ExtendedPendingAsset` looks like this: \[ ID, equippableGroupId, acce
 | ---- | -------------------------------------------- | ------------------------------------------------------------ |
 | \_0  | RMRKEquipRenderUtils.ExtendedPendingAsset\[] | An array of ExtendedPendingAssets present on the given token |
 
-### getPaginatedMintedIds
-
-```solidity
-function getPaginatedMintedIds(address target, uint256 pageStart, uint256 pageSize) external view returns (uint256[] page)
-```
-
-Used to get a list of existing token IDs in the range between `pageStart` and `pageSize`.
-
-_It is not optimized to avoid checking IDs out of max supply nor total supply, since this is not meant to be used during transaction execution; it is only meant to be used as a getter.The resulting array might be smaller than the given `pageSize` since no-existent IDs are not included._
-
-#### Parameters
-
-| Name      | Type    | Description                                                 |
-| --------- | ------- | ----------------------------------------------------------- |
-| target    | address | Address of the collection smart contract of the given token |
-| pageStart | uint256 | The first ID to check                                       |
-| pageSize  | uint256 | The number of IDs to check                                  |
-
-#### Returns
-
-| Name | Type       | Description                            |
-| ---- | ---------- | -------------------------------------- |
-| page | uint256\[] | An array of IDs of the existing tokens |
-
 ### getParent
 
 ```solidity
@@ -567,6 +570,49 @@ Used to retrieve the metadata URI of the specified token's asset with the highes
 | -------- | --------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
 | metadata | string\[] | An array of strings with the top asset metadata for each of the given tokens, in the same order as the tokens passed in the `tokenIds` input array |
 
+### getTotalDescendants
+
+```solidity
+function getTotalDescendants(address collection, uint256 tokenId) external view returns (uint256 totalDescendants, bool hasMoreThanOneLevelOfNesting_)
+```
+
+Used to retrieve the total number of descendants of the given token and whether it has more than one level of nesting.
+
+#### Parameters
+
+| Name       | Type    | Description                                      |
+| ---------- | ------- | ------------------------------------------------ |
+| collection | address | Address of the token's collection smart contract |
+| tokenId    | uint256 | ID of the token                                  |
+
+#### Returns
+
+| Name                           | Type    | Description                                                                           |
+| ------------------------------ | ------- | ------------------------------------------------------------------------------------- |
+| totalDescendants               | uint256 | The total number of descendants of the given token                                    |
+| hasMoreThanOneLevelOfNesting\_ | bool    | A boolean value indicating whether the given token has more than one level of nesting |
+
+### hasMoreThanOneLevelOfNesting
+
+```solidity
+function hasMoreThanOneLevelOfNesting(address collection, uint256 tokenId) external view returns (bool)
+```
+
+Used to retrieve whether a token has more than one level of nesting.
+
+#### Parameters
+
+| Name       | Type    | Description                                      |
+| ---------- | ------- | ------------------------------------------------ |
+| collection | address | Address of the token's collection smart contract |
+| tokenId    | uint256 | ID of the token                                  |
+
+#### Returns
+
+| Name | Type | Description                                                                           |
+| ---- | ---- | ------------------------------------------------------------------------------------- |
+| \_0  | bool | A boolean value indicating whether the given token has more than one level of nesting |
+
 ### isAssetEquipped
 
 ```solidity
@@ -593,6 +639,29 @@ Used to verify whether a given child asset is equipped into a given parent slot.
 | ---------- | ---- | ---------------------------------------------------------------------------------------- |
 | isEquipped | bool | Boolean value signifying whether the child asset is equipped into the parent slot or not |
 
+### isTokenRejectedOrAbandoned
+
+```solidity
+function isTokenRejectedOrAbandoned(address collection, uint256 tokenId) external view returns (bool isRejectedOrAbandoned)
+```
+
+Used to identify if the given token is rejected or abandoned. That is, it's parent is an NFT but this token is neither on the parent's active nor pending children list.
+
+_Returns false if the immediate owner is not an NFT._
+
+#### Parameters
+
+| Name       | Type    | Description                                      |
+| ---------- | ------- | ------------------------------------------------ |
+| collection | address | Address of the token's collection smart contract |
+| tokenId    | uint256 | ID of the token                                  |
+
+#### Returns
+
+| Name                  | Type | Description                                |
+| --------------------- | ---- | ------------------------------------------ |
+| isRejectedOrAbandoned | bool | Whether the token is rejected or abandoned |
+
 ### splitSlotAndFixedParts
 
 ```solidity
@@ -615,6 +684,53 @@ Used to split slot and fixed parts.
 | slotPartIds  | uint64\[] | An array of IDs of the `Slot` parts included in the `allPartIds`  |
 | fixedPartIds | uint64\[] | An array of IDs of the `Fixed` parts included in the `allPartIds` |
 
+### validateChildOf
+
+```solidity
+function validateChildOf(address parentAddress, address childAddress, uint256 parentId, uint256 childId) external view returns (bool)
+```
+
+Used to validate whether the specified child token is owned by a given parent token.
+
+#### Parameters
+
+| Name          | Type    | Description                                             |
+| ------------- | ------- | ------------------------------------------------------- |
+| parentAddress | address | Address of the parent token's collection smart contract |
+| childAddress  | address | Address of the child token's collection smart contract  |
+| parentId      | uint256 | ID of the parent token                                  |
+| childId       | uint256 | ID of the child token                                   |
+
+#### Returns
+
+| Name | Type | Description                                                                            |
+| ---- | ---- | -------------------------------------------------------------------------------------- |
+| \_0  | bool | A boolean value indicating whether the child token is owned by the parent token or not |
+
+### validateChildrenOf
+
+```solidity
+function validateChildrenOf(address parentAddress, address[] childAddresses, uint256 parentId, uint256[] childIds) external view returns (bool, bool[])
+```
+
+Used to validate whether the specified child token is owned by a given parent token.
+
+#### Parameters
+
+| Name           | Type       | Description                                                       |
+| -------------- | ---------- | ----------------------------------------------------------------- |
+| parentAddress  | address    | Address of the parent token's collection smart contract           |
+| childAddresses | address\[] | An array of the child token's collection smart contract addresses |
+| parentId       | uint256    | ID of the parent token                                            |
+| childIds       | uint256\[] | An array of child token IDs to verify                             |
+
+#### Returns
+
+| Name | Type    | Description                                                                                                 |
+| ---- | ------- | ----------------------------------------------------------------------------------------------------------- |
+| \_0  | bool    | A boolean value indicating whether all of the child tokens are owned by the parent token or not             |
+| \_1  | bool\[] | An array of boolean values indicating whether each of the child tokens are owned by the parent token or not |
+
 ## Errors
 
 ### RMRKChildNotFoundInParent
@@ -624,6 +740,14 @@ error RMRKChildNotFoundInParent()
 ```
 
 Attempting to find the index of a child token on a parent which does not own it.
+
+### RMRKMismachedArrayLength
+
+```solidity
+error RMRKMismachedArrayLength()
+```
+
+Attempting to pass complementary arrays of different lengths
 
 ### RMRKNotComposableAsset
 

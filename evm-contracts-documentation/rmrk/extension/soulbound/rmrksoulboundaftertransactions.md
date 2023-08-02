@@ -8,20 +8,6 @@ Smart contract of the RMRK Soulbound module where transfers are allowed for a li
 
 ## Methods
 
-### VERSION
-
-```solidity
-function VERSION() external view returns (string)
-```
-
-Version of the @rmrk-team/evm-contracts package
-
-#### Returns
-
-| Name | Type   | Description |
-| ---- | ------ | ----------- |
-| \_0  | string | undefined   |
-
 ### getMaxNumberOfTransfers
 
 ```solidity
@@ -56,41 +42,29 @@ Gets the current number of transfer the specified token.
 | ---- | ------- | --------------------------------------- |
 | \_0  | uint256 | Number of the token's transfers to date |
 
-### isNonTransferable
+### isTransferable
 
 ```solidity
-function isNonTransferable(uint256 tokenId) external view returns (bool)
+function isTransferable(uint256 tokenId, address, address) external view returns (bool)
 ```
 
-Used to check whether the given token is non-transferable or not.
+Used to check whether the given token is transferable or not.
 
-_If this function returns `true`, the transfer of the token MUST revert executionIf the tokenId does not exist, this method MUST revert execution_
+_If this function returns `false`, the transfer of the token MUST revert execution.If the tokenId does not exist, this method MUST revert execution, unless the token is being checked for minting._
 
 #### Parameters
 
 | Name    | Type    | Description                   |
 | ------- | ------- | ----------------------------- |
 | tokenId | uint256 | ID of the token being checked |
+| \_1     | address | undefined                     |
+| \_2     | address | undefined                     |
 
 #### Returns
 
-| Name | Type | Description                                                          |
-| ---- | ---- | -------------------------------------------------------------------- |
-| \_0  | bool | Boolean value indicating whether the given token is non-transferable |
-
-### name
-
-```solidity
-function name() external view returns (string)
-```
-
-Used to retrieve the collection name.
-
-#### Returns
-
-| Name | Type   | Description            |
-| ---- | ------ | ---------------------- |
-| \_0  | string | Name of the collection |
+| Name | Type | Description                                                      |
+| ---- | ---- | ---------------------------------------------------------------- |
+| \_0  | bool | Boolean value indicating whether the given token is transferable |
 
 ### supportsInterface
 
@@ -111,20 +85,6 @@ _Returns true if this contract implements the interface defined by `interfaceId`
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | \_0  | bool | undefined   |
-
-### symbol
-
-```solidity
-function symbol() external view returns (string)
-```
-
-Used to retrieve the collection symbol.
-
-#### Returns
-
-| Name | Type   | Description              |
-| ---- | ------ | ------------------------ |
-| \_0  | string | Symbol of the collection |
 
 ## Events
 

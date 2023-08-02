@@ -8,6 +8,10 @@ description: RMRK Nestable lego with MultiAsset lego example.
 
 Nestable and MultiAsset RMRK legos can be used together to provide more utility to the NFT. To examine each separately, please refer to their respective examples.
 
+{% hint style="danger" %}
+The usage examples of package **v2.0.0** are coming soon. The current examples are of the previous version.
+{% endhint %}
+
 ## Abstract
 
 In this tutorial we will examine the joined operation of the Nestable and MultiAsset RMRK blocks using two examples:

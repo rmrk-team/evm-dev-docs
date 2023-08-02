@@ -18,6 +18,10 @@ npm install @rmrk-team/evm-contracts
 
 Once you have installed the `@rmrk-team/evm-contracts` dependency, you can refer to one of the samples residing in this section's pages. The versions starting with `Simple` keyword are ready to use; you can simply extend those for your own contracts and pass fixed or variable parameters to the constructor. The examples starting with `Advanced` keyword showcase the implementation where you have more freedom in implementing custom business logic. The available internal functions when building it are outlined within the examples.
 
+{% hint style="danger" %}
+The usage examples of package **v2.0.0** are coming soon. The current examples are of the previous version.
+{% endhint %}
+
 ## RMRK EVM implementation examples
 
 This section contains the examples of using RMRK legos to build your own smart contracts. Every example uses the `@rmrk-team/evm-contracts` dependency in order to implement the examples. Adding it allows you to easily include them in your own smart contracts.

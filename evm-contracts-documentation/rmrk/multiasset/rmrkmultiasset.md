@@ -8,6 +8,18 @@ Smart contract of the RMRK Multi asset module.
 
 ## Methods
 
+### RMRK\_INTERFACE
+
+```solidity
+function RMRK_INTERFACE() external view returns (bytes4)
+```
+
+#### Returns
+
+| Name | Type   | Description |
+| ---- | ------ | ----------- |
+| \_0  | bytes4 | undefined   |
+
 ### VERSION
 
 ```solidity
@@ -294,20 +306,6 @@ _See {setApprovalForAllForAssets}._
 | ---- | ---- | ------------------------------------------------------------------------------------------------ |
 | \_0  | bool | A boolean value indicating wehter the account we are checking has been granted the operator role |
 
-### name
-
-```solidity
-function name() external view returns (string)
-```
-
-Used to retrieve the collection name.
-
-#### Returns
-
-| Name | Type   | Description            |
-| ---- | ------ | ---------------------- |
-| \_0  | string | Name of the collection |
-
 ### ownerOf
 
 ```solidity
@@ -472,20 +470,6 @@ _Returns true if this contract implements the interface defined by `interfaceId`
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | \_0  | bool | undefined   |
-
-### symbol
-
-```solidity
-function symbol() external view returns (string)
-```
-
-Used to retrieve the collection symbol.
-
-#### Returns
-
-| Name | Type   | Description              |
-| ---- | ------ | ------------------------ |
-| \_0  | string | Symbol of the collection |
 
 ### transferFrom
 

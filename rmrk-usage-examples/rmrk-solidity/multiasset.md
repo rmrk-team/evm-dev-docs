@@ -18,6 +18,10 @@ Every RMRK NFT has zero or more assets. When it has zero assets, the metadata is
 **NOTE: To dig deeper into the MultiAsset RMRK lego, you can also refer to the** [**ERC-5773**](https://eips.ethereum.org/EIPS/eip-5773) **that we published.**
 {% endhint %}
 
+{% hint style="danger" %}
+The usage examples of package **v2.0.0** are coming soon. The current examples are of the previous version.
+{% endhint %}
+
 ## Abstract
 
 In this example we will examine the MultiAsset RMRK block using two examples:
