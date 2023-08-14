@@ -10,15 +10,11 @@ This section is meant to help give you a head-start with developing your project
 
 We designed a template repository containing all of the configurations and packages required for you to get started:
 
-{% embed url="https://github.com/rmrk-team/evm-template" %}
-RMRK EVM development template
-{% endembed %}
+{% @github-files/github-code-block url="https://github.com/rmrk-team/evm-template" %}
 
 If you intend to build your project on a `zkSync` network, you can use the `zksync` branch of the template:
 
-{% embed url="https://github.com/rmrk-team/evm-template/tree/zksync" %}
-RMRK zkSync EVM development template
-{% endembed %}
+{% @github-files/github-code-block url="https://github.com/rmrk-team/evm-template/tree/zksync" %}
 
 To use the template, you can use the `Use this template` button:
 
