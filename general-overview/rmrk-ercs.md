@@ -88,3 +88,15 @@ This proposal introduces the ability to prevent a token from being transferred f
 {% embed url="https://eips.ethereum.org/EIPS/eip-6454" %}
 ERC-6454: Minimalistic Non-Transferable NFTs
 {% endembed %}
+
+## ERC-7508: Dynamic On-Chain Token Attributes Repository
+
+This ERC standardizes on-cain storage, retrieval, and management of token attributes.
+
+The Public On-Chain Non-Fungible Token Attributes Repository standard provides the ability for [ERC-721](https://eips.ethereum.org/EIPS/eip-721) and [ERC-1155](https://eips.ethereum.org/EIPS/eip-1155) compatible tokens to store their attributes on-chain available to any external smart contract interacting with them.
+
+This proposal introduces the ability to assign attributes to NFTs in a public non-gated repository smart contract that is accessible at the same address in all of the networks. The repository smart contract is designed to be a common-good repository, meaning that it can be used by any ERC-721 or ERC-1155 compatible token.
+
+{% embed url="https://eips.ethereum.org/EIPS/eip-7508" %}
+ERC-7508: Dynamic On-Chain Token Attributes Repository
+{% endembed %}
