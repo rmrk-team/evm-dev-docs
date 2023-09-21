@@ -1,5 +1,5 @@
 ---
-description: A quick-start guide to using RMRK legos.
+description: Get started with developing using RMRK standards.
 ---
 
 # Getting started

@@ -17,6 +17,7 @@
 ## ⚙ Getting started
 
 * [Getting started](getting-started/getting-started.md)
+* [Quickstart](getting-started/quickstart.md)
 * [Which lego to use?](getting-started/which-lego-to-use.md)
 
 ## 🧑🏫 RMRK usage examples
