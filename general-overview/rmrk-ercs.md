@@ -65,6 +65,14 @@ Equipping a part into an NFT doesn’t generate a new token but rather adds anot
 ERC-6220: Composable NFTs utilizing Equippable Parts
 {% endembed %}
 
+{% hint style="info" %}
+There are two important terms when talking about ERC-6220: **composing** and **equipping**.\
+\
+**Composing** refers to the composition of a token using fixed parts. This allows tokens to be built from multiple pre-defined fixed parts from a catalog.\
+\
+**Equipping** refers to the augmentation of the token using slot parts. This allows for the modification of tokens by equipping child tokens into the slot parts from the catalog.
+{% endhint %}
+
 ## ERC-6381: Public Non-Fungible Token Emote Repository
 
 This ERC is the standardized implementation of Emotes RMRK extension.
