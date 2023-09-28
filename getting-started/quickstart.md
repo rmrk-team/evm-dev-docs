@@ -45,7 +45,7 @@ Using the Soulbound option makes all tokens non-transferable. Without additional
 
 ## Deploying your smart contract
 
-Once you have configured your smart contract, you can deploy it. You can open the smart contract directly in Remix IDE, or you can import it into your Hardhat/Truffle/Foundry project.
+Once you have configured your smart contract, you can deploy it. You can open the smart contract directly in Remix IDE, or you can import it into your Hardhat or Foundry project.
 
 The following section examines the use of Remix IDE and Hardhat framework:
 

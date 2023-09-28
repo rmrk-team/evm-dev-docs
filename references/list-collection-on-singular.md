@@ -4,7 +4,7 @@ description: How to get your collection listed on Singular marketplace
 
 # List collection on Singular
 
-The [Singular marketplace](https://singular.app) is the most advanced NFT marketplace to date with support for [ERC-5773](https://eips.ethereum.org/EIPS/eip-5773), [ERC-6059](https://eips.ethereum.org/EIPS/eip-6059), [ERC-6220](https://eips.ethereum.org/EIPS/eip-6220), [ERC-6381](https://eips.ethereum.org/EIPS/eip-6381), and [ERC-6454](https://eips.ethereum.org/EIPS/eip-6454) in addition to the support for [ERC-721](https://eips.ethereum.org/EIPS/eip-721), [ERC-2981](https://eips.ethereum.org/EIPS/eip-2981), and other standard NFT-powering ERCs.
+The [Singular marketplace](https://singular.app) is the most advanced NFT marketplace to date with support for [ERC-5773](https://eips.ethereum.org/EIPS/eip-5773), [ERC-7401](https://eips.ethereum.org/EIPS/eip-7401), [ERC-6220](https://eips.ethereum.org/EIPS/eip-6220), [ERC-6381](https://eips.ethereum.org/EIPS/eip-6381), [ERC-6454](https://eips.ethereum.org/EIPS/eip-6454), and [ERC-7508](https://eips.ethereum.org/EIPS/eip-7508) in addition to the support for [ERC-721](https://eips.ethereum.org/EIPS/eip-721), [ERC-2981](https://eips.ethereum.org/EIPS/eip-2981), and other standard NFT-powering ERCs.
 
 To ensure the best results when the collection is displayed, we prepared a list of suggested extensions to implement:
 

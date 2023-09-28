@@ -20,7 +20,7 @@ There is a number of available minimal implementation smart contracts available:
 
 #### RMRKNestable
 
-`RMRKNestable` provides the minimal implementation of RMRK nestable lego, also known as [ERC-6059](https://eips.ethereum.org/EIPS/eip-6059). It allows the nesting of NFTs into one another.
+`RMRKNestable` provides the minimal implementation of RMRK nestable lego, also known as [ERC-7401](https://eips.ethereum.org/EIPS/eip-7401). It allows the nesting of NFTs into one another.
 
 * You can refer to the `RMRKNestable` documentation [here](../evm-contracts-documentation/rmrk/nestable/rmrknestable.md)
 * You can refer to the `RMRKNestable` source code [here](https://github.com/rmrk-team/evm/blob/master/contracts/RMRK/nestable/RMRKNestable.sol)
@@ -46,7 +46,7 @@ import "@rmrk-team/evm-contracts/contracts/RMRK/multiasset/RMRKMultiAsset.sol";
 
 #### RMRKNestableMultiAsset
 
-`RMRKNestableMultiAsset` provides the minimal implementation of joined RMRK nestable and multi-asset legos, also known as [ERC-6059](https://eips.ethereum.org/EIPS/eip-6059) and [ERC-5773](https://eips.ethereum.org/EIPS/eip-5773). It allows tokens to be nested into one another and every single token to have multiple assets.
+`RMRKNestableMultiAsset` provides the minimal implementation of joined RMRK nestable and multi-asset legos, also known as [ERC-7401](https://eips.ethereum.org/EIPS/eip-7401) and [ERC-5773](https://eips.ethereum.org/EIPS/eip-5773). It allows tokens to be nested into one another and every single token to have multiple assets.
 
 * You can refer to the `RMRKNestableMultiAsset` documentation [here](../evm-contracts-documentation/rmrk/nestable/rmrknestablemultiasset.md)
 * You can refer to the `RMRKNestableMultiAsset` source code [here](https://github.com/rmrk-team/evm/blob/master/contracts/RMRK/nestable/RMRKNestableMultiAsset.sol)
@@ -119,7 +119,7 @@ There is a number of ready-to-use implementation smart contracts available. Each
 
 #### Nestable
 
-The `RMRKNestableLazyMintNative` provides a ready-to-use native token pay implementation of RMRK nestable lego, also known as the [ERC-6059](https://eips.ethereum.org/EIPS/eip-6059) allowing NFTs to be nested into other NFTs.
+The `RMRKNestableLazyMintNative` provides a ready-to-use native token pay implementation of RMRK nestable lego, also known as the [ERC-7401](https://eips.ethereum.org/EIPS/eip-7401) allowing NFTs to be nested into other NFTs.
 
 * You can refer to the `RMRKNestableLazyMintNative` documentation [here](../evm-contracts-documentation/implementations/native-token-pay/rmrknestablelazymintnative.md)
 * You can refer to the `RMRKNestableLazyMintNative` source code [here](https://github.com/rmrk-team/evm/blob/master/contracts/implementations/lazyMintNative/RMRKNestableLazyMintNative.sol)
@@ -130,7 +130,7 @@ In order to import the `RMRKNestableImpl` into your smart contract, you can impo
 import "@rmrk-team/evm-contracts/contracts/implementations/lazyMintNative/RMRKNestableLazyMintNative.sol";
 ```
 
-The `RMRKNestableLazyMintErc20` provides a ready-to-use ERC-20 pay implementation of RMRK nestable lego, also known as the [ERC-6059](https://eips.ethereum.org/EIPS/eip-6059) allowing NFTs to be nested into other NFTs.
+The `RMRKNestableLazyMintErc20` provides a ready-to-use ERC-20 pay implementation of RMRK nestable lego, also known as the [ERC-7401](https://eips.ethereum.org/EIPS/eip-7401) allowing NFTs to be nested into other NFTs.
 
 * You can refer to the `RMRKNestableLazyMintErc20` documentation [here](../evm-contracts-documentation/implementations/erc-20-pay/rmrknestablelazyminterc20soulbound.md)
 * You can refer to the `RMRKNestableLazyMintErc20` source code [here](https://github.com/rmrk-team/evm/blob/master/contracts/implementations/lazyMintErc20/RMRKNestableLazyMintErc20.sol)
@@ -141,7 +141,7 @@ In order to import the `RMRKNestablelazyMintErc20` into your smart contract, you
 import "@rmrk-team/evm-contracts/contracts/implementations/lazyMintErc20/RMRKNestableLazyMintErc20.sol";
 ```
 
-The `RMRKNestablePreMint` provides a ready-to-use premint implementation of RMRK nestable lego, also known as the [ERC-6059](https://eips.ethereum.org/EIPS/eip-6059) allowing NFTs to be nested into other NFTs.
+The `RMRKNestablePreMint` provides a ready-to-use premint implementation of RMRK nestable lego, also known as the [ERC-7401](https://eips.ethereum.org/EIPS/eip-7401) allowing NFTs to be nested into other NFTs.
 
 * You can refer to the `RMRKNestablePreMint` documentation [here](../evm-contracts-documentation/implementations/premint/rmrknestablepremint.md)
 * You can refer to the `RMRKNestablePreMint` source code [here](https://github.com/rmrk-team/evm/blob/master/contracts/implementations/premint/RMRKNestablePreMint.sol)
@@ -189,7 +189,7 @@ import "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAsse
 
 #### Nestable with MultiAsset
 
-The `RMRKNestableMultiAssetLazyMintNative` provides a ready-to-use native token pay implementation of RMRK nestable and multi-asset legos, also known as the [ERC-6059](https://eips.ethereum.org/EIPS/eip-6059) and [ERC-5773](https://eips.ethereum.org/EIPS/eip-5773) allowing NFTs to be nested into after other NFTs and to have multiple assets.
+The `RMRKNestableMultiAssetLazyMintNative` provides a ready-to-use native token pay implementation of RMRK nestable and multi-asset legos, also known as the [ERC-7401](https://eips.ethereum.org/EIPS/eip-7401) and [ERC-5773](https://eips.ethereum.org/EIPS/eip-5773) allowing NFTs to be nested into after other NFTs and to have multiple assets.
 
 * You can refer to the `RMRKNestableMultiAssetLazyMintNative` documentation [here](../evm-contracts-documentation/implementations/native-token-pay/rmrknestablemultiassetlazymintnative.md)
 * You can refer to the `RMRKNestableMultiAssetLazyMintNative` source code [here](https://github.com/rmrk-team/evm/blob/master/contracts/implementations/lazyMintNative/RMRKNestableMultiAssetLazyMintNative.sol)
@@ -200,7 +200,7 @@ In order to import the `RMRKNestableMultiAssetLazyMintNative` into your smart co
 import "@rmrk-team/evm-contracts/contracts/implementations/lazyMintNative/RMRKNestableMultiAssetLazyMintNative.sol";
 ```
 
-The `RMRKNestableMultiAssetLazyMintErc20` provides a ready-to-use ERC-20 pay implementation of RMRK nestable and multi-asset legos, also known as the [ERC-6059](https://eips.ethereum.org/EIPS/eip-6059) and [ERC-5773](https://eips.ethereum.org/EIPS/eip-5773) allowing NFTs to be nested into after other NFTs and to have multiple assets.
+The `RMRKNestableMultiAssetLazyMintErc20` provides a ready-to-use ERC-20 pay implementation of RMRK nestable and multi-asset legos, also known as the [ERC-7401](https://eips.ethereum.org/EIPS/eip-7401) and [ERC-5773](https://eips.ethereum.org/EIPS/eip-5773) allowing NFTs to be nested into after other NFTs and to have multiple assets.
 
 * You can refer to the `RMRKNestableMultiAssetLazyMintErc20` documentation [here](../evm-contracts-documentation/implementations/erc-20-pay/rmrknestablemultiassetlazyminterc20.md)
 * You can refer to the `RMRKNestableMultiAssetLazyMintErc20` source code [here](https://github.com/rmrk-team/evm/blob/master/contracts/implementations/lazyMintErc20/RMRKNestableMultiAssetLazyMintErc20.sol)
@@ -211,7 +211,7 @@ In order to import the `RMRKNestableMultiAssetLazyMintErc20` into your smart con
 import "@rmrk-team/evm-contracts/contracts/implementations/LazyMintErc20/RMRKNestableMultiAssetLazyMintErc20.sol";
 ```
 
-The `RMRKNestableMultiAssetPreMint` provides a ready-to-use premint implementation of RMRK nestable and multi-asset legos, also known as the [ERC-6059](https://eips.ethereum.org/EIPS/eip-6059) and [ERC-5773](https://eips.ethereum.org/EIPS/eip-5773) allowing NFTs to be nested into after other NFTs and to have multiple assets.
+The `RMRKNestableMultiAssetPreMint` provides a ready-to-use premint implementation of RMRK nestable and multi-asset legos, also known as the [ERC-7401](https://eips.ethereum.org/EIPS/eip-7401) and [ERC-5773](https://eips.ethereum.org/EIPS/eip-5773) allowing NFTs to be nested into after other NFTs and to have multiple assets.
 
 * You can refer to the `RMRKNestableMultiAssetPreMint` documentation [here](../evm-contracts-documentation/implementations/premint/rmrknestablemultiassetpremint.md)
 * You can refer to the `RMRKNestableMultiAssetPreMint` source code [here](https://github.com/rmrk-team/evm/blob/master/contracts/implementations/premint/RMRKNestableMultiAssetPreMint.sol)
@@ -272,7 +272,7 @@ import "@rmrk-team/evm-contracts/contracts/implementations/RMRKCatalogImpl.sol";
 
 ## Flowchart
 
-The following flowchart can help you in deciding which RMRK smart contract to use as the basis of your solution:
+The following flowchart can help you decide which RMRK smart contract to use as the basis of your solution:
 
 ```mermaid
 flowchart TD

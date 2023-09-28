@@ -20,7 +20,7 @@ An NFT can have multiple assets (outputs), which can be any kind of file to be s
 ERC-5773: Context-Dependent Multi-Asset Tokens
 {% endembed %}
 
-## ERC-6059: Parent-Governed Nestable Non-Fungible Tokens
+## ERC-7401: Parent-Governed Non-Fungible Tokens Nesting
 
 This ERC is the standardized implementation of Nestable RMRK lego.
 
@@ -45,8 +45,8 @@ graph LR
 
 The graph illustrates how a child token can also be a parent token, but both are still administered by the root parent token’s owner.
 
-{% embed url="https://eips.ethereum.org/EIPS/eip-6059" %}
-ERC-6059: Parent-Governed Nestable Non-Fungible Tokens
+{% embed url="https://eips.ethereum.org/EIPS/eip-7401" %}
+ERC-7401: Parent-Governed Non-Fungible Tokens Nesting
 {% endembed %}
 
 ## ERC-6220: Composable NFTs utilizing Equippable Parts

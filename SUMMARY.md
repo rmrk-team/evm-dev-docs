@@ -6,7 +6,7 @@
 
 * [RMRK legos](general-overview/rmrk-legos/README.md)
   * [MultiAsset (ERC-5773)](general-overview/rmrk-legos/multiasset.md)
-  * [Nestable (ERC-6059)](general-overview/rmrk-legos/nestable.md)
+  * [Nestable (ERC-7401)](general-overview/rmrk-legos/nestable.md)
   * [Catalog and Equippable NFTs (ERC-6220)](general-overview/rmrk-legos/catalog-and-equippable-nfts.md)
 * [RMRK extensions](general-overview/rmrk-extensions/README.md)
   * [Emotable (ERC-6381)](general-overview/rmrk-extensions/emotable-erc-6381.md)

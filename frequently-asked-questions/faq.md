@@ -21,7 +21,7 @@ The xcRMRK token is not necessary to use RMRK NFT 2.0 contracts in any way - the
 The list can be found in the [RMRK legos](../general-overview/rmrk-legos/) and [RMRK extensions](../general-overview/rmrk-extensions/) sections, but also here:
 
 * [ERC-5773: Context-Dependent Multi-Asset Tokens](https://eips.ethereum.org/EIPS/eip-5773)
-* [ERC-6059: Parent-Governed Nestable Non-Fungible Tokens](https://eips.ethereum.org/EIPS/eip-6059)
+* [ERC-7401: Parent-Governed Non-Fungible Tokens Nesting](https://eips.ethereum.org/EIPS/eip-7401)
 * [ERC-6220: Composable NFTs utilizing Equippable Parts](https://eips.ethereum.org/EIPS/eip-6220)
 * [ERC-6381: Public Non-Fungible Token Emote Repository](https://eips.ethereum.org/EIPS/eip-6381)
 * [ERC-6454: Minimal Transferable NFT detection interface](https://eips.ethereum.org/EIPS/eip-6454)
@@ -46,3 +46,5 @@ All of the changes to the package are recorded in a congested way in the [CHANGE
 Additionally, you can read all about the changes in the most recent version in our [blog](https://www.rmrk.app/blog) titled _Developer Notes_.
 
 {% embed url="https://www.rmrk.app/blog/developer-notes-on-rmrk-team-evm-contracts-v2-0-0" %}
+
+{% embed url="https://www.rmrk.app/blog/arcane-developer-notes-introduction-of-rmrk-wizard" %}

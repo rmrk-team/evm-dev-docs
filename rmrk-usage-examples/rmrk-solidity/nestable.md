@@ -19,7 +19,7 @@ Some NFTs can be configured with special conditions for parent-child relationshi
 * some parent NFTs will have special withdrawal conditions, like a music NFT that accepts music stems. The stems can be removed by their owners until a certain number of co-composers upvote a stem enough, or until the owner of the parent music track seals and "publishes" it
 
 {% hint style="info" %}
-**NOTE: To dig deeper into the Nestable RMRK lego, you can also refer to the** [**ERC-6059**](https://eips.ethereum.org/EIPS/eip-6059) **that we published.**
+**NOTE: To dig deeper into the Nestable RMRK lego, you can also refer to the** [**ERC-7401**](https://eips.ethereum.org/EIPS/eip-7401) **that we published.**
 {% endhint %}
 
 {% hint style="danger" %}
