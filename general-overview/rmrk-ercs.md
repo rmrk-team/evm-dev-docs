@@ -73,16 +73,14 @@ There are two important terms when talking about ERC-6220: **composing** and **e
 **Equipping** refers to the augmentation of the token using slot parts. This allows for the modification of tokens by equipping child tokens into the slot parts from the catalog.
 {% endhint %}
 
-## ERC-6381: Public Non-Fungible Token Emote Repository
+## ERC-7409: Public Non-Fungible Tokens Emote Repository
 
 This ERC is the standardized implementation of Emotes RMRK extension.
 
 The Public Non-Fungible Token Emote Repository standard provides an enhanced interactive utility for ERC-721 and ERC-1155 by allowing NFTs to be emoted at.
 
-This proposal introduces the ability to react to NFTs using Unicode standardized emoji in a public non-gated repository smart contract that is accessible at the same address in all of the networks.
-
-{% embed url="https://eips.ethereum.org/EIPS/eip-6381" %}
-ERC-6381: Public Non-Fungible Token Emote Repository
+{% embed url="https://eips.ethereum.org/EIPS/eip-7409" %}
+ERC-7409: Public Non-Fungible Tokens Emote Repository
 {% endembed %}
 
 ## ERC-6454: Minimal Transferable NFT detection interface

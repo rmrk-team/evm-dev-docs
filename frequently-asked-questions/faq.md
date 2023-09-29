@@ -23,7 +23,7 @@ The list can be found in the [RMRK legos](../general-overview/rmrk-legos/) and [
 * [ERC-5773: Context-Dependent Multi-Asset Tokens](https://eips.ethereum.org/EIPS/eip-5773)
 * [ERC-7401: Parent-Governed Non-Fungible Tokens Nesting](https://eips.ethereum.org/EIPS/eip-7401)
 * [ERC-6220: Composable NFTs utilizing Equippable Parts](https://eips.ethereum.org/EIPS/eip-6220)
-* [ERC-6381: Public Non-Fungible Token Emote Repository](https://eips.ethereum.org/EIPS/eip-6381)
+* [ERC-7409: Public Non-Fungible Tokens Emote Repository](https://eips.ethereum.org/EIPS/eip-7409)
 * [ERC-6454: Minimal Transferable NFT detection interface](https://eips.ethereum.org/EIPS/eip-6454)
 * [ERC-7508: Dynamic On-Chain Token Attributes Repository](https://eips.ethereum.org/EIPS/eip-7508)
 
