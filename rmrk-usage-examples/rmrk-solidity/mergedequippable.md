@@ -1,12 +1,12 @@
 ---
-description: RMRK MergedEquippable lego composite example.
+description: RMRK Equippable lego composite example.
 ---
 
-# MergedEquippable
+# Equippable
 
-<figure><img src="../../.gitbook/assets/8.jpg" alt=""><figcaption><p>Merged Equippable RMRK lego composite</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/8.jpg" alt=""><figcaption><p>Equippable RMRK lego composite</p></figcaption></figure>
 
-The `MergedEquippable` composite of RMRK legos uses both the `Nestable` and `MultiAsset` RMRK legos as well as the `Equippable` lego. In addition to these three RMRK legos, it also requires the `Catalog` RMRK lego. Let's first examine the `Catalog` RMRK lego and then the `Equippable` one.
+The `Equippable` composite of RMRK legos uses both the `Nestable` and `MultiAsset` RMRK legos as well as the `Equippable` lego. In addition to these three RMRK legos, it also requires the `Catalog` RMRK lego. Let's first examine the `Catalog` RMRK lego and then the `Equippable` one.
 
 {% hint style="danger" %}
 The usage examples of package **v2.0.0** are coming soon. The current examples are of the previous version.
@@ -38,22 +38,18 @@ Each slot of the NFT can have a predefined collection of allowed NFT collections
 
 ## Abstract
 
-In this tutorial we will examine the MergedEquippable composite of RMRK blocks:
+In this tutorial we will examine the Equippable composite of RMRK blocks:
 
-* SimpleEquippable and SimpleCatalog work together to showcase the minimal implementation of the MergedEquippable RMRK lego composite.
-* AdvancedEquippable and AdvancedCatalog work together to showcase a more customizable implementation of the MergedEquippable RMRK lego composite.
+* SimpleEquippable and SimpleCatalog work together to showcase the minimal implementation of the Equippable RMRK lego composite.
+* AdvancedEquippable and AdvancedCatalog work together to showcase a more customizable implementation of the Equippable RMRK lego composite.
 
 Let's first examine the simple, minimal, implementation and then move on to the advanced one.
 
-## Simple MergedEquippable
+## Simple Equippable
 
-The simple `MergedEquippable` consists of two smart contracts. Let's first examine the `SimpleCatalog` smart contract and then move on to the `SimpleEquippable`.
+The simple `Equippable` consists of two smart contracts. Let's first examine the `SimpleCatalog` smart contract and then move on to the `SimpleEquippable`.
 
 ### SimpleCatalog
-
-{% hint style="info" %}
-**NOTE: As the `SimpleCatalog` smart contract is used by both `MergedEquippable` as well as `SplitEquippable` it resides in the root `contracts/` directory.**
-{% endhint %}
 
 The `SimpleCatalog` example uses the [`RMRKCatalogImpl`](https://github.com/rmrk-team/evm/blob/dev/contracts/implementations/RMRKCatalogImpl.sol). It is used by importing it using the `import` statement below the `pragma` definition:
 
@@ -234,7 +230,7 @@ contract SimpleEquippable is RMRKEquippableImpl {
 }
 ```
 
-The `RMRKEquippableImpl` implements all of the required functionality of the MergedEquippable RMRK lego composite. It implements minting, burning and asset management.
+The `RMRKEquippableImpl` implements all of the required functionality of the Equippable RMRK lego composite. It implements minting, burning and asset management.
 
 {% hint style="danger" %}
 **WARNING: The `RMRKEquippableImpl` only has minimal access control implemented. If you intend to use it, make sure to define your own, otherwise your smart contracts are at risk of unexpected behaviour.**
@@ -403,7 +399,7 @@ The `updateRoyaltyRecipient` function is used to update the royalty recipient an
 
 ### Deploy script
 
-The deploy script for the simple `MergedEquippable` resides in the `deployEquippable.ts`.
+The deploy script for the simple `Equippable` resides in the `deployEquippable.ts`.
 
 The deploy script uses the `ethers`, `SimpleCatalog`, `SimpleEquippable`, `RMRKEquipRenderUtils` and `ContractTransaction` imports. We will also define the `pricePerMint` constant, which will be used to set the minting price of the tokens. The empty deploy script should look like this:
 
@@ -512,7 +508,7 @@ Sample contracts deployed to 0x5FbDB2315678afecb367f032d93F642f64180aa3 (Kanaria
 
 ### User journey
 
-With the deploy script ready, we can examine how the journey of a user using merged equippable would look like.
+With the deploy script ready, we can examine how the journey of a user using equippable would look like.
 
 The base of the user journey script is the same as the deploy script, as we need to deploy the smart contract in order to interact with it:
 
@@ -1312,11 +1308,11 @@ Composed:  [
 ]
 ```
 
-This concludes our work on the simple Merged equippable RMRK lego composite and we can now move on to examining the advanced implementation.
+This concludes our work on the simple Equippable RMRK lego composite and we can now move on to examining the advanced implementation.
 
-## Advanced MergedEquippable
+## Advanced Equippable
 
-The `Advanced MergedEquippable` implementation uses the `AdvancedCatalog` and `AdvancedEquippable` and allows for more flexibility when implementing the Merged equippable RMRK lego composite. It implements the minimum required implementation in order to be compatible with RMRK merged equippable, but leaves more business logic implementation freedom to the developer.
+The `Advanced Equippable` implementation uses the `AdvancedCatalog` and `AdvancedEquippable` and allows for more flexibility when implementing the Equippable RMRK lego composite. It implements the minimum required implementation in order to be compatible with RMRK Equippable, but leaves more business logic implementation freedom to the developer.
 
 ### AdvancedCatalog
 
@@ -1386,7 +1382,7 @@ Any additional functions supporting your NFT use case and utility related to the
 
 ### AdvancedEquippable
 
-The `AdvancedEquippable` smart contract represents the minimum required implementation in order for the smart contract to be compatible with the `MergedEquippable` RMRK lego composite. It uses the [`RMRKEquippable.sol`](https://github.com/rmrk-team/evm/blob/dev/contracts/RMRK/equippable/RMRKEquippable.sol) import to gain access to the Merged equippable RMRK lego composite:
+The `AdvancedEquippable` smart contract represents the minimum required implementation in order for the smart contract to be compatible with the `Equippable` RMRK lego composite. It uses the [`RMRKEquippable.sol`](https://github.com/rmrk-team/evm/blob/dev/contracts/RMRK/equippable/RMRKEquippable.sol) import to gain access to the Equippable RMRK lego composite:
 
 ```solidity
 import "@rmrk-team/evm-contracts/contracts/RMRK/equippable/RMRKEquippable.sol";
@@ -1408,7 +1404,7 @@ contract AdvancedEquippable is RMRKEquippable {
 }
 ```
 
-This is all that is required to get you started with implementing the Merged equippable RMRK lego composite.
+This is all that is required to get you started with implementing the Equippable RMRK lego composite.
 
 <details>
 

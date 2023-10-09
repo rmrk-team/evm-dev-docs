@@ -6,7 +6,7 @@ description: Welcome to RMRK EVM! ✨
 
 # Welcome
 
-Welcome to the RMRK EVM developer documentation, home of [**ERC-5773**](https://eips.ethereum.org/EIPS/eip-5773), [**ERC-7401**](https://eips.ethereum.org/EIPS/eip-7401), [**ERC-6220**](https://eips.ethereum.org/EIPS/eip-6220), [**ERC-7409**](https://eips.ethereum.org/EIPS/eip-7409)**,** [**ERC-6454**](https://eips.ethereum.org/EIPS/eip-6454), and [**ERC-7508**](https://eips.ethereum.org/EIPS/eip-7508). Here, you can find all of the information needed in order to utilize RMRK's next-generation NFT legos.
+Welcome to the RMRK EVM developer documentation, home of [**ERC-5773**](https://eips.ethereum.org/EIPS/eip-5773), [**ERC-7401**](https://eips.ethereum.org/EIPS/eip-7401), [**ERC-6220**](https://eips.ethereum.org/EIPS/eip-6220), [**ERC-7409**](https://eips.ethereum.org/EIPS/eip-7409)**,** [**ERC-6454**](https://eips.ethereum.org/EIPS/eip-6454), and [**ERC-7508**](https://eips.ethereum.org/EIPS/eip-7508). Here, you can find all of the information needed in order to utilize RMRK's next-generation Modular NFTs.
 
 ## Sections
 

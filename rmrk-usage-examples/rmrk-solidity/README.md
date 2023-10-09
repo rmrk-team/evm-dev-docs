@@ -32,7 +32,6 @@ The examples included are:
 2. [`Nestable`](nestable.md)
 3. [`Nestable with MultiAsset`](nestable-with-multiasset.md)
 4. [`MergedEquippable`](mergedequippable.md)
-5. [`SplitEquippable`](splitequippable.md)
 
 Additionally we have render util contracts. The reason these are separate is to save contract space. You can have a single deploy of those and use them on any number of contracts or even use the existing ones (we will provide them in the future):
 
